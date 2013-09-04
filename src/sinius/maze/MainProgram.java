@@ -1,6 +1,5 @@
 package sinius.maze;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import sinius.maze.gui.StartupScreen;
@@ -15,17 +14,20 @@ public class MainProgram {
 	
 	public static String SAVEMAP = System.getenv("APPDATA") + "\\Sinius Maze";
 	
+	
+	
 	public static void main(String[] args) {
 		if(args.length == 1)
 			SAVEMAP = args[0];
 		
-		
+		MapStructureCreator maper = new MapStructureCreator();
 		try {
-			MapStructureCreator.CreateFirstStartup();
-		} catch (IOException e) {
+			maper.CreateFirstStartup();
+		} catch (Exception e) {
 			System.out.println("something critical went wrong when creating the files");
-			System.exit(1);
 			e.printStackTrace();
+			System.exit(1);
+			
 		}
 		
 		
