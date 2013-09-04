@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
 import javax.swing.JToggleButton;
+import javax.swing.SwingConstants;
 
 public class StartupScreen extends JFrame {
 
@@ -76,6 +77,7 @@ public class StartupScreen extends JFrame {
 		contentPane.add(showNextLevel);
 		
 		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		textField.setEditable(false);
 		textField.setBounds(61, 172, 312, 20);
 		contentPane.add(textField);

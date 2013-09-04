@@ -27,10 +27,10 @@ public class Player implements Entity{
 		speed =  3;
 		
 		try {
-			upImg	= ImageIO.read(new File(MainProgram.SAVEMAP + "/rec/Player_Up.png"));
-			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/rec/Player_Down.png"));
-			leftImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/rec/Player_Left.png"));
-			rightImg= ImageIO.read(new File(MainProgram.SAVEMAP + "/rec/Player_Right.png"));
+			upImg	= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Up.png"));
+			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Down.png"));
+			leftImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Left.png"));
+			rightImg= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Right.png"));
 			
 		} catch (Exception e) {
 			e.printStackTrace();

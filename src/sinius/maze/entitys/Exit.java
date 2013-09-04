@@ -16,9 +16,19 @@ public class Exit implements Entity{
 
 	private int x, y;
 	private Rectangle r;
-	
-	
-	
+	private Image img;
+		
+	@Override
+	public void Create(int x, int y) {
+		this.x = x;
+		this.y = y;
+		r = new Rectangle(x*Game.ppb_x, y*Game.ppb_y, Game.ppb_x, Game.ppb_y);
+		try {
+			img = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Exit.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	@Override
 	public String getName() {
@@ -37,7 +47,7 @@ public class Exit implements Entity{
 
 	@Override
 	public Image getFont() throws IOException {
-		return ImageIO.read(new File(MainProgram.SAVEMAP + "/rec/Exit.png"));
+		return img;
 	}
 
 	@Override
@@ -56,13 +66,7 @@ public class Exit implements Entity{
 	}
 
 
-	@Override
-	public void Create(int x, int y) {
-		this.x = x;
-		this.y = y;
-		r = new Rectangle(x*Game.ppb_x, y*Game.ppb_y, Game.ppb_x, Game.ppb_y);
-		
-	}
+	
 
 
 }

@@ -1,6 +1,5 @@
 package sinius.maze;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,25 +13,24 @@ public class MainProgram {
 	public static ArrayList<Level> levels;
 	public static Game game;
 	
-	public static final String SAVEMAP = System.getenv("APPDATA") + "\\Sinius Maze";
+	public static String SAVEMAP = System.getenv("APPDATA") + "\\Sinius Maze";
 	
 	public static void main(String[] args) {
+		if(args.length == 1)
+			SAVEMAP = args[0];
 		
-		File f = new File(System.getenv("APPDATA") + "\\Sinius Maze");
-		f.mkdirs();
 		
 		try {
 			MapStructureCreator.CreateFirstStartup();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.out.println("something critical went wrong when creating the files");
+			System.exit(1);
 			e.printStackTrace();
 		}
 		
 		
 		loadAllLevels();
 		reDrawStartupScreen();
-		
-		
 		
 	}
 	

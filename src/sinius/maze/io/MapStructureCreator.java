@@ -10,7 +10,7 @@ import sinius.maze.Util;
 public class MapStructureCreator {
 
 	private static File main = new File(MainProgram.SAVEMAP);
-	private static File res = new File(MainProgram.SAVEMAP + "\\rec");
+	private static File res = new File(MainProgram.SAVEMAP + "\\res");
 	private static File saves = new File(MainProgram.SAVEMAP + "\\saves");
 	private static File levels = new File(MainProgram.SAVEMAP + "\\levels");
 	
@@ -25,8 +25,8 @@ public class MapStructureCreator {
 		if(!levels.exists())
 			levels.mkdirs();
 		
-		for(File f : Util.getFileList("res\\graphics\\")){
-			File to = new File(MainProgram.SAVEMAP + "\\rec\\" + f.getName());
+		for(File f : Util.getFileList("res\\pics_Entity\\")){
+			File to = new File(MainProgram.SAVEMAP + "\\res\\" + f.getName());
 			if(!to.exists())
 				Files.copy(f.toPath(), to.toPath());
 		}
