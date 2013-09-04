@@ -26,18 +26,13 @@ public class Util {
 	
 	public static ArrayList<File> getFileList(String path){
 		ArrayList<File> files = new ArrayList<File>();
-		String file;
 		File folder = new File(path);
 		folder.getParentFile().mkdirs();
 		File[] listOfFiles = folder.listFiles(); 
 		
 		for (int i = 0; i < listOfFiles.length; i++){
 			if (listOfFiles[i].isFile()) {
-				file = listOfFiles[i].getName();
-				if (file.toLowerCase().endsWith(".maze")){
-					System.out.println("found a file: " + file);
-					files.add(listOfFiles[i]);
-				}
+				files.add(listOfFiles[i]);
 			}
 		}
 		return files;

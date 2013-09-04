@@ -1,10 +1,12 @@
 package sinius.maze;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import sinius.maze.gui.StartupScreen;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.io.MapStructureCreator;
 
 public class MainProgram {
 	
@@ -19,7 +21,12 @@ public class MainProgram {
 		File f = new File(System.getenv("APPDATA") + "\\Sinius Maze");
 		f.mkdirs();
 		
-		
+		try {
+			MapStructureCreator.CreateFirstStartup();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		loadAllLevels();

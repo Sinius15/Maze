@@ -40,7 +40,6 @@ public class LevelLoader {
 		for(Entity t : l.getEntitys()){
 			saveFile.addInt("entitys." + i + ".x", t.getX());
 			saveFile.addInt("entitys." + i + ".y", t.getY());
-			//saveFile.addString("entitys." + i + ".type", t.getName());
 			saveFile.addString("entitys." + i + ".class",t.getClass().getName());
 			i++;
 		}
@@ -55,7 +54,6 @@ public class LevelLoader {
 		saveFile.Load(f);
 		
 		Level level = new Level(saveFile.getInt("levelWidht"), saveFile.getInt("levelHeight"), saveFile.getString("levelName"));
-		System.out.println(saveFile.getString("levelName"));
 		
 		Game.ppb_x = 800 / level.getWidth();
 		Game.ppb_y = 800 / level.getHeight();
@@ -68,10 +66,8 @@ public class LevelLoader {
 		}
 		
 		for(int i = 0; i<saveFile.getInt("entityAmount"); i++){
-			//String name = saveFile.getString("entitys." + i + ".type");
 			try {
 				Class<?> e = Class.forName(saveFile.getString("entitys." + i + ".class"));
-				System.out.println(e.getName());
 				if(!Entity.class.isAssignableFrom(e)){
 					continue;
 				}
