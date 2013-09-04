@@ -16,7 +16,6 @@ public class Player implements Entity{
 
 	private int x, y, hp;
 	int speed;
-	public int xv, yv;
 	private String lastMove = "up";
 	
 	Image upImg, downImg, leftImg, rightImg;

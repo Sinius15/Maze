@@ -16,7 +16,7 @@ public class EditorOptionScreen extends JFrame {
 	private JPanel contentPane;
 	ButtonGroup buttonGroup = new ButtonGroup();
 	ColorChooserPanel panel1;
-	final JRadioButton br_spawn , br_end, br_wall;
+	final JRadioButton br_spawn , br_end, br_WallBrush, br_WallPencil;
 
 	public EditorOptionScreen() {
 		setTitle("Option's");
@@ -36,20 +36,25 @@ public class EditorOptionScreen extends JFrame {
 		panel.setLayout(null);
 		
 		br_spawn = new JRadioButton("Spawn Point");
-		br_spawn.setBounds(8, 36, 121, 24);
+		br_spawn.setBounds(8, 64, 121, 24);
 		panel.add(br_spawn);
 		buttonGroup.add(br_spawn);
 		
 		br_end = new JRadioButton("End Point");
-		br_end.setBounds(8, 64, 121, 24);
+		br_end.setBounds(8, 92, 121, 24);
 		panel.add(br_end);
 		buttonGroup.add(br_end);
 		
-		br_wall = new JRadioButton("Wall");
-		br_wall.setSelected(true);
-		br_wall.setBounds(8, 8, 121, 24);
-		panel.add(br_wall);
-		buttonGroup.add(br_wall);
+		br_WallBrush = new JRadioButton("Wall");
+		br_WallBrush.setSelected(true);
+		br_WallBrush.setBounds(8, 8, 121, 24);
+		panel.add(br_WallBrush);
+		buttonGroup.add(br_WallBrush);
+		
+		br_WallPencil = new JRadioButton("Pencil");
+		br_WallPencil.setBounds(8, 36, 121, 24);
+		panel.add(br_WallPencil);
+		buttonGroup.add(br_WallPencil);
 		
 		panel1 = new ColorChooserPanel();
 		panel1.tcc.setBounds(0, 0, 560, 227);
@@ -66,8 +71,10 @@ public class EditorOptionScreen extends JFrame {
 			return "spawn";
 		if(br_end.isSelected())
 			return "exit";
-		if(br_wall.isSelected())
+		if(br_WallBrush.isSelected())
 			return "wall";
+		if(br_WallPencil.isSelected())
+			return "pencil";
 		return "";
 	}
 }

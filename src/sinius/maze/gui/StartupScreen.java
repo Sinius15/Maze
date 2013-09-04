@@ -23,6 +23,7 @@ public class StartupScreen extends JFrame {
 	
 
 	public StartupScreen() {
+		setResizable(false);
 		setTitle("Sinius's Maze   -  Level Choser");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 455, 321);

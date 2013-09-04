@@ -60,7 +60,7 @@ public class Exit implements Entity{
 	public void Create(int x, int y) {
 		this.x = x;
 		this.y = y;
-		r= new Rectangle(x*Game.ppb_x, y*Game.ppb_y, Game.ppb_x, Game.ppb_y);
+		r = new Rectangle(x*Game.ppb_x, y*Game.ppb_y, Game.ppb_x, Game.ppb_y);
 		
 	}
 

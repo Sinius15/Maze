@@ -37,7 +37,7 @@ public class Level {
 			}
 		}
 		spawn = new Spawn();
-		spawn.Create(0, 0);
+		spawn.Create(12, 12);
 	}
 	
 	public Block getBlock(int x, int y){
@@ -48,6 +48,8 @@ public class Level {
 		}
 		return null;
 	}
+	
+	public boolean editEntityReturner;
 	
 	@SuppressWarnings("rawtypes")
 	public synchronized void editEntitys(String what, Graphics2D graphics, Entity e, Runnable r, int x, int y, Class s){
@@ -83,6 +85,12 @@ public class Level {
 				
 			}
 			
+		}else if(what.equals("isEntityOnCoord")){
+			for(Entity f: entitys){
+				if(f.getX() == x && f.getY() == y)
+					editEntityReturner = true;
+				
+			}
 		}
 		
 		for(Entity f: removeEntitys){

@@ -21,8 +21,6 @@ public class Spawn implements Entity{
 		this.y = y;
 	}
 	
-		
-	
 	@Override
 	public String getName() {
 		return "End Point";

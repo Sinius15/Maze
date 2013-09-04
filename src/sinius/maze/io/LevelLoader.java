@@ -75,9 +75,9 @@ public class LevelLoader {
 				if(!Entity.class.isAssignableFrom(e)){
 					continue;
 				}
-				e.newInstance();
-				
-				//level.editEntitys("add", null, (Entity)e.newInstance() , null, 0, 0, null);
+				Entity entity = (Entity) e.newInstance();
+				entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"));
+				level.editEntitys("add", null, entity , null, 0, 0, null);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
