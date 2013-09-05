@@ -5,8 +5,6 @@ import java.awt.geom.Line2D;
 import java.io.File;
 import java.util.ArrayList;
 
-import sinius.maze.api.Level;
-
 public class Util {
 
 	public static ArrayList<Block> getCrossedBlocks(int x1, int y1, int x2, int y2, Level level){

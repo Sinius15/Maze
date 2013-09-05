@@ -1,12 +1,10 @@
-package sinius.maze.api;
+package sinius.maze;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-import sinius.maze.Block;
-import sinius.maze.Game;
 import sinius.maze.entitys.Spawn;
 
 public class Level {
@@ -58,13 +56,25 @@ public class Level {
 			try {
 				
 				for(Entity f : entitys){
+					if(f.onGrid())
 						graphics.drawImage(f.getFont(), f.getX()*Game.ppb_x, f.getY()*Game.ppb_y, Game.ppb_x, Game.ppb_y, null);
+					else{
+						if(f.getSize() != null)
+							graphics.drawImage(f.getFont(), f.getX(), f.getY(), f.getSize().width, f.getSize().height, null);
+						else
+							graphics.drawImage(f.getFont(), f.getX(), f.getY(), Game.ppb_x, Game.ppb_y, null);
+					}
+						
 				}
 				
 				graphics.drawImage(getSpawn().getFont(), getSpawn().getX()*Game.ppb_x, getSpawn().getY()*Game.ppb_y,Game.ppb_x, Game.ppb_y, null);
 				
 			} catch (Exception e1) {
 				e1.printStackTrace();
+			}
+		}else if(what.equals("advRender")){
+			for(Entity f : entitys){
+				f.advancedRender(graphics, Game.editMode);	
 			}
 		}
 		else if(what.equals("add")){
@@ -93,7 +103,6 @@ public class Level {
 				
 			}
 		}
-		
 		for(Entity f: removeEntitys){
 			entitys.remove(f);
 		}

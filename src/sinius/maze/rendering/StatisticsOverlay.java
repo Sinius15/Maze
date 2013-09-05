@@ -1,4 +1,4 @@
-package sinius.maze.drawing;
+package sinius.maze.rendering;
 
 import java.awt.Color;
 import java.awt.Font;

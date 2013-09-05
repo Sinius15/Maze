@@ -1,5 +1,7 @@
 package sinius.maze.entitys;
 
+import java.awt.Dimension;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
@@ -7,9 +9,9 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import sinius.maze.Entity;
+import sinius.maze.Level;
 import sinius.maze.MainProgram;
-import sinius.maze.api.Entity;
-import sinius.maze.api.Level;
 
 public class Spawn implements Entity{
 
@@ -60,6 +62,20 @@ public class Spawn implements Entity{
 
 	@Override
 	public String getSaveData() {
+		return null;
+	}
+
+	@Override
+	public void advancedRender(Graphics2D graphics, boolean editMode) {
+	}
+
+	@Override
+	public boolean onGrid() {
+		return true;
+	}
+
+	@Override
+	public Dimension getSize() {
 		return null;
 	}
 

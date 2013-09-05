@@ -1,19 +1,19 @@
-package sinius.maze.drawing;
+package sinius.maze.rendering;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 
 import sinius.maze.Block;
 import sinius.maze.Game;
+import sinius.maze.Level;
 import sinius.maze.MainProgram;
-import sinius.maze.api.Level;
 import sinius.maze.entitys.Player;
 
 public class Drawer {
 
 	public static Graphics2D graphics;
 	
-	public static void draw(Level l){
+	public static void drawEntitys(Level l){
 		l.editEntitys("draw", graphics, null, null, 0, 0, null);
 	}
 	

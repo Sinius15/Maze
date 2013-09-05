@@ -9,7 +9,6 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import sinius.maze.api.Entity;
 import sinius.maze.io.MapStructureCreator;
 
 @SuppressWarnings("rawtypes")
@@ -26,13 +25,12 @@ public class EntityManager {
 				InputStream is = path.openStream();
 				InputStreamReader isr = new InputStreamReader(is, "US-ASCII" );
 				BufferedReader br = new BufferedReader(isr);
-
 				String text;
 				while((text = br.readLine()) != null){
 					URL url = f.toURI().toURL();
 					URL[] urls = new URL[]{url};
 					ClassLoader clazzloader = new URLClassLoader(urls);
-					
+					System.out.println(text);
 					Class<?> clazz = Class.forName(text, true, clazzloader);
 					if(Entity.class.isAssignableFrom(clazz)){
 						avalableEntitys.add(clazz);
@@ -45,6 +43,36 @@ public class EntityManager {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public synchronized ArrayList<String> getEntityNames(){
+		ArrayList<String> out = new ArrayList<String>();
+		
+		for(Class c: avalableEntitys){
+			Entity e;
+			try {
+				e = (Entity) c.newInstance();
+				out.add(e.getName());
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		
+		return out;
+	}
+	
+	public synchronized Entity getEntityByName(String name){
+		for(Class c: avalableEntitys){
+			Entity e;
+			try {
+				e = (Entity) c.newInstance();
+				if(e.getName().equals(name))
+					return e;
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return null;
 	}
 	
 	public synchronized Entity getEntityByClass(String className){

@@ -5,17 +5,15 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import sinius.maze.api.Level;
-import sinius.maze.drawing.Drawer;
-import sinius.maze.drawing.Finish;
-import sinius.maze.drawing.StatisticsOverlay;
-import sinius.maze.entitys.Exit;
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.gui.GameScreen;
 import sinius.maze.io.KeyHandler;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.rendering.Drawer;
+import sinius.maze.rendering.Finish;
+import sinius.maze.rendering.StatisticsOverlay;
 import sinius.maze.timing.FPSTimer;
 import sinius.maze.timing.TimeTimer;
 
@@ -32,14 +30,14 @@ public class Game {
 	
 	private Thread gameLoop;
 	private boolean isRunning = false;
-	private boolean editMode;
+	public static boolean editMode;
 	public static boolean isFinihed = false;
 	private Player player;
 	
 	public static int ppb_x, ppb_y;
 	
 	public Game(Level l, boolean editMode){
-		this.editMode = editMode;
+		Game.editMode = editMode;
 		level = l;
 		gameScreen = new GameScreen();
 		gameScreen.setVisible(true);
@@ -73,7 +71,7 @@ public class Game {
 		}
 		if(editMode){
 			if(Game.keys.mousePosX != -1){
-				if(options.getBrush().equals("wall")){
+				if(options.getBrush().equals("Wall Brush")){
 					Block b = level.getBlock(Game.keys.mousePosX, Game.keys.mousePosY);
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 						b.setType(Block.WALL);
@@ -96,16 +94,14 @@ public class Game {
 						
 					}
 					
-				}
-				else if(options.getBrush().equals("spawn")){
+				}else if(options.getBrush().equals("Spawn")){
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 						Spawn s = new Spawn();
 						s.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
 						level.setSpawn(s);
 					}
 						
-				}
-				else if(options.getBrush().equals("pencil")){
+				}else if(options.getBrush().equals("Wall pencil")){
 					Block b = level.getBlock(Game.keys.mousePosX, Game.keys.mousePosY);
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 						b.setType(Block.WALL);
@@ -114,21 +110,18 @@ public class Game {
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
 						b.setType(Block.AIR);
 					}
-				}
-				else if(options.getBrush().equals("exit")){
+				}else{
+					Entity x = MainProgram.entityManager.getEntityByName(options.getBrush());
+					x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 						
 						level.editEntitys("isEntityOnCoord", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, null);
-						if(!level.editEntityReturner){
-							Exit x = new Exit();
-							x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
+						if(!level.editEntityReturner)
 							level.editEntitys("add", null, x, null, 0, 0, null);
-						}
 						level.editEntityReturner = false;
 						
-					}
-					else if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
-						level.editEntitys("remove", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, Exit.class);
+					}else if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
+						level.editEntitys("remove", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, x.getClass());
 					}
 					
 				}
@@ -165,13 +158,12 @@ public class Game {
 		Drawer.graphics = (Graphics2D)g;
 			
 		Drawer.drawMaze(level);
-		Drawer.draw(level);
+		Drawer.drawEntitys(level);
 		if(!editMode){
 			Drawer.drawTimer();
 			Drawer.drawPlayer(level);
 			if(Game.keys.isKeyPressed(KeyEvent.VK_F1))
 				StatisticsOverlay.Draw((Graphics2D)g);
-			
 			if(isFinihed)
 				Finish.Draw((Graphics2D) g);
 			

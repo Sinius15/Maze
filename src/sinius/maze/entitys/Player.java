@@ -1,19 +1,21 @@
 package sinius.maze.entitys;
 
+import java.awt.Dimension;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
 
 import javax.imageio.ImageIO;
 
+import sinius.maze.Entity;
 import sinius.maze.Game;
+import sinius.maze.Level;
 import sinius.maze.MainProgram;
-import sinius.maze.api.Entity;
-import sinius.maze.api.Level;
 
 public class Player implements Entity{
 
-	private int x, y, hp;
+	private int x, y;
 	int speed;
 	private String lastMove = "up";
 	
@@ -24,7 +26,6 @@ public class Player implements Entity{
 		this.x = x;
 		this.y = y;
 		speed =  3;
-		
 		try {
 			upImg	= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Up.png"));
 			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Down.png"));
@@ -34,45 +35,13 @@ public class Player implements Entity{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
-		
+
 	@Override
 	public String getName() {
-		return "Player";
+		return "player";
 	}
 
-	@Override
-	public int getX() {
-		return x;
-	}
-
-	@Override
-	public int getY() {
-		return y;
-	}
-
-	@Override
-	public Image getFont(){
-		if(lastMove.equals("up"))
-			return upImg;
-		if(lastMove.equals("down"))
-			return downImg;
-		if(lastMove.equals("left"))
-			return leftImg;
-		else
-			return rightImg;
-	}
-
-	@Override
-	public void onPlayerTouch() {//this is the player, so nothing here :)
-	
-	}
-
-	@Override
-	public void onTick(Level l) {
-	}
-	
 	public void up(Level l){
 		lastMove = "up";
 		int x1 = (x - Game.ppb_x/2)+2;
@@ -132,21 +101,49 @@ public class Player implements Entity{
 		if(!wall)
 			x = x + speed;
 	}
-
-	public int getHp() {
-		return (int)hp;
+	
+	@Override
+	public int getX() {
+		return x;
 	}
 
-	public void setHp(int hp) {
-		this.hp = hp;
+	@Override
+	public int getY() {
+		return y;
 	}
 
-	public float getSpeed() {
-		return speed;
+	@Override
+	public void onPlayerTouch() {
 	}
 
-	public void setSpeed(int speed) {
-		this.speed = speed;
+	@Override
+	public void onTick(Level l) {
+	}
+
+	@Override
+	public void advancedRender(Graphics2D graphics, boolean editMode) {
+	}
+
+	@Override
+	public boolean onGrid() {
+		return false;
+	}
+
+	@Override
+	public Dimension getSize() {
+		return null;
+	}
+
+	@Override
+	public Image getFont() {
+		if(lastMove.equals("up"))
+			return upImg;
+		if(lastMove.equals("down"))
+			return downImg;
+		if(lastMove.equals("left"))
+			return leftImg;
+		else
+			return rightImg;
 	}
 
 	@Override
@@ -159,11 +156,7 @@ public class Player implements Entity{
 		return null;
 	}
 
-	public void setX(int x){
-		this.x = x;
-	}
-	
-	public void setY(int y){
-		this.y = y;
-	}
+
+
+
 }

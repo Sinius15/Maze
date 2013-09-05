@@ -2,7 +2,6 @@ package sinius.maze;
 
 import java.util.ArrayList;
 
-import sinius.maze.api.Level;
 import sinius.maze.gui.StartupScreen;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.io.MapStructureCreator;
