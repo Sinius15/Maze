@@ -37,8 +37,6 @@ public class EntityManager {
 					if(Entity.class.isAssignableFrom(clazz)){
 						avalableEntitys.add(clazz);
 						System.out.println("just added: " + clazz.getName());
-						System.out.println(clazz.getName());
-						System.out.println(clazz.getPackage());
 					}
 				}
 				
@@ -50,21 +48,33 @@ public class EntityManager {
 	}
 	
 	public synchronized Entity getEntityByClass(String className){
+		
 		for(Class c : avalableEntitys){
 			if(c.getName().equals(className)){
 				try {
+					System.out.println(c.getName());
 					return (Entity) c.newInstance();
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		}
+		
+		try {
+			Class<?> c = Class.forName(className);
+			if(Entity.class.isAssignableFrom(c)){
+				return (Entity) c.newInstance();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
 		return null;
 	}
-	
-	
-	
-	
 	
 	private List<File> getFiles(){
 		List<File> files = new ArrayList<File>();

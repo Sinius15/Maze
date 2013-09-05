@@ -5,6 +5,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import sinius.maze.Game;
+import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.api.Entity;
 import sinius.maze.api.Level;
@@ -69,11 +70,7 @@ public class LevelLoader {
 		
 		for(int i = 0; i<saveFile.getInt("entityAmount"); i++){
 			try {
-				Class<?> e = Class.forName(saveFile.getString("entitys." + i + ".class"));
-				if(!Entity.class.isAssignableFrom(e)){
-					continue;
-				}
-				Entity entity = (Entity) e.newInstance();
+				Entity entity = MainProgram.entityManager.getEntityByClass(saveFile.getString("entitys." + i + ".class"));
 				if(saveFile.getString("entitys." + i + ".data") == null){
 					entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"), "");
 				}else{
