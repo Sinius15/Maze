@@ -7,10 +7,10 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.Level;
 import sinius.maze.MainProgram;
+import sinius.maze.api.Entity;
+import sinius.maze.api.Level;
 
 public class Teleporter implements Entity{
 

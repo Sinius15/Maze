@@ -5,8 +5,8 @@ import java.awt.Graphics2D;
 
 import sinius.maze.Block;
 import sinius.maze.Game;
-import sinius.maze.Level;
 import sinius.maze.MainProgram;
+import sinius.maze.api.Level;
 import sinius.maze.entitys.Player;
 
 public class Drawer {

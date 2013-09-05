@@ -1,10 +1,12 @@
-package sinius.maze;
+package sinius.maze.api;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import sinius.maze.Block;
+import sinius.maze.Game;
 import sinius.maze.entitys.Spawn;
 
 public class Level {

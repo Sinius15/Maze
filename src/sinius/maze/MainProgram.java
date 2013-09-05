@@ -2,6 +2,7 @@ package sinius.maze;
 
 import java.util.ArrayList;
 
+import sinius.maze.api.Level;
 import sinius.maze.gui.StartupScreen;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.io.MapStructureCreator;
@@ -11,6 +12,8 @@ public class MainProgram {
 	public static StartupScreen startupScreen;
 	public static ArrayList<Level> levels;
 	public static Game game;
+	public static EntityManager entityManager = new EntityManager();
+	
 	
 	public static String SAVEMAP = System.getenv("APPDATA") + "\\Sinius Maze";
 	
@@ -30,6 +33,7 @@ public class MainProgram {
 			
 		}
 		
+		entityManager.init();
 		
 		loadAllLevels();
 		reDrawStartupScreen();

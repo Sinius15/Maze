@@ -1,4 +1,4 @@
-package sinius.maze;
+package sinius.maze.api;
 
 import java.awt.Image;
 import java.awt.Rectangle;

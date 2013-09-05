@@ -15,9 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import sinius.maze.Level;
 import sinius.maze.MainProgram;
 import sinius.maze.Util;
+import sinius.maze.api.Level;
 import sinius.maze.io.LevelLoader;
 
 public class LevelCreator extends JFrame {

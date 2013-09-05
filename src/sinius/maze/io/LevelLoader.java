@@ -4,10 +4,10 @@ import java.awt.Color;
 import java.io.File;
 import java.util.ArrayList;
 
-import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.Level;
 import sinius.maze.Util;
+import sinius.maze.api.Entity;
+import sinius.maze.api.Level;
 import sinius.maze.entitys.Spawn;
 
 public class LevelLoader {

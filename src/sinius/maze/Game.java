@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+import sinius.maze.api.Level;
 import sinius.maze.drawing.Drawer;
 import sinius.maze.drawing.Finish;
 import sinius.maze.drawing.StatisticsOverlay;

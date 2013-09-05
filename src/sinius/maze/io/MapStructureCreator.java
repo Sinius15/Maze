@@ -17,6 +17,7 @@ public class MapStructureCreator {
 	private static File res = new File(MainProgram.SAVEMAP + "\\res");
 	private static File saves = new File(MainProgram.SAVEMAP + "\\saves");
 	private static File levels = new File(MainProgram.SAVEMAP + "\\levels");
+	public static File entitys = new File(MainProgram.SAVEMAP + "\\entitys");
 	
 	
 	@SuppressWarnings("resource")
@@ -31,6 +32,9 @@ public class MapStructureCreator {
 			saves.mkdirs();
 		if(!levels.exists())
 			levels.mkdirs();
+		if(!entitys.exists())
+			entitys.mkdirs();
+		
 			
 		if(!s.endsWith(".jar")){	
 			for(File f : Util.getFileList("res\\pics_Entity\\")){
