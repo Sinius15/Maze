@@ -2,7 +2,6 @@ package sinius.maze.drawing;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.io.IOException;
 
 import sinius.maze.Block;
 import sinius.maze.Game;
@@ -25,7 +24,7 @@ public class Drawer {
 		Player p = MainProgram.game.getPlayer();
 		try {
 			graphics.drawImage(p.getFont(), p.getX()-ppb_x/2, p.getY()-ppb_y/2, ppb_x, ppb_y, null);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

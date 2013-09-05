@@ -7,7 +7,7 @@ import sinius.maze.io.LevelLoader;
 import sinius.maze.io.MapStructureCreator;
 
 public class MainProgram {
-	
+
 	public static StartupScreen startupScreen;
 	public static ArrayList<Level> levels;
 	public static Game game;

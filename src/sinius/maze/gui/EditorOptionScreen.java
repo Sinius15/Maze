@@ -5,9 +5,9 @@ import java.awt.Color;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JRadioButton;
 
 public class EditorOptionScreen extends JFrame {
 
@@ -16,7 +16,7 @@ public class EditorOptionScreen extends JFrame {
 	private JPanel contentPane;
 	ButtonGroup buttonGroup = new ButtonGroup();
 	ColorChooserPanel panel1;
-	final JRadioButton br_spawn , br_end, br_WallBrush, br_WallPencil;
+	final JRadioButton br_spawn , br_end, br_WallBrush, br_WallPencil, br_Teleporter;
 
 	public EditorOptionScreen() {
 		setTitle("Option's");
@@ -41,7 +41,7 @@ public class EditorOptionScreen extends JFrame {
 		buttonGroup.add(br_spawn);
 		
 		br_end = new JRadioButton("End Point");
-		br_end.setBounds(8, 92, 121, 24);
+		br_end.setBounds(203, 8, 121, 24);
 		panel.add(br_end);
 		buttonGroup.add(br_end);
 		
@@ -56,10 +56,18 @@ public class EditorOptionScreen extends JFrame {
 		panel.add(br_WallPencil);
 		buttonGroup.add(br_WallPencil);
 		
+		br_Teleporter = new JRadioButton("Teleporter");
+		br_Teleporter.setBounds(203, 36, 121, 24);
+		panel.add(br_Teleporter);
+		buttonGroup.add(br_Teleporter);
+		
 		panel1 = new ColorChooserPanel();
 		panel1.tcc.setBounds(0, 0, 560, 227);
 		tabbedPane.addTab("Color", null, panel1, null);
 		panel1.setLayout(null);
+		
+		
+		
 	}
 	
 	public Color getColor(){
@@ -75,6 +83,8 @@ public class EditorOptionScreen extends JFrame {
 			return "wall";
 		if(br_WallPencil.isSelected())
 			return "pencil";
+		if(br_Teleporter.isSelected())
+			return "teleporter";
 		return "";
 	}
 }

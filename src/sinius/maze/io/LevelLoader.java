@@ -41,6 +41,8 @@ public class LevelLoader {
 			saveFile.addInt("entitys." + i + ".x", t.getX());
 			saveFile.addInt("entitys." + i + ".y", t.getY());
 			saveFile.addString("entitys." + i + ".class",t.getClass().getName());
+			if(t.getSaveData() != null)
+				saveFile.addString("entitys." + i + ".data", t.getSaveData());
 			i++;
 		}
 		
@@ -72,7 +74,11 @@ public class LevelLoader {
 					continue;
 				}
 				Entity entity = (Entity) e.newInstance();
-				entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"));
+				if(saveFile.getString("entitys." + i + ".data") == null){
+					entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"), "");
+				}else{
+					entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"), saveFile.getString("entitys." + i + ".data"));
+				}
 				level.editEntitys("add", null, entity , null, 0, 0, null);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -92,7 +98,7 @@ public class LevelLoader {
 		level.setStandardBlockColor(new Color(r,g,b));
 		
 		Spawn s = new Spawn();
-		s.Create(saveFile.getInt("spawn.x"), saveFile.getInt("spawn.y"));
+		s.Create(saveFile.getInt("spawn.x"), saveFile.getInt("spawn.y"), "");
 		level.setSpawn(s);
 		
 		return level;

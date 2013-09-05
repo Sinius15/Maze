@@ -17,7 +17,7 @@ public class Spawn implements Entity{
 	private Image img;
 	
 	@Override
-	public void Create(int x, int y) {
+	public void Create(int x, int y, String saveData) {
 		this.x = x;
 		this.y = y;
 		try {
@@ -43,7 +43,7 @@ public class Spawn implements Entity{
 	}
 
 	@Override
-	public Image getFont() throws IOException {
+	public Image getFont(){
 		return img;
 	}
 
@@ -55,6 +55,11 @@ public class Spawn implements Entity{
 
 	@Override
 	public Rectangle getCollisionBox() {
+		return null;
+	}
+
+	@Override
+	public String getSaveData() {
 		return null;
 	}
 

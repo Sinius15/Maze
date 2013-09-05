@@ -2,16 +2,16 @@ package sinius.maze;
 
 import java.awt.Image;
 import java.awt.Rectangle;
-import java.io.IOException;
 
 public interface Entity {
 
-	void Create(int x, int y);
+	void Create(int x, int y, String saveData);
 	String getName();
 	int getX();
 	int getY();
-	Image getFont()  throws IOException;
+	Image getFont();
 	void onPlayerTouch();
 	void onTick(Level l);
 	Rectangle getCollisionBox();
+	String getSaveData();
 }

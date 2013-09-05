@@ -3,7 +3,6 @@ package sinius.maze;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import sinius.maze.entitys.Spawn;
@@ -37,7 +36,7 @@ public class Level {
 			}
 		}
 		spawn = new Spawn();
-		spawn.Create(12, 12);
+		spawn.Create(12, 12, "");
 	}
 	
 	public Block getBlock(int x, int y){
@@ -62,7 +61,7 @@ public class Level {
 				
 				graphics.drawImage(getSpawn().getFont(), getSpawn().getX()*Game.ppb_x, getSpawn().getY()*Game.ppb_y,Game.ppb_x, Game.ppb_y, null);
 				
-			} catch (IOException e1) {
+			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
 		}

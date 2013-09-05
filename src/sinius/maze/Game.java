@@ -32,7 +32,6 @@ public class Game {
 	private Thread gameLoop;
 	private boolean isRunning = false;
 	private boolean editMode;
-	private boolean showInfoOverlay = false;
 	public static boolean isFinihed = false;
 	private Player player;
 	
@@ -56,7 +55,7 @@ public class Game {
 		int y1 = (level.getSpawn().getY() * ppb_y) + ppb_y/2;
 		System.out.println(x1 + "  " + y1);
 		player = new Player();
-		player.Create(x1, y1);
+		player.Create(x1, y1, "");
 
 		
 
@@ -100,7 +99,7 @@ public class Game {
 				else if(options.getBrush().equals("spawn")){
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 						Spawn s = new Spawn();
-						s.Create(Game.keys.mousePosX, Game.keys.mousePosY);
+						s.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
 						level.setSpawn(s);
 					}
 						
@@ -121,13 +120,12 @@ public class Game {
 						level.editEntitys("isEntityOnCoord", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, null);
 						if(!level.editEntityReturner){
 							Exit x = new Exit();
-							x.Create(Game.keys.mousePosX, Game.keys.mousePosY);
+							x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
 							level.editEntitys("add", null, x, null, 0, 0, null);
 						}
 						level.editEntityReturner = false;
 						
 					}
-						
 					else if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
 						level.editEntitys("remove", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, Exit.class);
 					}
@@ -148,8 +146,6 @@ public class Game {
 				player.left(level);
 			if(Game.keys.isKeyPressed(KeyEvent.VK_RIGHT))
 				player.right(level);
-			if(Game.keys.isKeyPressed(KeyEvent.VK_F1))
-				showInfoOverlay = !showInfoOverlay;
 		}
 		
 		
@@ -172,7 +168,7 @@ public class Game {
 		if(!editMode){
 			Drawer.drawTimer();
 			Drawer.drawPlayer(level);
-			if(showInfoOverlay)
+			if(Game.keys.isKeyPressed(KeyEvent.VK_F1))
 				StatisticsOverlay.Draw((Graphics2D)g);
 			
 			if(isFinihed)

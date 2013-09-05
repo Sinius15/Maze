@@ -3,7 +3,6 @@ package sinius.maze.entitys;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.io.File;
-import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
@@ -21,7 +20,7 @@ public class Player implements Entity{
 	Image upImg, downImg, leftImg, rightImg;
 	
 	@Override
-	public void Create(int x, int y) {
+	public void Create(int x, int y, String saveData) {
 		this.x = x;
 		this.y = y;
 		speed =  3;
@@ -54,7 +53,7 @@ public class Player implements Entity{
 	}
 
 	@Override
-	public Image getFont() throws IOException {
+	public Image getFont(){
 		if(lastMove.equals("up"))
 			return upImg;
 		if(lastMove.equals("down"))
@@ -155,7 +154,16 @@ public class Player implements Entity{
 		return new Rectangle(x-Game.ppb_x/2, y-Game.ppb_y/2, Game.ppb_x, Game.ppb_y);
 	}
 
+	@Override
+	public String getSaveData() {
+		return null;
+	}
 
+	public void setX(int x){
+		this.x = x;
+	}
 	
-	
+	public void setY(int y){
+		this.y = y;
+	}
 }

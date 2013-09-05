@@ -12,27 +12,29 @@ import sinius.maze.Game;
 import sinius.maze.Level;
 import sinius.maze.MainProgram;
 
-public class Exit implements Entity{
+public class Teleporter implements Entity{
 
-	private int x, y;
-	private Rectangle r;
-	private Image img;
-		
+	int x, y, toX, toY;
+	Image img;
+	Rectangle rec;
+	
 	@Override
 	public void Create(int x, int y, String saveData) {
 		this.x = x;
 		this.y = y;
-		r = new Rectangle(x*Game.ppb_x, y*Game.ppb_y, Game.ppb_x, Game.ppb_y);
 		try {
-			img = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Exit.png"));
+			img = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Teleporter.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		rec = new Rectangle(x * Game.ppb_x , y * Game.ppb_y, Game.ppb_x, Game.ppb_y);
+		toX = Integer.parseInt(saveData.split(",")[0]);
+		toY = Integer.parseInt(saveData.split(",")[1]);
 	}
-	
+
 	@Override
 	public String getName() {
-		return "EndPoint";
+		return "Teleporter";
 	}
 
 	@Override
@@ -52,9 +54,8 @@ public class Exit implements Entity{
 
 	@Override
 	public void onPlayerTouch() {
-		Game.isFinihed = true;
-		Game.timer.Stop();
-		
+		MainProgram.game.getPlayer().setX(toX);
+		MainProgram.game.getPlayer().setY(toY);
 	}
 
 	@Override
@@ -62,16 +63,14 @@ public class Exit implements Entity{
 
 	@Override
 	public Rectangle getCollisionBox() {
-		return r;
+		return rec;
 	}
 
 	@Override
 	public String getSaveData() {
-		return null;
+		return toX + "," + toY;
 	}
 
-
 	
-
-
+	
 }
