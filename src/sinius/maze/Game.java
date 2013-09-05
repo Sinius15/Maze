@@ -56,8 +56,6 @@ public class Game {
 		player = new Player();
 		player.Create(x1, y1, "");
 
-		
-
 		gameLoop = new Thread(gameLoop(), "gameLoop");
 		gameLoop.start();
 		timer.Start();

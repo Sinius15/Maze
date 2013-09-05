@@ -47,6 +47,11 @@ public class MapStructureCreator {
 				if(!to.exists())
 					Files.copy(f.toPath(), to.toPath());
 			}
+			for(File f : Util.getFileList("res\\entitys\\")){
+				File to = new File(MainProgram.SAVEMAP + "\\entitys\\" + f.getName());
+				if(!to.exists())
+					Files.copy(f.toPath(), to.toPath());
+			}
 		}else{
 			JarFile jar = new JarFile(s);
 			Enumeration<JarEntry> entrys = jar.entries();
@@ -55,8 +60,8 @@ public class MapStructureCreator {
 				String path = entry.getName();
 				String[] split = path.split("/");
 				
-				
-				if(path.contains("levels/") && !path.equals("levels/")){
+				System.out.println(path);
+				if(path.startsWith("levels/") && !path.equals("levels/")){
 					System.out.println("Now going to copy a file...    the path is " + path);
 					
 					File outFile = new File(MainProgram.SAVEMAP + "//levels//" + split[split.length-1]);
@@ -74,10 +79,28 @@ public class MapStructureCreator {
 		            outStream.close();
 				}
 					
-				if(path.contains("pics_Entity/") && !path.equals("pics_Entity/")){
+				if(path.startsWith("pics_Entity/") && !path.equals("pics_Entity/")){
 					System.out.println("Now going to copy a file...    the path is " + path);
 					
 					File outFile = new File(MainProgram.SAVEMAP + "//res//" + split[split.length-1]);
+					FileOutputStream outStream = new FileOutputStream(outFile);
+					InputStream inStream = getClass().getClassLoader().getResourceAsStream(path);
+					
+					int readBytes;
+		            byte[] buffer = new byte[4096];
+		            while ((readBytes = inStream.read(buffer)) > 0) {
+		                outStream.write(buffer, 0, readBytes);
+		            }
+		            
+		            inStream.close();
+		            outStream.flush();
+		            outStream.close();
+				}
+				
+				if(path.startsWith("entitys/") && !path.equals("entitys/")){
+					System.out.println("Now going to copy a file...    the path is " + path);
+					
+					File outFile = new File(MainProgram.SAVEMAP + "//entitys//" + split[split.length-1]);
 					FileOutputStream outStream = new FileOutputStream(outFile);
 					InputStream inStream = getClass().getClassLoader().getResourceAsStream(path);
 					
