@@ -37,6 +37,9 @@ public class EntityManager {
 						System.out.println("just added: " + clazz.getName());
 					}
 				}
+				br.close();
+				isr.close();
+				is.close();
 				
 			} catch (Exception e) {
 				System.err.println("Something went wrong in this file: " + f.getAbsolutePath());

@@ -113,7 +113,7 @@ public class Player implements Entity{
 	}
 
 	@Override
-	public void onPlayerTouch() {
+	public void onPlayerTouch(Player p) {
 	}
 
 	@Override
@@ -156,7 +156,11 @@ public class Player implements Entity{
 		return null;
 	}
 
-
-
+	public void setX(int x){
+		this.x = x;
+	}
+	public void setY(int y){
+		this.y = y;
+	}
 
 }

@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
+import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 
 public class Level {
@@ -92,7 +93,7 @@ public class Level {
 		}else if(what.equals("playerTouch")){
 			for(Entity f: entitys){
 				if(f.getCollisionBox().intersects(e.getCollisionBox()))
-					f.onPlayerTouch();
+					f.onPlayerTouch((Player)e);
 				
 			}
 			

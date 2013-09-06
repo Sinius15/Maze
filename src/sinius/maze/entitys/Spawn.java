@@ -50,7 +50,7 @@ public class Spawn implements Entity{
 	}
 
 	@Override
-	public void onPlayerTouch() {}
+	public void onPlayerTouch(Player p) {}
 
 	@Override
 	public void onTick(Level l) {}
