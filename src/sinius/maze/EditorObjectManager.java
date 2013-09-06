@@ -17,16 +17,16 @@ import java.util.List;
 import sinius.maze.io.MapStructureCreator;
 
 @SuppressWarnings("rawtypes")
-public class EntityManager {
-
-	private ArrayList<Class<?>> entitys = new ArrayList<Class<?>>();
+public class EditorObjectManager {
+	
+	private ArrayList<Class<?>> editorObj = new ArrayList<Class<?>>();
 	
 	@SuppressWarnings("resource")
-	public void initEntitys(){
+	public void initEditorObj(){
 		try {
 			List<File> files = getFiles(".jar", MapStructureCreator.entitys.toPath());
 			for(File f: files){
-					URL path = new URL("jar:" + f.toURI().toURL() + "!/entitys.txt");
+					URL path = new URL("jar:" + f.toURI().toURL() + "!/editorObj.txt");
 					
 					InputStream is = path.openStream();
 					InputStreamReader isr = new InputStreamReader(is, "US-ASCII" );
@@ -37,8 +37,8 @@ public class EntityManager {
 						URL[] urls = new URL[]{url};
 						ClassLoader clazzloader = new URLClassLoader(urls);
 						Class<?> clazz = Class.forName(text, true, clazzloader);
-						if(Entity.class.isAssignableFrom(clazz)){
-							entitys.add(clazz);
+						if(EditorObject.class.isAssignableFrom(clazz)){
+							editorObj.add(clazz);
 						}
 					}
 					br.close();
@@ -54,12 +54,12 @@ public class EntityManager {
 		String s = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 		if(!s.endsWith(".jar")){
 			try{
-				File entityTxt = new File(s + "/entitys.txt");
+				File entityTxt = new File(s + "/editorObj.txt");
 				BufferedReader br = new BufferedReader(new FileReader(entityTxt));  
 				String line = null;  
 				while ((line = br.readLine()) != null){
-					System.out.println("i read from the entitys.txt: " + line);
-					entitys.add(Class.forName(line));
+					System.out.println("i read from the editorObj.txt: " + line);
+					editorObj.add(Class.forName(line));
 				} 
 			}catch(Exception e){
 				e.printStackTrace();
@@ -67,13 +67,14 @@ public class EntityManager {
 		}
 	}
 	
-	public synchronized ArrayList<String> getEntityNames(){
+	
+	public synchronized ArrayList<String> getNames(){
 		ArrayList<String> out = new ArrayList<String>();
 		
-		for(Class c: entitys){
-			Entity e;
+		for(Class c: editorObj){
+			EditorObject e;
 			try {
-				e = (Entity) c.newInstance();
+				e = (EditorObject) c.newInstance();
 				out.add(e.getName());
 			} catch (Exception e1) {
 				e1.printStackTrace();
@@ -83,11 +84,11 @@ public class EntityManager {
 		return out;
 	}
 	
-	public synchronized Entity getEntityByName(String name){
-		for(Class c: entitys){
-			Entity e;
+	public synchronized EditorObject getByName(String name){
+		for(Class c: editorObj){
+			EditorObject e;
 			try {
-				e = (Entity) c.newInstance();
+				e = (EditorObject) c.newInstance();
 				if(e.getName().equals(name))
 					return e;
 			} catch (Exception e1) {
@@ -97,12 +98,12 @@ public class EntityManager {
 		return null;
 	}
 	
-	public synchronized Entity getEntityByClass(String className){
+	public synchronized EditorObject getByClass(String className){
 		
-		for(Class c : entitys){
+		for(Class c : editorObj){
 			if(c.getName().equals(className)){
 				try {
-					return (Entity) c.newInstance();
+					return (EditorObject) c.newInstance();
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -112,8 +113,8 @@ public class EntityManager {
 		
 		try {
 			Class<?> c = Class.forName(className);
-			if(Entity.class.isAssignableFrom(c)){
-				return (Entity) c.newInstance();
+			if(EditorObject.class.isAssignableFrom(c)){
+				return (EditorObject) c.newInstance();
 			}
 			
 		} catch (Exception e) {
@@ -135,17 +136,6 @@ public class EntityManager {
 				if(f.getName().endsWith(suffix))
 					files.add(f);
 		}
-		
-//		File[] listOfFiles = folder.listFiles(); 
-//		for(int i = 0; i < listOfFiles.length; i++){
-//			if (listOfFiles[i].isFile()) {
-//				String txt = listOfFiles[i].getName();
-//				System.out.println(txt);
-//				if(txt.toLowerCase().endsWith(suffix)){
-//					files.add(listOfFiles[i]);
-//				}
-//			}
-//		}
 		return files;
 	}
 }

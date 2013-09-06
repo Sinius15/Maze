@@ -12,7 +12,7 @@ public class MainProgram {
 	public static ArrayList<Level> levels;
 	public static Game game;
 	public static EntityManager entityManager = new EntityManager();
-	
+	public static EditorObjectManager editorObjManager = new EditorObjectManager();
 	
 	public static String SAVEMAP = System.getenv("APPDATA") + "\\Sinius Maze";
 	
@@ -32,7 +32,8 @@ public class MainProgram {
 			
 		}
 		
-		entityManager.init();
+		entityManager.initEntitys();
+		editorObjManager.initEditorObj();
 		
 		loadAllLevels();
 		reDrawStartupScreen();

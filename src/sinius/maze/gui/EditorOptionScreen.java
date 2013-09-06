@@ -44,7 +44,10 @@ public class EditorOptionScreen extends JFrame {
 		model.addElement("Spawn");
 	    for(String s : MainProgram.entityManager.getEntityNames()){
 	         model.addElement(s);
-	    }     
+	    } 
+	    for(String s : MainProgram.editorObjManager.getNames()){
+	         model.addElement(s);
+	    } 
 		
 		list = new JList<String>(model);
 		list.setSelectedIndex(0);

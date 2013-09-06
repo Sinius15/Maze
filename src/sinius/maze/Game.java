@@ -52,7 +52,6 @@ public class Game {
 		isRunning = true;
 		int x1 = (level.getSpawn().getX() * ppb_x) + ppb_x/2;
 		int y1 = (level.getSpawn().getY() * ppb_y) + ppb_y/2;
-		System.out.println(x1 + "  " + y1);
 		player = new Player();
 		player.Create(x1, y1, "");
 
@@ -110,6 +109,7 @@ public class Game {
 					}
 				}else{
 					Entity x = MainProgram.entityManager.getEntityByName(options.getBrush());
+					if(x == null) return;
 					x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
 					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 						
