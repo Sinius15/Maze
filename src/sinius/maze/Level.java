@@ -65,6 +65,8 @@ public class Level {
 						else
 							graphics.drawImage(f.getFont(), f.getX(), f.getY(), Game.ppb_x, Game.ppb_y, null);
 					}
+					graphics.setColor(Color.black);
+					f.advancedRender(graphics, Game.editMode);
 						
 				}
 				

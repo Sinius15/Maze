@@ -41,7 +41,6 @@ public class MainProgram {
 	}
 	
 	public static void loadAllLevels(){
-		
 		levels = LevelLoader.getLevelList(System.getenv("APPDATA") + "\\Sinius Maze\\saves");
 	}
 	

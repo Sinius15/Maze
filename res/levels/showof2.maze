@@ -195,23 +195,23 @@ blocks:
             color: -1
             type: 0
         y20:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y23:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y26:  
             color: -1
             type: 0
@@ -243,11 +243,11 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -307,11 +307,11 @@ blocks:
             type: 0
     x10:  
         y0:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y1:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y10:  
             color: -1
             type: 0
@@ -319,55 +319,55 @@ blocks:
             color: -1
             type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
-            color: -16777216
+            color: -1
             type: 0
         y14:  
-            color: -16777216
+            color: -1
             type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -1
+            color: -13421569
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
-            color: -1
+            color: -13421569
             type: 0
         y23:  
-            color: -1
+            color: -13421569
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -376,8 +376,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -406,8 +406,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -421,14 +421,14 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -458,17 +458,17 @@ blocks:
             type: 0
     x11:  
         y0:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y1:  
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
             color: -1
             type: 0
@@ -488,7 +488,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -500,17 +500,17 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
         y23:  
-            color: -1
+            color: -13421569
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
             color: -1
             type: 0
@@ -518,7 +518,7 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -527,8 +527,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -557,8 +557,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -569,8 +569,8 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -578,8 +578,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -602,14 +602,14 @@ blocks:
             color: -1
             type: 0
         y8:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x12:  
         y0:  
-            color: -52429
+            color: -1
             type: 0
         y1:  
             color: -1
@@ -639,7 +639,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -651,17 +651,17 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
         y23:  
-            color: -1
+            color: -13421569
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
             color: -1
             type: 0
@@ -669,7 +669,7 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -678,8 +678,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -708,8 +708,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -717,20 +717,20 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -750,11 +750,11 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y9:  
             color: -1
             type: 0
@@ -790,56 +790,56 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -16777216
+            color: -13421569
             type: 1
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y24:  
-            color: -16777216
+            color: -13421569
             type: 1
         y25:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -859,8 +859,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -868,17 +868,17 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
@@ -898,11 +898,11 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
@@ -938,14 +938,14 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
+            color: -1
             type: 0
         y18:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
@@ -953,17 +953,17 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
         y23:  
-            color: -1
+            color: -13421569
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
             color: -1
             type: 0
@@ -971,7 +971,7 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -980,8 +980,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -989,14 +989,14 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
             color: -1
             type: 0
@@ -1010,8 +1010,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -1022,14 +1022,14 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
@@ -1049,8 +1049,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -1080,19 +1080,19 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -1104,17 +1104,17 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
         y23:  
-            color: -1
+            color: -13421569
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
             color: -1
             type: 0
@@ -1122,7 +1122,7 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -1131,8 +1131,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -1146,11 +1146,11 @@ blocks:
             color: -1
             type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
             color: -1
             type: 0
@@ -1161,8 +1161,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -1173,17 +1173,17 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -1200,8 +1200,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -1228,11 +1228,11 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -1243,7 +1243,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -1255,26 +1255,26 @@ blocks:
             color: -1
             type: 0
         y21:  
+            color: -13421569
+            type: 1
+        y22:  
             color: -1
             type: 0
-        y22:  
-            color: -16777216
-            type: 1
         y23:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y24:  
-            color: -16777216
+            color: -13421569
             type: 1
         y25:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
             color: -1
             type: 0
@@ -1282,8 +1282,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -1300,8 +1300,8 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
             color: -1
             type: 0
@@ -1312,8 +1312,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -1324,8 +1324,8 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -1333,8 +1333,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -1351,8 +1351,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -1373,14 +1373,14 @@ blocks:
             color: -1
             type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -1391,50 +1391,50 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 0
         y19:  
-            color: -16777216
+            color: -1
             type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
+            color: -13421569
             type: 1
         y21:  
-            color: -16777216
+            color: -13421569
             type: 1
         y22:  
-            color: -16777216
-            type: 1
-        y23:  
             color: -1
+            type: 0
+        y23:  
+            color: -13421569
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -1451,11 +1451,11 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -1463,8 +1463,8 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
@@ -1475,8 +1475,8 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -1484,8 +1484,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -1502,8 +1502,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -1524,8 +1524,8 @@ blocks:
             color: -1
             type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
             color: -1
             type: 0
@@ -1539,23 +1539,23 @@ blocks:
             color: -1
             type: 0
         y16:  
-            color: -16777216
-            type: 1
-        y17:  
-            color: -16777216
-            type: 1
-        y18:  
             color: -1
+            type: 0
+        y17:  
+            color: -1
+            type: 0
+        y18:  
+            color: -13421569
             type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
-        y20:  
             color: -1
             type: 0
+        y20:  
+            color: -13421569
+            type: 1
         y21:  
             color: -1
             type: 0
@@ -1566,29 +1566,29 @@ blocks:
             color: -1
             type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -16777216
+            color: -13421569
             type: 1
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
             type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
             color: -1
             type: 0
@@ -1605,8 +1605,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -1620,8 +1620,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -1629,8 +1629,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -1638,8 +1638,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -1653,8 +1653,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -1672,11 +1672,11 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
             color: -1
             type: 0
@@ -1687,47 +1687,47 @@ blocks:
             color: -1
             type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
-        y20:  
             color: -1
             type: 0
+        y20:  
+            color: -16250731
+            type: 1
         y21:  
-            color: -16777216
+            color: -16250731
             type: 1
         y22:  
-            color: -16777216
+            color: -16250731
             type: 1
         y23:  
-            color: -16777216
+            color: -16250731
             type: 1
         y24:  
-            color: -13421569
+            color: -16250731
             type: 1
         y25:  
-            color: -16777216
+            color: -16250731
             type: 1
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
             color: -1
             type: 0
@@ -1741,8 +1741,8 @@ blocks:
             color: -1
             type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
             color: -1
             type: 0
@@ -1756,8 +1756,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -1771,8 +1771,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -1780,8 +1780,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -1789,8 +1789,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -1804,8 +1804,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -1817,17 +1817,17 @@ blocks:
             type: 0
     x2:  
         y0:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y1:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
             color: -1
             type: 0
@@ -1835,59 +1835,59 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 1
         y19:  
-            color: -16777216
+            color: -13421569
             type: 1
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -16777216
+            color: -13421569
             type: 1
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -16777216
+            color: -13421569
             type: 1
         y26:  
-            color: -16777216
+            color: -13421569
             type: 1
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -1904,38 +1904,38 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
@@ -1952,20 +1952,20 @@ blocks:
             color: -1
             type: 0
         y5:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x20:  
         y0:  
             color: -1
@@ -1974,8 +1974,8 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
             color: -1
             type: 0
@@ -1989,8 +1989,8 @@ blocks:
             color: -1
             type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
             color: -1
             type: 0
@@ -1998,41 +1998,41 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -13421569
+            color: -1
             type: 0
         y21:  
-            color: -13421569
+            color: -1
             type: 0
         y22:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2043,11 +2043,11 @@ blocks:
             color: -1
             type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -2058,8 +2058,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2073,8 +2073,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -2082,8 +2082,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -2091,8 +2091,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -2106,8 +2106,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -2125,8 +2125,8 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
             color: -1
             type: 0
@@ -2137,8 +2137,8 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -2149,17 +2149,17 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y19:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y21:  
             color: -1
             type: 0
@@ -2176,14 +2176,14 @@ blocks:
             color: -1
             type: 0
         y26:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y27:  
             color: -13421569
-            type: 1
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2197,8 +2197,8 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -2209,8 +2209,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2224,8 +2224,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -2233,8 +2233,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -2242,8 +2242,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -2257,8 +2257,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -2276,8 +2276,8 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
             color: -1
             type: 0
@@ -2288,8 +2288,8 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -2297,26 +2297,26 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
             color: -13421569
-            type: 1
+            type: 0
         y19:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
             color: -1
             type: 0
         y21:  
-            color: -16777216
+            color: -1
             type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
             color: -1
             type: 0
@@ -2331,10 +2331,10 @@ blocks:
             type: 0
         y27:  
             color: -13421569
-            type: 1
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2348,8 +2348,8 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -2360,8 +2360,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2375,8 +2375,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -2384,8 +2384,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -2393,8 +2393,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -2408,8 +2408,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -2417,8 +2417,8 @@ blocks:
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x23:  
         y0:  
             color: -1
@@ -2436,8 +2436,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -2448,32 +2448,32 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
             color: -13421569
-            type: 1
+            type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -16777216
+            color: -1
             type: 0
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
             color: -1
             type: 0
@@ -2482,10 +2482,10 @@ blocks:
             type: 0
         y27:  
             color: -13421569
-            type: 1
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2499,8 +2499,8 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -2511,8 +2511,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2526,8 +2526,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -2535,8 +2535,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -2544,8 +2544,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -2559,8 +2559,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -2568,8 +2568,8 @@ blocks:
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x24:  
         y0:  
             color: -1
@@ -2587,8 +2587,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -2599,29 +2599,29 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
-        y18:  
             color: -1
+            type: 0
+        y18:  
+            color: -13421569
             type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y24:  
             color: -1
             type: 0
@@ -2633,10 +2633,10 @@ blocks:
             type: 0
         y27:  
             color: -13421569
-            type: 1
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2650,8 +2650,8 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -2662,8 +2662,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2680,8 +2680,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -2689,14 +2689,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -2710,8 +2710,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -2719,8 +2719,8 @@ blocks:
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x25:  
         y0:  
             color: -1
@@ -2738,8 +2738,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -2750,29 +2750,29 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
-        y18:  
             color: -1
+            type: 0
+        y18:  
+            color: -13421569
             type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y24:  
             color: -1
             type: 0
@@ -2780,14 +2780,14 @@ blocks:
             color: -1
             type: 0
         y26:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y27:  
             color: -13421569
-            type: 1
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2801,8 +2801,8 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
             color: -1
             type: 0
@@ -2813,8 +2813,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2831,8 +2831,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -2840,14 +2840,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -2864,14 +2864,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x26:  
         y0:  
             color: -1
@@ -2889,8 +2889,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -2901,44 +2901,44 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
-        y18:  
             color: -1
+            type: 0
+        y18:  
+            color: -13421569
             type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
             color: -1
             type: 0
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -2949,8 +2949,8 @@ blocks:
             color: -1
             type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
             color: -1
             type: 0
@@ -2964,8 +2964,8 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -2982,8 +2982,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -2991,14 +2991,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -3015,14 +3015,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x27:  
         y0:  
             color: -1
@@ -3040,8 +3040,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -3052,17 +3052,17 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
-        y18:  
             color: -1
+            type: 0
+        y18:  
+            color: -13421569
             type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
             color: -1
             type: 0
@@ -3070,23 +3070,23 @@ blocks:
             color: -1
             type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -13421569
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
             color: -1
             type: 0
@@ -3100,8 +3100,8 @@ blocks:
             color: -1
             type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
             color: -1
             type: 0
@@ -3112,11 +3112,11 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -3133,8 +3133,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -3142,14 +3142,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -3166,14 +3166,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x28:  
         y0:  
             color: -1
@@ -3191,8 +3191,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -3206,37 +3206,37 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -1
-            type: 0
+            color: -16250731
+            type: 1
         y21:  
-            color: -1
-            type: 0
+            color: -16250731
+            type: 1
         y22:  
-            color: -1
-            type: 0
+            color: -16250731
+            type: 1
         y23:  
-            color: -1
-            type: 0
+            color: -16250731
+            type: 1
         y24:  
-            color: -16777216
+            color: -16250731
             type: 1
         y25:  
-            color: -16777216
+            color: -16250731
             type: 1
         y26:  
-            color: -16777216
-            type: 1
+            color: -16250731
+            type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -3245,11 +3245,11 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
             color: -1
             type: 0
@@ -3263,8 +3263,8 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
             color: -1
             type: 0
@@ -3284,8 +3284,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -3293,14 +3293,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -3317,14 +3317,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x29:  
         y0:  
             color: -1
@@ -3342,8 +3342,8 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -3357,16 +3357,16 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
+            color: -13421569
             type: 1
         y21:  
             color: -1
@@ -3381,26 +3381,26 @@ blocks:
             color: -1
             type: 0
         y25:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
             type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
             color: -1
             type: 0
@@ -3411,8 +3411,8 @@ blocks:
             color: -1
             type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
             color: -1
             type: 0
@@ -3435,8 +3435,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -3444,14 +3444,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -3468,14 +3468,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x3:  
         y0:  
             color: -1
@@ -3487,17 +3487,17 @@ blocks:
             color: -1
             type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -3508,8 +3508,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -3538,35 +3538,35 @@ blocks:
             color: -1
             type: 0
         y27:  
+            color: -13421569
+            type: 1
+        y28:  
             color: -1
             type: 0
-        y28:  
-            color: -16777216
-            type: 1
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
             color: -1
             type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
             color: -1
             type: 0
@@ -3595,8 +3595,8 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
@@ -3644,11 +3644,11 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -3659,7 +3659,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -3668,38 +3668,38 @@ blocks:
             color: -1
             type: 0
         y20:  
-            color: -16777216
+            color: -13421569
             type: 1
         y21:  
-            color: -16777216
+            color: -13421569
             type: 1
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
             color: -1
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -3713,8 +3713,8 @@ blocks:
             color: -1
             type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
             color: -1
             type: 0
@@ -3737,8 +3737,8 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -3746,14 +3746,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -3770,14 +3770,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x31:  
         y0:  
             color: -1
@@ -3798,8 +3798,8 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -3810,7 +3810,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -3822,26 +3822,26 @@ blocks:
             color: -1
             type: 0
         y21:  
+            color: -13421569
+            type: 1
+        y22:  
             color: -1
             type: 0
-        y22:  
-            color: -16777216
-            type: 1
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
+            color: -13421569
             type: 1
         y25:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
             color: -1
             type: 0
@@ -3849,8 +3849,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -3861,11 +3861,11 @@ blocks:
             color: -1
             type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
             color: -1
             type: 0
@@ -3885,11 +3885,11 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -3897,14 +3897,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -3921,14 +3921,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x32:  
         y0:  
             color: -1
@@ -3949,11 +3949,11 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
             color: -1
             type: 0
@@ -3961,7 +3961,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -3973,8 +3973,8 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
@@ -3982,16 +3982,16 @@ blocks:
             color: -1
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -4000,20 +4000,20 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
             color: -1
             type: 0
@@ -4036,8 +4036,8 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -4048,14 +4048,14 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4072,14 +4072,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x33:  
         y0:  
             color: -1
@@ -4088,8 +4088,8 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
             color: -1
             type: 0
@@ -4106,13 +4106,13 @@ blocks:
             color: -1
             type: 0
         y16:  
-            color: -16777216
-            type: 1
-        y17:  
-            color: -16777216
-            type: 1
-        y18:  
             color: -1
+            type: 0
+        y17:  
+            color: -1
+            type: 0
+        y18:  
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -4124,8 +4124,8 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
@@ -4133,29 +4133,29 @@ blocks:
             color: -1
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
             color: -1
             type: 0
@@ -4181,14 +4181,14 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -4196,17 +4196,17 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4223,8 +4223,8 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
@@ -4239,8 +4239,8 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
             color: -1
             type: 0
@@ -4260,14 +4260,14 @@ blocks:
             color: -1
             type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
@@ -4275,8 +4275,8 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
@@ -4284,20 +4284,20 @@ blocks:
             color: -1
             type: 0
         y24:  
+            color: -13421569
+            type: 1
+        y25:  
+            color: -13421569
+            type: 0
+        y26:  
             color: -1
             type: 0
-        y25:  
-            color: -16777216
-            type: 1
-        y26:  
-            color: -16777216
-            type: 1
         y27:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
             color: -1
             type: 0
@@ -4329,14 +4329,14 @@ blocks:
             color: -1
             type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
             color: -1
             type: 0
@@ -4347,8 +4347,8 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -4356,8 +4356,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4374,8 +4374,8 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
@@ -4390,11 +4390,11 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
             color: -1
             type: 0
@@ -4414,37 +4414,37 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -16777216
+            color: -13421569
             type: 1
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
+            color: -13421569
             type: 1
         y25:  
-            color: -16777216
-            type: 1
+            color: -13421569
+            type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -4477,17 +4477,17 @@ blocks:
             color: -1
             type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
             color: -1
             type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
             color: -1
             type: 0
@@ -4495,11 +4495,11 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -4507,8 +4507,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4525,8 +4525,8 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
@@ -4544,11 +4544,11 @@ blocks:
             color: -1
             type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
             color: -1
             type: 0
@@ -4565,7 +4565,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -4577,25 +4577,25 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
-            color: -1
+            color: -13421569
             type: 0
         y23:  
             color: -1
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -4604,8 +4604,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -4622,14 +4622,14 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
             color: -1
             type: 0
@@ -4646,8 +4646,8 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -4658,8 +4658,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4673,11 +4673,11 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
@@ -4698,14 +4698,14 @@ blocks:
             color: -1
             type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -4716,7 +4716,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -4728,8 +4728,8 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
@@ -4737,16 +4737,16 @@ blocks:
             color: -1
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -4755,8 +4755,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -4767,14 +4767,14 @@ blocks:
             color: -1
             type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
             color: -1
             type: 0
@@ -4794,11 +4794,11 @@ blocks:
             color: -1
             type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -4809,8 +4809,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4824,8 +4824,8 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -4855,19 +4855,19 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -4879,8 +4879,8 @@ blocks:
             color: -1
             type: 0
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
             color: -1
             type: 0
@@ -4888,16 +4888,16 @@ blocks:
             color: -1
             type: 0
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -4906,20 +4906,20 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
             color: -1
             type: 0
@@ -4942,11 +4942,11 @@ blocks:
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
             color: -1
             type: 0
@@ -4960,8 +4960,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -4975,11 +4975,11 @@ blocks:
             color: -1
             type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
             color: -1
             type: 0
@@ -5012,56 +5012,56 @@ blocks:
             color: -1
             type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 1
         y19:  
-            color: -16777216
+            color: -13421569
             type: 1
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
+            color: -13421569
             type: 1
         y21:  
-            color: -16777216
+            color: -13421569
             type: 1
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
+            color: -13421569
             type: 1
         y25:  
-            color: -16777216
+            color: -13421569
             type: 1
         y26:  
-            color: -16777216
+            color: -13421569
             type: 1
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
             color: -1
             type: 0
@@ -5087,14 +5087,14 @@ blocks:
             color: -1
             type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
             color: -1
             type: 0
@@ -5111,8 +5111,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -5129,14 +5129,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x4:  
         y0:  
             color: -1
@@ -5169,8 +5169,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -5199,8 +5199,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -5256,11 +5256,11 @@ blocks:
             color: -1
             type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -5296,11 +5296,11 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
             color: -1
             type: 0
@@ -5320,8 +5320,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -5350,8 +5350,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -5359,8 +5359,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -5383,11 +5383,11 @@ blocks:
             color: -1
             type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
             color: -1
             type: 0
@@ -5413,8 +5413,8 @@ blocks:
             color: -1
             type: 0
         y46:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y47:  
             color: -1
             type: 0
@@ -5437,8 +5437,8 @@ blocks:
             color: -1
             type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x41:  
         y0:  
             color: -1
@@ -5450,14 +5450,14 @@ blocks:
             color: -1
             type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -5471,8 +5471,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -5501,8 +5501,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -5510,8 +5510,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -5528,14 +5528,14 @@ blocks:
             color: -1
             type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
             color: -1
             type: 0
@@ -5543,8 +5543,8 @@ blocks:
             color: -1
             type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
             color: -1
             type: 0
@@ -5561,8 +5561,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -5607,80 +5607,80 @@ blocks:
             color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
             color: -1
             type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 1
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
             color: -1
             type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
             color: -1
             type: 0
@@ -5694,8 +5694,8 @@ blocks:
             color: -1
             type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
             color: -1
             type: 0
@@ -5706,14 +5706,14 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -5727,8 +5727,8 @@ blocks:
             color: -1
             type: 0
         y5:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y6:  
             color: -1
             type: 0
@@ -5767,13 +5767,13 @@ blocks:
             color: -1
             type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 1
         y19:  
             color: -1
@@ -5803,8 +5803,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -5839,26 +5839,26 @@ blocks:
             color: -1
             type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
@@ -5878,11 +5878,11 @@ blocks:
             color: -1
             type: 0
         y5:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
             color: -1
             type: 0
@@ -5915,46 +5915,46 @@ blocks:
             color: -1
             type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 1
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
             color: -1
@@ -5984,14 +5984,14 @@ blocks:
             color: -1
             type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
             color: -1
             type: 0
@@ -6035,14 +6035,14 @@ blocks:
             color: -1
             type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x45:  
         y0:  
             color: -1
@@ -6051,20 +6051,20 @@ blocks:
             color: -1
             type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y12:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
             color: -1
             type: 0
@@ -6075,8 +6075,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -6105,23 +6105,23 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
             color: -1
             type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
             color: -1
             type: 0
@@ -6129,14 +6129,14 @@ blocks:
             color: -1
             type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
             color: -1
             type: 0
@@ -6226,8 +6226,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -6256,8 +6256,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -6274,14 +6274,14 @@ blocks:
             color: -1
             type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
             color: -1
             type: 0
@@ -6377,38 +6377,38 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y23:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y26:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -6528,7 +6528,7 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
             color: -1
@@ -6537,28 +6537,28 @@ blocks:
             color: -1
             type: 0
         y20:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y21:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y22:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y23:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y24:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y25:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y26:  
             color: -1
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
             color: -1
@@ -6679,40 +6679,40 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
+            color: -13421569
             type: 0
         y19:  
-            color: -1
+            color: -13421569
             type: 0
         y2:  
             color: -1
             type: 0
         y20:  
-            color: -1
+            color: -13421569
             type: 0
         y21:  
-            color: -1
+            color: -13421569
             type: 0
         y22:  
-            color: -1
+            color: -13421569
             type: 0
         y23:  
-            color: -1
+            color: -13421569
             type: 0
         y24:  
-            color: -1
+            color: -13421569
             type: 0
         y25:  
-            color: -1
+            color: -13421569
             type: 0
         y26:  
-            color: -1
+            color: -13421569
             type: 0
         y27:  
-            color: -1
+            color: -13421569
             type: 0
         y28:  
-            color: -1
+            color: -13421569
             type: 0
         y29:  
             color: -1
@@ -6830,8 +6830,8 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
@@ -6860,8 +6860,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -6884,35 +6884,35 @@ blocks:
             color: -1
             type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
             color: -1
             type: 0
         y40:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y41:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -6920,8 +6920,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -6951,11 +6951,11 @@ blocks:
             type: 0
     x6:  
         y0:  
-            color: -52429
+            color: -1
             type: 0
         y1:  
-            color: -52429
-            type: 1
+            color: -1
+            type: 0
         y10:  
             color: -1
             type: 0
@@ -6969,74 +6969,74 @@ blocks:
             color: -1
             type: 0
         y14:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y15:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y16:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y17:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y18:  
-            color: -16777216
+            color: -13421569
             type: 1
         y19:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y2:  
-            color: -52429
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y21:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y25:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y26:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -52429
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
             color: -1
             type: 0
@@ -7062,8 +7062,8 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -7071,8 +7071,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -7105,7 +7105,7 @@ blocks:
             color: -1
             type: 0
         y1:  
-            color: -52429
+            color: -1
             type: 0
         y10:  
             color: -1
@@ -7114,11 +7114,11 @@ blocks:
             color: -1
             type: 0
         y12:  
-            color: -16777216
+            color: -1
             type: 0
         y13:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y14:  
             color: -1
             type: 0
@@ -7132,14 +7132,14 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -26215
-            type: 1
+            color: -1
+            type: 0
         y20:  
             color: -1
             type: 0
@@ -7162,8 +7162,8 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y28:  
             color: -1
             type: 0
@@ -7171,8 +7171,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -52429
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -7213,8 +7213,8 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
             color: -1
             type: 0
@@ -7222,8 +7222,8 @@ blocks:
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -7253,16 +7253,16 @@ blocks:
             type: 0
     x8:  
         y0:  
-            color: -52429
+            color: -1
             type: 0
         y1:  
-            color: -26215
-            type: 1
+            color: -1
+            type: 0
         y10:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y11:  
-            color: -16777216
+            color: -1
             type: 0
         y12:  
             color: -1
@@ -7283,13 +7283,13 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
             color: -1
             type: 0
         y2:  
-            color: -52429
+            color: -1
             type: 0
         y20:  
             color: -1
@@ -7313,50 +7313,50 @@ blocks:
             color: -1
             type: 0
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y29:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y3:  
-            color: -52429
-            type: 1
+            color: -1
+            type: 0
         y30:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y31:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y32:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y33:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y34:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y35:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y36:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y37:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
             color: -1
             type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
             color: -1
             type: 0
@@ -7364,17 +7364,17 @@ blocks:
             color: -1
             type: 0
         y42:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -7388,27 +7388,27 @@ blocks:
             color: -1
             type: 0
         y5:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y6:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y7:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y8:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y9:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
     x9:  
         y0:  
-            color: -26215
-            type: 1
+            color: -1
+            type: 0
         y1:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y10:  
             color: -1
             type: 0
@@ -7434,37 +7434,37 @@ blocks:
             color: -1
             type: 0
         y18:  
-            color: -1
-            type: 0
+            color: -13421569
+            type: 1
         y19:  
-            color: -16777216
+            color: -13421569
             type: 1
         y2:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y20:  
-            color: -16777216
+            color: -13421569
             type: 1
         y21:  
-            color: -16777216
+            color: -13421569
             type: 1
         y22:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y23:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y24:  
-            color: -16777216
+            color: -13421569
             type: 1
         y25:  
-            color: -16777216
+            color: -13421569
             type: 1
         y26:  
-            color: -16777216
+            color: -13421569
             type: 1
         y27:  
-            color: -16777216
+            color: -13421569
             type: 1
         y28:  
             color: -1
@@ -7473,8 +7473,8 @@ blocks:
             color: -1
             type: 0
         y3:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y30:  
             color: -1
             type: 0
@@ -7500,14 +7500,14 @@ blocks:
             color: -1
             type: 0
         y38:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y39:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y4:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y40:  
             color: -1
             type: 0
@@ -7518,14 +7518,14 @@ blocks:
             color: -1
             type: 0
         y43:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y44:  
             color: -1
             type: 0
         y45:  
-            color: -16777216
-            type: 1
+            color: -1
+            type: 0
         y46:  
             color: -1
             type: 0
@@ -7553,26 +7553,42 @@ blocks:
         y9:  
             color: -1
             type: 0
-entityAmount: 1
+entityAmount: 6
 entitys:  
     0:  
-        class: "sinius.maze.entitys.Exit"
-        x: 24
-        y: 25
+        class: "sinius.maze.plugin.Exit"
+        x: 46
+        y: 22
     1:  
-        class: "sinius.maze.entitys.Exit"
-        x: 26
+        class: "sinius.maze.plugin.Exit"
+        x: 46
         y: 23
     2:  
-        class: "sinius.maze.entitys.Exit"
-        x: 27
-        y: 5
+        class: "sinius.maze.plugin.Teleporter"
+        data: "-1,-1,out"
+        x: 31
+        y: 22
+    3:  
+        class: "sinius.maze.plugin.Teleporter"
+        data: "31,22,in"
+        x: 17
+        y: 22
+    4:  
+        class: "sinius.maze.plugin.Teleporter"
+        data: "-1,-1,out"
+        x: 31
+        y: 23
+    5:  
+        class: "sinius.maze.plugin.Teleporter"
+        data: "31,23,in"
+        x: 17
+        y: 23
 levelHeight: 50
-levelName: "ExampleLevel"
+levelName: "showof2"
 levelWidht: 50
 spawn:  
-    x: 5
-    y: 4
+    x: 3
+    y: 22
 standardBlockColor: "0"
     blue: 0
     green: 0

@@ -24,7 +24,7 @@ public class Game {
 	public GameScreen gameScreen;
 	public static Level level;
 	public String stage = "Menu";
-	public EditorOptionScreen options;
+	public static EditorOptionScreen options;
 	public static TimeTimer timer = new TimeTimer();
 	public static FPSTimer fps = new FPSTimer();
 	
@@ -109,18 +109,20 @@ public class Game {
 					}
 				}else{
 					Entity x = MainProgram.entityManager.getEntityByName(options.getBrush());
-					if(x == null) return;
-					x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
-					if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
-						
-						level.editEntitys("isEntityOnCoord", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, null);
-						if(!level.editEntityReturner)
-							level.editEntitys("add", null, x, null, 0, 0, null);
-						level.editEntityReturner = false;
-						
-					}else if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
-						level.editEntitys("remove", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, x.getClass());
+					if(x != null){
+						x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
+						if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
+							
+							level.editEntitys("isEntityOnCoord", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, null);
+							if(!level.editEntityReturner)
+								level.editEntitys("add", null, x, null, 0, 0, null);
+							level.editEntityReturner = false;
+							
+						}else if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
+							level.editEntitys("remove", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, x.getClass());
+						}
 					}
+					
 					
 				}
 			}
@@ -157,6 +159,7 @@ public class Game {
 			
 		Drawer.drawMaze(level);
 		Drawer.drawEntitys(level);
+		MainProgram.editorObjManager.draw((Graphics2D) g); 
 		if(!editMode){
 			Drawer.drawTimer();
 			Drawer.drawPlayer(level);

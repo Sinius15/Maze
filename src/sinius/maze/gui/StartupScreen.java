@@ -50,8 +50,8 @@ public class StartupScreen extends JFrame {
 				MainProgram.game = new Game(MainProgram.levels.get(levelNr), useEditor.isSelected());
 				MainProgram.startupScreen.dispose();
 				if(useEditor.isSelected()){
-					MainProgram.game.options = new EditorOptionScreen();
-					MainProgram.game.options.setVisible(true);
+					Game.options = new EditorOptionScreen();
+					Game.options.setVisible(true);
 				}
 			}
 		});
@@ -94,9 +94,9 @@ public class StartupScreen extends JFrame {
 		btnNew.setBounds(274, 248, 98, 26);
 		contentPane.add(btnNew);
 		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(61, 248, 98, 26);
-		contentPane.add(btnNewButton_1);
+		JButton btnKnopje = new JButton("knopje?");
+		btnKnopje.setBounds(61, 248, 98, 26);
+		contentPane.add(btnKnopje);
 
 		
 		nextLevel();
