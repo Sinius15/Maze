@@ -30,15 +30,9 @@ public class Begin implements GraphicsLayer{
 
 	@Override
 	public void mouseClick(MouseEvent e) {
-		Game.graManger.pause = true;
 		Game.graManger.addLayer(new Maze());
-		if(Game.editMode){
-			Game.graManger.addLayer(new EditorOptionLayer());
-		}else{
-			Game.graManger.addLayer(new Entitys());
-		}
-		Game.graManger.removeLayer(this);	
-		Game.graManger.pause = false;
+		Game.graManger.addLayer(new Entitys());
+		Game.graManger.removeLayer(this.getClass());	
 	}
 
 	@Override

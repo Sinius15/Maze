@@ -8,6 +8,9 @@ import java.awt.event.MouseEvent;
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.graphicsLayer.Begin;
+import sinius.maze.graphicsLayer.EditorOptionLayer;
+import sinius.maze.graphicsLayer.Entitys;
+import sinius.maze.graphicsLayer.Maze;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.gui.GameScreen;
 import sinius.maze.io.KeyHandler;
@@ -30,7 +33,6 @@ public class Game {
 	private Thread gameLoop;
 	private boolean isRunning = false;
 	public static boolean editMode;
-	public static boolean isFinihed = false;
 	private Player player;
 	
 	public static int ppb_x, ppb_y;
@@ -56,7 +58,14 @@ public class Game {
 
 		gameLoop = new Thread(gameLoop(), "gameLoop");
 		gameLoop.start();
-		graManger.addLayer(new Begin());
+		if(!editMode){
+			graManger.addLayer(new Begin());
+		}else{
+			graManger.addLayer(new EditorOptionLayer());
+			graManger.addLayer(new Entitys());
+			graManger.addLayer(new Maze());
+		}
+		
 		timer.Start();
 		fps.Start();
 	}
@@ -155,7 +164,7 @@ public class Game {
 			e.printStackTrace();
 		}
 		
-		
+		graManger.tick();
 		MainProgram.game.gameScreen.repaint();
 	}
 	

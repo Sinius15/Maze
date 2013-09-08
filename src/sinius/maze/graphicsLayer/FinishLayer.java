@@ -8,7 +8,7 @@ import java.awt.event.MouseEvent;
 import sinius.maze.Game;
 import sinius.maze.GraphicsLayer;
 
-public class Finish implements GraphicsLayer{
+public class FinishLayer implements GraphicsLayer{
 
 	static Color gray = new Color(0f, 0f, 0f, 0.85f);
 	static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);

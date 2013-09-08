@@ -2,28 +2,24 @@ package sinius.maze;
 
 import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
+import java.util.Vector;
 
 public class GraphicsLayerManager {
 
-	private ArrayList<GraphicsLayer> curLayers = new ArrayList<GraphicsLayer>();
-	private GraphicsLayer temp;
+	private Vector<GraphicsLayer> curLayers = new Vector<GraphicsLayer>();
+	private Vector<GraphicsLayer> toAdd = new Vector<GraphicsLayer>();
+	private Vector<GraphicsLayer> temp = new Vector<GraphicsLayer>();
+	private Vector<Class<?>> toRemove = new Vector<Class<?>>();
+	
 	
 	private synchronized void editCurLayers(String what, GraphicsLayer s, Graphics2D graphics, MouseEvent event){
+
 		if(what.equals("add"))
 			curLayers.add(s);
-		else if(what.equals("remove")){
-			for(GraphicsLayer g : curLayers){
-				if(g.getClass().equals(s.getClass()))
-					temp = g;
-			}
-			curLayers.remove(temp);
-		}
 		else if(what.equals("draw")){
 			for(int i = 0; i <= 10; i++){
 				for(GraphicsLayer g : curLayers){
 					if(g.priority() == i){
-						System.out.println("drawing " + g.priority());
 						g.Draw(graphics);
 					}
 				}
@@ -34,15 +30,39 @@ public class GraphicsLayerManager {
 			for(GraphicsLayer g : curLayers){
 				g.mouseClick(event);
 			}
+			
 		}
+		else if(what.equals("onTick")){
+			for(GraphicsLayer g : toAdd){
+				curLayers.add(g);
+			}
+			toAdd.clear();
+			for(Class<?> c : toRemove){
+				for(GraphicsLayer g : curLayers){
+					if(g.getClass().equals(c))
+						temp.add(g);
+				}
+			}
+			for(GraphicsLayer g : temp){
+				curLayers.remove(g);
+			}
+			temp.clear();
+			toRemove.clear();
+		}
+		
+		
 	}
 	
-	public synchronized void addLayer(GraphicsLayer g){
-		this.editCurLayers("add", g, null, null);
+	public synchronized void tick(){
+		editCurLayers("onTick", null, null, null);
 	}
 	
-	public synchronized void removeLayer(GraphicsLayer g){
-		this.editCurLayers("remove", g, null, null);
+	public synchronized void addLayer(GraphicsLayer i){
+		toAdd.add(i);
+	}
+	
+	public synchronized void removeLayer(Class<?> i){
+		toRemove.add(i);
 	}
 	
 	public synchronized void draw(Graphics2D g){
