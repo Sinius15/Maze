@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 
+import sinius.maze.Game;
 import sinius.maze.GraphicsLayer;
 
 public class Begin implements GraphicsLayer{
@@ -29,6 +30,15 @@ public class Begin implements GraphicsLayer{
 
 	@Override
 	public void mouseClick(MouseEvent e) {
+		Game.graManger.pause = true;
+		Game.graManger.addLayer(new Maze());
+		if(Game.editMode){
+			Game.graManger.addLayer(new EditorOptionLayer());
+		}else{
+			Game.graManger.addLayer(new Entitys());
+		}
+		Game.graManger.removeLayer(this);	
+		Game.graManger.pause = false;
 	}
 
 	@Override

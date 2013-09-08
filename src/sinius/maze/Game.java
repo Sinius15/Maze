@@ -7,13 +7,11 @@ import java.awt.event.MouseEvent;
 
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
+import sinius.maze.graphicsLayer.Begin;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.gui.GameScreen;
 import sinius.maze.io.KeyHandler;
 import sinius.maze.io.LevelLoader;
-import sinius.maze.rendering.Drawer;
-import sinius.maze.rendering.Finish;
-import sinius.maze.rendering.StatisticsOverlay;
 import sinius.maze.timing.FPSTimer;
 import sinius.maze.timing.TimeTimer;
 
@@ -25,6 +23,7 @@ public class Game {
 	public static Level level;
 	public String stage = "Menu";
 	public static EditorOptionScreen options;
+	public static GraphicsLayerManager graManger = new GraphicsLayerManager();
 	public static TimeTimer timer = new TimeTimer();
 	public static FPSTimer fps = new FPSTimer();
 	
@@ -57,6 +56,7 @@ public class Game {
 
 		gameLoop = new Thread(gameLoop(), "gameLoop");
 		gameLoop.start();
+		graManger.addLayer(new Begin());
 		timer.Start();
 		fps.Start();
 	}
@@ -66,6 +66,11 @@ public class Game {
 			isRunning = false;
 			
 		}
+		if(Game.keys.latestMouseEvent != null){
+			graManger.mouseClick(Game.keys.latestMouseEvent);
+			Game.keys.latestMouseEvent = null;
+		}
+			
 		if(editMode){
 			if(Game.keys.mousePosX != -1){
 				if(options.getBrush().equals("Wall Brush")){
@@ -154,23 +159,8 @@ public class Game {
 		MainProgram.game.gameScreen.repaint();
 	}
 	
-	public void draw(Graphics g){
-		Drawer.graphics = (Graphics2D)g;
-			
-		Drawer.drawMaze(level);
-		Drawer.drawEntitys(level);
-		MainProgram.editorObjManager.draw((Graphics2D) g); 
-		if(!editMode){
-			Drawer.drawTimer();
-			Drawer.drawPlayer(level);
-			if(Game.keys.isKeyPressed(KeyEvent.VK_F1))
-				StatisticsOverlay.Draw((Graphics2D)g);
-			if(isFinihed)
-				Finish.Draw((Graphics2D) g);
-			
-		}
-				
-		g = Drawer.graphics;
+	public void draw(Graphics g){			
+		graManger.draw((Graphics2D)g);
 	}
 	
 	private Runnable gameLoop(){

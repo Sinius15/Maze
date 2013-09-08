@@ -20,10 +20,15 @@ public class GraphicsLayerManager {
 			curLayers.remove(temp);
 		}
 		else if(what.equals("draw")){
-			for(int i = 0; i <= 10; i++)
-				for(GraphicsLayer g : curLayers)
-					if(g.priority() == i)
+			for(int i = 0; i <= 10; i++){
+				for(GraphicsLayer g : curLayers){
+					if(g.priority() == i){
+						System.out.println("drawing " + g.priority());
 						g.Draw(graphics);
+					}
+				}
+			}
+				
 		}
 		else if(what.equals("mouseClick")){
 			for(GraphicsLayer g : curLayers){
@@ -32,19 +37,19 @@ public class GraphicsLayerManager {
 		}
 	}
 	
-	public void addLayer(GraphicsLayer g){
+	public synchronized void addLayer(GraphicsLayer g){
 		this.editCurLayers("add", g, null, null);
 	}
 	
-	public void removeLayer(GraphicsLayer g){
+	public synchronized void removeLayer(GraphicsLayer g){
 		this.editCurLayers("remove", g, null, null);
 	}
 	
-	public void draw(Graphics2D g){
+	public synchronized void draw(Graphics2D g){
 		this.editCurLayers("draw", null, g, null);
 	}
 	
-	public void mouseClick(MouseEvent e){
+	public synchronized void mouseClick(MouseEvent e){
 		this.editCurLayers("mouseClick", null, null, e);
 	}
 	

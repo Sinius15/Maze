@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import sinius.maze.Block;
 import sinius.maze.Game;
 import sinius.maze.GraphicsLayer;
+import sinius.maze.entitys.Spawn;
 
 public class Maze implements GraphicsLayer{
 
@@ -28,11 +29,15 @@ public class Maze implements GraphicsLayer{
 				
 			}
 		}
+		
+		Spawn s = Game.level.getSpawn();
+		graphics.drawImage(s.getFont(), s.getX()*Game.ppb_x, s.getY()*Game.ppb_y, Game.ppb_x, Game.ppb_y, null);
 
 	}
 
 	@Override
 	public void mouseClick(MouseEvent e) {
+		
 	}
 	
 	@Override

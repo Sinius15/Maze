@@ -9,9 +9,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-import sinius.maze.EditorObject;
 import sinius.maze.Game;
-import sinius.maze.MainProgram;
 
 public class KeyHandler implements ComponentListener, KeyListener, MouseListener, MouseMotionListener{
 	
@@ -25,6 +23,7 @@ public class KeyHandler implements ComponentListener, KeyListener, MouseListener
 	
 	public boolean mouseMovedAfterDrag = false;
 	
+	public MouseEvent latestMouseEvent = null;
 	
 	public boolean isKeyPressed(int key){
 		for(int i : pressedKeys){
@@ -55,8 +54,7 @@ public class KeyHandler implements ComponentListener, KeyListener, MouseListener
 		if(mousePosX >= Game.level.getWidth() || mousePosY >= Game.level.getHeight() || mousePosX < 0 || mousePosY < 0){
 			mousePosX = -1;
 			mousePosY = -1;
-		}
-			
+		}	
 	}
 
 	@Override
@@ -75,9 +73,7 @@ public class KeyHandler implements ComponentListener, KeyListener, MouseListener
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		EditorObject o = MainProgram.editorObjManager.getByName(Game.options.getBrush());
-		if(o != null)
-			o.mouseClick(e);
+		latestMouseEvent = e;
 	}
 
 	@Override
