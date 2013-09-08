@@ -21,11 +21,12 @@ public class Display{
 	public Display(int width, int height, String title){
 		frame = new JFrame();
 		pane = new DrawPane();
+		frame.setResizable(false);
 		pane.setPreferredSize(new Dimension(width, height));
 		frame.setContentPane(pane);
 		frame.setTitle(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
+		
 		frame.pack();
 		frame.setVisible(true);
 		
@@ -34,7 +35,7 @@ public class Display{
 		graphics = (Graphics2D) frame.getContentPane().getGraphics();
 	}
 	
-	private class DrawPane extends JPanel{
+	public class DrawPane extends JPanel{
 		private static final long serialVersionUID = -6825107813851526680L;
 		public void paintComponent(Graphics g){
 			for(GObject b : objects){

@@ -7,6 +7,8 @@ import java.awt.event.MouseEvent;
 
 import sinius.maze.Game;
 import sinius.maze.GraphicsLayer;
+import sinius.maze.MainProgram;
+import sinius.maze.entitys.Player;
 
 public class Begin implements GraphicsLayer{
 
@@ -32,7 +34,13 @@ public class Begin implements GraphicsLayer{
 	public void mouseClick(MouseEvent e) {
 		Game.graManger.addLayer(new Maze());
 		Game.graManger.addLayer(new Entitys());
+		Game.graManger.addLayer(new Time());
 		Game.graManger.removeLayer(this.getClass());	
+		
+		int x1 = (Game.level.getSpawn().getX() * Game.ppb_x) + Game.ppb_x/2;
+		int y1 = (Game.level.getSpawn().getY() * Game.ppb_y) + Game.ppb_y/2;
+		MainProgram.game.player = new Player();
+		MainProgram.game.player.Create(x1, y1, "");
 	}
 
 	@Override

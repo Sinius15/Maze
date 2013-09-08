@@ -1,18 +1,18 @@
 package sinius.maze;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
+import sinius.maze.gameEngine.Display;
+import sinius.maze.gameEngine.Display.DrawAction;
 import sinius.maze.graphicsLayer.Begin;
 import sinius.maze.graphicsLayer.EditorOptionLayer;
 import sinius.maze.graphicsLayer.Entitys;
 import sinius.maze.graphicsLayer.Maze;
 import sinius.maze.gui.EditorOptionScreen;
-import sinius.maze.gui.GameScreen;
 import sinius.maze.io.KeyHandler;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.timing.FPSTimer;
@@ -22,50 +22,55 @@ public class Game {
 	
 	public static KeyHandler keys = new KeyHandler();
 	
-	public GameScreen gameScreen;
 	public static Level level;
 	public String stage = "Menu";
 	public static EditorOptionScreen options;
 	public static GraphicsLayerManager graManger = new GraphicsLayerManager();
 	public static TimeTimer timer = new TimeTimer();
 	public static FPSTimer fps = new FPSTimer();
+	public static Display display;
 	
 	private Thread gameLoop;
 	private boolean isRunning = false;
 	public static boolean editMode;
-	private Player player;
+	public Player player;
 	
 	public static int ppb_x, ppb_y;
 	
 	public Game(Level l, boolean editMode){
 		Game.editMode = editMode;
 		level = l;
-		gameScreen = new GameScreen();
-		gameScreen.setVisible(true);
+		display = new Display(800, 800, "Sinius's Maze");
+		display.getPanel().addComponentListener(Game.keys);
+		display.getFrame().addKeyListener(Game.keys);
+		display.getPanel().addMouseListener(Game.keys);
+		display.getPanel().addMouseMotionListener(Game.keys);
+		
+		display.setDrawAction(new DrawAction() {@Override public void Draw(Graphics2D g) {
+				graManger.draw(g);
+		}});
 		
 		ppb_x = 800 / l.getWidth();
 		ppb_y = 800 / l.getHeight();
 		
 		startGame();
+		
 	}
 	
 	public void startGame(){
 		isRunning = true;
-		int x1 = (level.getSpawn().getX() * ppb_x) + ppb_x/2;
-		int y1 = (level.getSpawn().getY() * ppb_y) + ppb_y/2;
-		player = new Player();
-		player.Create(x1, y1, "");
-
-		gameLoop = new Thread(gameLoop(), "gameLoop");
-		gameLoop.start();
+		
 		if(!editMode){
 			graManger.addLayer(new Begin());
+			player = new Player();
+			player.Create(0, 0, "");
 		}else{
 			graManger.addLayer(new EditorOptionLayer());
 			graManger.addLayer(new Entitys());
 			graManger.addLayer(new Maze());
 		}
-		
+		gameLoop = new Thread(gameLoop(), "gameLoop");
+		gameLoop.start();
 		timer.Start();
 		fps.Start();
 	}
@@ -165,11 +170,8 @@ public class Game {
 		}
 		
 		graManger.tick();
-		MainProgram.game.gameScreen.repaint();
-	}
-	
-	public void draw(Graphics g){			
-		graManger.draw((Graphics2D)g);
+		display.reDraw();
+		
 	}
 	
 	private Runnable gameLoop(){
@@ -213,4 +215,5 @@ public class Game {
 	public void setPlayer(Player player) {
 		this.player = player;
 	}
+		
 }

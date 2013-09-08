@@ -20,12 +20,15 @@ public class Entitys implements GraphicsLayer{
 		
 		Game.level.editEntitys("draw", graphics, null, null, 0, 0, null);
 		
-		Player p = MainProgram.game.getPlayer();
-		try {
-			graphics.drawImage(p.getFont(), p.getX()-Game.ppb_x/2, p.getY()-Game.ppb_y/2, Game.ppb_x, Game.ppb_y, null);
-		} catch (Exception e) {
-			e.printStackTrace();
+		if(!Game.editMode){
+			Player p = MainProgram.game.getPlayer();
+			try {
+				graphics.drawImage(p.getFont(), p.getX()-Game.ppb_x/2, p.getY()-Game.ppb_y/2, Game.ppb_x, Game.ppb_y, null);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+		
 	}
 
 	@Override
