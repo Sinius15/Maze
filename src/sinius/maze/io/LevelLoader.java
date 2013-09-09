@@ -8,12 +8,15 @@ import sinius.maze.Entity;
 import sinius.maze.Game;
 import sinius.maze.Level;
 import sinius.maze.MainProgram;
+import sinius.maze.SynchroniezedList.editAction;
 import sinius.maze.Util;
 import sinius.maze.entitys.Spawn;
 
 public class LevelLoader {
 
 	private static YAMLFile saveFile = new YAMLFile();
+	
+	static int i = 0;
 	
 	public static void SaveLevel(Level l, String place) throws Exception{
 		saveFile.addInt("levelWidht", l.getWidth());
@@ -37,15 +40,18 @@ public class LevelLoader {
 		}
 		
 		saveFile.addInt("entityAmount", l.getEntitys().size());
-		int i = 0;
-		for(Entity t : l.getEntitys()){
+		i = 0;
+		
+		l.getEntitys().doForAll(new editAction() { @Override public void action(Object o) {
+			Entity t = (Entity) o;
 			saveFile.addInt("entitys." + i + ".x", t.getX());
 			saveFile.addInt("entitys." + i + ".y", t.getY());
 			saveFile.addString("entitys." + i + ".class",t.getClass().getName());
 			if(t.getSaveData() != null)
 				saveFile.addString("entitys." + i + ".data", t.getSaveData());
 			i++;
-		}
+			
+		}});
 		
 		saveFile.addInt("spawn.x", l.getSpawn().getX());
 		saveFile.addInt("spawn.y", l.getSpawn().getY());
@@ -76,7 +82,7 @@ public class LevelLoader {
 				}else{
 					entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"), saveFile.getString("entitys." + i + ".data"));
 				}
-				level.editEntitys("add", null, entity , null, 0, 0, null);
+				level.getEntitys().add(entity);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -4,6 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+import sinius.maze.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gameEngine.Display;
@@ -127,18 +128,23 @@ public class Game {
 						b.setType(Block.AIR);
 					}
 				}else{
-					Entity x = MainProgram.entityManager.getEntityByName(options.getBrush());
+					final Entity x = MainProgram.entityManager.getEntityByName(options.getBrush());
 					if(x != null){
 						x.Create(Game.keys.mousePosX, Game.keys.mousePosY, "");
 						if(Game.keys.isMousePressed(MouseEvent.BUTTON1)){
 							
-							level.editEntitys("isEntityOnCoord", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, null);
-							if(!level.editEntityReturner)
-								level.editEntitys("add", null, x, null, 0, 0, null);
-							level.editEntityReturner = false;
+							level.getEntitys().doForAll(new editAction() {@Override public void action(Object o) {
+									Entity e = (Entity) o;
+									if(e.getX() == x.getX() && e.getY() == x.getY())
+										level.getEntitys().addLater(o);
+							}});
 							
 						}else if(Game.keys.isMousePressed(MouseEvent.BUTTON3)){
-							level.editEntitys("remove", null, null, null, Game.keys.mousePosX, Game.keys.mousePosY, x.getClass());
+							level.getEntitys().doForAll(new editAction() {@Override public void action(Object o) {
+								Entity e = (Entity) o;
+								if(e.getX() == Game.keys.mousePosX && e.getY() == Game.keys.mousePosY && e.getClass().equals(x.getClass()))
+									level.getEntitys().removeLater(o);
+							}});
 						}
 					}
 					
@@ -147,8 +153,14 @@ public class Game {
 			}
 		}
 		if(!editMode){
-			level.editEntitys("tick", null, null, null, 0, 0, null);
-			level.editEntitys("playerTouch", null, player, null, 0, 0, null);
+			
+			level.getEntitys().doForAll(new editAction() { @Override public void action(Object o) {
+					Entity e = (Entity) o;
+					e.onTick(Game.level);
+					if(e.getCollisionBox().intersects(player.getCollisionBox()))
+						e.onPlayerTouch(player);
+			}});
+			
 			player.onTick(level);
 			
 			if(Game.keys.isKeyPressed(KeyEvent.VK_UP))

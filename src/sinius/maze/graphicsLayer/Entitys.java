@@ -6,8 +6,9 @@ import java.awt.event.MouseEvent;
 
 import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.MainProgram;
 import sinius.maze.GraphicsLayer;
+import sinius.maze.MainProgram;
+import sinius.maze.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 
 public class Entitys implements GraphicsLayer{
@@ -18,23 +19,24 @@ public class Entitys implements GraphicsLayer{
 	}
 
 	@Override
-	public void Draw(Graphics2D graphics) {
-		
-		//Game.level.editEntitys("draw", graphics, null, null, 0, 0, null);
-		
-		for(Entity f : Game.level.getEntitys()){
-			if(f.onGrid())
-				graphics.drawImage(f.getFont(), f.getX()*Game.ppb_x, f.getY()*Game.ppb_y, Game.ppb_x, Game.ppb_y, null);
+	public void Draw(final Graphics2D graphics) {
+		Game.level.getEntitys().doForAll(new editAction() { @Override public void action(Object o) {
+			
+			Entity e = (Entity) o;
+			
+			if(e.onGrid())
+				graphics.drawImage(e.getFont(), e.getX()*Game.ppb_x, e.getY()*Game.ppb_y, Game.ppb_x, Game.ppb_y, null);
 			else{
-				if(f.getSize() != null)
-					graphics.drawImage(f.getFont(), f.getX(), f.getY(), f.getSize().width, f.getSize().height, null);
+				if(e.getSize() != null)
+					graphics.drawImage(e.getFont(), e.getX(), e.getY(), e.getSize().width, e.getSize().height, null);
 				else
-					graphics.drawImage(f.getFont(), f.getX(), f.getY(), Game.ppb_x, Game.ppb_y, null);
+					graphics.drawImage(e.getFont(), e.getX(), e.getY(), Game.ppb_x, Game.ppb_y, null);
 			}
 			graphics.setColor(Color.black);
-			f.advancedRender(graphics, Game.editMode);
-				
-		}
+			e.advancedRender(graphics, Game.editMode);
+			
+		}});
+		
 		
 		if(!Game.editMode){
 			Player p = MainProgram.game.getPlayer();

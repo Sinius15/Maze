@@ -1,11 +1,8 @@
 package sinius.maze;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
-import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 
 public class Level {
@@ -21,8 +18,7 @@ public class Level {
 	private Color standardBlockColor = Color.white;
 	
 	private Block[][] blocks;
-	private ArrayList<Entity> entitys = new ArrayList<Entity>();
-	private ArrayList<Entity> removeEntitys = new ArrayList<Entity>();
+	private SynchroniezedList entitys = new SynchroniezedList();
 	private Spawn spawn;
 	
 	
@@ -47,69 +43,6 @@ public class Level {
 			e.printStackTrace();
 		}
 		return null;
-	}
-	
-	public boolean editEntityReturner;
-	
-	@SuppressWarnings("rawtypes")
-	public synchronized void editEntitys(String what, Graphics2D graphics, Entity e, Runnable r, int x, int y, Class s){
-		if(what.equals("draw")){
-			try {
-				
-				for(Entity f : entitys){
-					if(f.onGrid())
-						graphics.drawImage(f.getFont(), f.getX()*Game.ppb_x, f.getY()*Game.ppb_y, Game.ppb_x, Game.ppb_y, null);
-					else{
-						if(f.getSize() != null)
-							graphics.drawImage(f.getFont(), f.getX(), f.getY(), f.getSize().width, f.getSize().height, null);
-						else
-							graphics.drawImage(f.getFont(), f.getX(), f.getY(), Game.ppb_x, Game.ppb_y, null);
-					}
-					graphics.setColor(Color.black);
-					f.advancedRender(graphics, Game.editMode);
-						
-				}
-				
-				graphics.drawImage(getSpawn().getFont(), getSpawn().getX()*Game.ppb_x, getSpawn().getY()*Game.ppb_y,Game.ppb_x, Game.ppb_y, null);
-				
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-		}else if(what.equals("advRender")){
-			for(Entity f : entitys){
-				f.advancedRender(graphics, Game.editMode);	
-			}
-		}
-		else if(what.equals("add")){
-			entitys.add(e);
-		}else if(what.equals("remove")){
-			for(Entity f : entitys){
-				if(f.getX() == x && f.getY() == y && f.getClass().equals(s)){
-					removeEntitys.add(f);
-				}	
-			}
-		}else if(what.equals("tick")){
-			for(Entity f : entitys){
-				f.onTick(this);
-			}
-		}else if(what.equals("playerTouch")){
-			for(Entity f: entitys){
-				if(f.getCollisionBox().intersects(e.getCollisionBox()))
-					f.onPlayerTouch((Player)e);
-				
-			}
-			
-		}else if(what.equals("isEntityOnCoord")){
-			for(Entity f: entitys){
-				if(f.getX() == x && f.getY() == y)
-					editEntityReturner = true;
-				
-			}
-		}
-		for(Entity f: removeEntitys){
-			entitys.remove(f);
-		}
-		removeEntitys.clear();
 	}
 	
 	public boolean isPixelWall(int x, int y){
@@ -167,7 +100,7 @@ public class Level {
 		this.spawn = spawn;
 	}
 
-	public ArrayList<Entity> getEntitys() {
+	public SynchroniezedList getEntitys() {
 		return entitys;
 	}
 }
