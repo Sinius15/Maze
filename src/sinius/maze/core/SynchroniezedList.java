@@ -1,4 +1,4 @@
-package sinius.maze;
+package sinius.maze.core;
 
 import java.util.ArrayList;
 import java.util.Collection;

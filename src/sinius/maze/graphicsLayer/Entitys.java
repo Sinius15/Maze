@@ -8,7 +8,7 @@ import sinius.maze.Entity;
 import sinius.maze.Game;
 import sinius.maze.GraphicsLayer;
 import sinius.maze.MainProgram;
-import sinius.maze.SynchroniezedList.editAction;
+import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 
 public class Entitys implements GraphicsLayer{

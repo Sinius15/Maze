@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
-import sinius.maze.SynchroniezedList.editAction;
+import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gameEngine.Display;

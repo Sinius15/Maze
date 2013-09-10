@@ -3,6 +3,7 @@ package sinius.maze;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 
+import sinius.maze.core.SynchroniezedList;
 import sinius.maze.entitys.Spawn;
 
 public class Level {

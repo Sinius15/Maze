@@ -8,8 +8,8 @@ import sinius.maze.Entity;
 import sinius.maze.Game;
 import sinius.maze.Level;
 import sinius.maze.MainProgram;
-import sinius.maze.SynchroniezedList.editAction;
 import sinius.maze.Util;
+import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Spawn;
 
 public class LevelLoader {
