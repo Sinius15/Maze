@@ -4,15 +4,12 @@ import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+import sinius.maze.core.Engine;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gameEngine.Display;
 import sinius.maze.gameEngine.Display.DrawAction;
-import sinius.maze.graphicsLayer.Begin;
-import sinius.maze.graphicsLayer.EditorOptionLayer;
-import sinius.maze.graphicsLayer.Entitys;
-import sinius.maze.graphicsLayer.Maze;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.io.KeyHandler;
 import sinius.maze.io.LevelLoader;
@@ -24,17 +21,14 @@ public class Game {
 	public static KeyHandler keys = new KeyHandler();
 	
 	public static Level level;
-	public String stage = "Menu";
 	public static EditorOptionScreen options;
-	public static GraphicsLayerManager graManger = new GraphicsLayerManager();
 	public static TimeTimer timer = new TimeTimer();
 	public static FPSTimer fps = new FPSTimer();
 	public static Display display;
 	
-	private Thread gameLoop;
-	private boolean isRunning = false;
+	private static Thread gameLoop;
 	public static boolean editMode;
-	public Player player;
+	public static Player player;
 	
 	public static int ppb_x, ppb_y;
 	
@@ -48,7 +42,7 @@ public class Game {
 		display.getPanel().addMouseMotionListener(Game.keys);
 		
 		display.setDrawAction(new DrawAction() {@Override public void Draw(Graphics2D g) {
-				graManger.draw(g);
+				//TODO: draw!!
 		}});
 		
 		ppb_x = 800 / l.getWidth();
@@ -58,31 +52,21 @@ public class Game {
 		
 	}
 	
-	public void startGame(){
-		isRunning = true;
+	public static void startGame(){
 		
-		if(!editMode){
-			graManger.addLayer(new Begin());
-			player = new Player();
-			player.Create(0, 0, "");
-		}else{
-			graManger.addLayer(new EditorOptionLayer());
-			graManger.addLayer(new Entitys());
-			graManger.addLayer(new Maze());
-		}
-		gameLoop = new Thread(gameLoop(), "gameLoop");
+		MainProgram.engine = new Engine();
+		
 		gameLoop.start();
 		timer.Start();
 		fps.Start();
 	}
 	
-	public void doTick(){
+	public static void doTick(){
 		if(Game.keys.isKeyPressed(KeyEvent.VK_ESCAPE)){
-			isRunning = false;
+			MainProgram.engine.stopGame();
 			
 		}
 		if(Game.keys.latestMouseEvent != null){
-			graManger.mouseClick(Game.keys.latestMouseEvent);
 			Game.keys.latestMouseEvent = null;
 		}
 			
@@ -181,34 +165,6 @@ public class Game {
 			e.printStackTrace();
 		}
 		
-		graManger.tick();
-		display.reDraw();
-		
-	}
-	
-	private Runnable gameLoop(){
-		return new Runnable(){ @Override public void run() {
-			while(isRunning){
-				fps.registerTick();
-				doTick();
-				try {
-					Thread.sleep(1);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				
-			}
-			quitGame();
-				
-		}};
-	}
-
-	public boolean isRunning() {
-		return isRunning;
-	}
-
-	public void setRunning(boolean isRunning) {
-		this.isRunning = isRunning;
 	}
 		
 	public void quitGame(){
@@ -222,10 +178,6 @@ public class Game {
 
 	public Player getPlayer() {
 		return player;
-	}
-
-	public void setPlayer(Player player) {
-		this.player = player;
 	}
 		
 }

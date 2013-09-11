@@ -5,10 +5,10 @@ import java.awt.event.MouseEvent;
 
 import sinius.maze.EditorObject;
 import sinius.maze.Game;
-import sinius.maze.GraphicsLayer;
 import sinius.maze.MainProgram;
+import sinius.maze.state.GrapicsLayer;
 
-public class EditorOptionLayer implements GraphicsLayer{
+public class EditorOptionLayer implements GrapicsLayer{
 
 	@Override
 	public String getName() {

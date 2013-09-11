@@ -2,16 +2,15 @@ package sinius.maze.graphicsLayer;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 
 import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.GraphicsLayer;
 import sinius.maze.MainProgram;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
+import sinius.maze.state.GrapicsLayer;
 
-public class Entitys implements GraphicsLayer{
+public class Entitys implements GrapicsLayer{
 
 	@Override
 	public String getName() {
@@ -48,11 +47,7 @@ public class Entitys implements GraphicsLayer{
 		}
 		
 	}
-
-	@Override
-	public void mouseClick(MouseEvent e) {
-	}
-
+	
 	@Override
 	public int priority() {
 		return 2;

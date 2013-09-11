@@ -1,14 +1,13 @@
 package sinius.maze.graphicsLayer;
 
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 
 import sinius.maze.Block;
 import sinius.maze.Game;
-import sinius.maze.GraphicsLayer;
 import sinius.maze.entitys.Spawn;
+import sinius.maze.state.GrapicsLayer;
 
-public class Maze implements GraphicsLayer{
+public class Maze implements GrapicsLayer{
 
 	@Override
 	public String getName() {
@@ -35,11 +34,6 @@ public class Maze implements GraphicsLayer{
 
 	}
 
-	@Override
-	public void mouseClick(MouseEvent e) {
-		
-	}
-	
 	@Override
 	public int priority() {
 		return 0;

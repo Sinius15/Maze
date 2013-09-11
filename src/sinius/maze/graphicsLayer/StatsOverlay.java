@@ -3,13 +3,12 @@ package sinius.maze.graphicsLayer;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
-import sinius.maze.GraphicsLayer;
+import sinius.maze.state.GrapicsLayer;
 
-public class StatsOverlay implements GraphicsLayer{
+public class StatsOverlay implements GrapicsLayer{
 
 	static Color gray = new Color(0f, 0f, 0f, 0.75f);
 	static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 18);
@@ -32,9 +31,6 @@ public class StatsOverlay implements GraphicsLayer{
 		g.drawString("x: " + MainProgram.game.getPlayer().getX() , 15, 42);
 		g.drawString("y: " + MainProgram.game.getPlayer().getY() , 15, 62);
 	}
-
-	@Override
-	public void mouseClick(MouseEvent e) {}
 
 	@Override
 	public int priority() {

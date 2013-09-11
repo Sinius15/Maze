@@ -1,5 +1,7 @@
 package sinius.maze.core;
 
+import sinius.maze.Game;
+
 
 public class Engine{
 
@@ -19,13 +21,13 @@ public class Engine{
 		
 		saveThread = new Thread(saveThread(), "saveThread");
 		saveThread.start();
-		System.out.println("");
+		System.out.println("Starting the gameloop");
 	}
 	
 	public Runnable tickThread() {
 		return new Runnable() { @Override public void run() {
 			while(isRunning){
-				//TODO: tick
+				Game.doTick();
 				try {
 					Thread.sleep(10000);
 				} catch (InterruptedException e) {
@@ -37,16 +39,15 @@ public class Engine{
 	public Runnable drawThread() {
 		return new Runnable() { @Override public void run() {
 			while(isRunning){
-				//TODO: add a draw functions
+				Game.fps.registerTick();
+				Game.display.reDraw();
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(17);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}		
 			}
 	}};}
-	
-	int i = 0;
 	
 	public Runnable saveThread() {
 		return new Runnable() { @Override public void run() {
@@ -60,4 +61,10 @@ public class Engine{
 			}
 	}};}
 
+	
+	public void stopGame(){
+		//TODO: save level
+		
+		isRunning = false;
+	}
 }

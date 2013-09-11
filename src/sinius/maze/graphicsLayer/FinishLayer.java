@@ -3,12 +3,11 @@ package sinius.maze.graphicsLayer;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 
 import sinius.maze.Game;
-import sinius.maze.GraphicsLayer;
+import sinius.maze.state.GrapicsLayer;
 
-public class FinishLayer implements GraphicsLayer{
+public class FinishLayer implements GrapicsLayer{
 
 	static Color gray = new Color(0f, 0f, 0f, 0.85f);
 	static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
@@ -31,10 +30,6 @@ public class FinishLayer implements GraphicsLayer{
 		g.drawString("Press the X to exit!", 200, 260);
 		g.drawString("Time: " + Game.timer.getTime(), 200, 300);
 		
-	}
-
-	@Override
-	public void mouseClick(MouseEvent e) {
 	}
 
 	@Override

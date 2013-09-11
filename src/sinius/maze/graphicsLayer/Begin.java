@@ -6,11 +6,11 @@ import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 
 import sinius.maze.Game;
-import sinius.maze.GraphicsLayer;
 import sinius.maze.MainProgram;
 import sinius.maze.entitys.Player;
+import sinius.maze.state.GrapicsLayer;
 
-public class Begin implements GraphicsLayer{
+public class Begin implements GrapicsLayer{
 
 	static Color gray = new Color(0f, 0f, 0f, 0.75f);
 	static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 18);
