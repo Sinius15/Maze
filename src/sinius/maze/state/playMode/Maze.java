@@ -1,4 +1,4 @@
-package sinius.maze.graphicsLayer;
+package sinius.maze.state.playMode;
 
 import java.awt.Graphics2D;
 

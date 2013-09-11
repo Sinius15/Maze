@@ -1,6 +1,5 @@
 package sinius.maze;
 
-import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
@@ -9,7 +8,6 @@ import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gameEngine.Display;
-import sinius.maze.gameEngine.Display.DrawAction;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.io.KeyHandler;
 import sinius.maze.io.LevelLoader;
@@ -40,10 +38,6 @@ public class Game {
 		display.getFrame().addKeyListener(Game.keys);
 		display.getPanel().addMouseListener(Game.keys);
 		display.getPanel().addMouseMotionListener(Game.keys);
-		
-		display.setDrawAction(new DrawAction() {@Override public void Draw(Graphics2D g) {
-				//TODO: draw!!
-		}});
 		
 		ppb_x = 800 / l.getWidth();
 		ppb_y = 800 / l.getHeight();

@@ -10,13 +10,17 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import sinius.maze.core.SynchroniezedList.editAction;
+import sinius.maze.state.GameState;
+import sinius.maze.state.GrapicsLayer;
+
 public class Display{
 
 	private JFrame frame;
 	private DrawPane pane;
 	private Graphics2D graphics;
-	private DrawAction drawing;
 	private ArrayList<GObject> objects = new ArrayList<GObject>();
+	private GameState gameState;
 	
 	public Display(int width, int height, String title){
 		frame = new JFrame();
@@ -30,7 +34,7 @@ public class Display{
 		frame.pack();
 		frame.setVisible(true);
 		
-		pane.addMouseListener(getMouseListener());
+		
 		
 		graphics = (Graphics2D) frame.getContentPane().getGraphics();
 	}
@@ -41,21 +45,15 @@ public class Display{
 			for(GObject b : objects){
 				b.Draw((Graphics2D) g);
 			}
-			if(drawing != null)
-				drawing.Draw((Graphics2D) g);
+			gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
+					GrapicsLayer g = (GrapicsLayer) o;
+					g.Draw((Graphics2D) g);
+			}});
 		}
-	}
-	
-	public interface DrawAction{
-		void Draw(Graphics2D g);
 	}
 	
 	public Graphics2D getGraphics(){
 		return graphics;
-	}
-	
-	public void setDrawAction(DrawAction g){
-		this.drawing = g;
 	}
 	
 	public void reDraw(){
@@ -100,5 +98,15 @@ public class Display{
 				}
 			}
 		};
+	}
+	
+	public void setGameState(GameState t){
+		this.gameState = t;
+		pane.addMouseListener(getMouseListener());
+		if(t.getMouseListener() != null)
+			pane.addMouseListener(t.getMouseListener());
+		if(t.getKeyListener() != null)
+			pane.addKeyListener(t.getKeyListener());
+		
 	}
 }

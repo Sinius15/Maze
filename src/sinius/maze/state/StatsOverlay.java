@@ -1,4 +1,4 @@
-package sinius.maze.graphicsLayer;
+package sinius.maze.state;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -6,7 +6,6 @@ import java.awt.Graphics2D;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
-import sinius.maze.state.GrapicsLayer;
 
 public class StatsOverlay implements GrapicsLayer{
 

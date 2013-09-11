@@ -1,10 +1,7 @@
-package sinius.maze.graphicsLayer;
+package sinius.maze.state.editMode;
 
 import java.awt.Graphics2D;
-import java.awt.event.MouseEvent;
 
-import sinius.maze.EditorObject;
-import sinius.maze.Game;
 import sinius.maze.MainProgram;
 import sinius.maze.state.GrapicsLayer;
 
@@ -18,13 +15,6 @@ public class EditorOptionLayer implements GrapicsLayer{
 	@Override
 	public void Draw(Graphics2D graphics) {
 		MainProgram.editorObjManager.draw(graphics);
-	}
-
-	@Override
-	public void mouseClick(MouseEvent e) {
-		EditorObject o = MainProgram.editorObjManager.getByName(Game.options.getBrush());
-		if(o != null)
-			o.mouseClick(e);
 	}
 
 	@Override
