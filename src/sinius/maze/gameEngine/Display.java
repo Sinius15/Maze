@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,7 +18,6 @@ public class Display{
 	private JFrame frame;
 	private DrawPane pane;
 	private Graphics2D graphics;
-	private ArrayList<GObject> objects = new ArrayList<GObject>();
 	private GameState gameState;
 	
 	public Display(int width, int height, String title){
@@ -34,7 +32,7 @@ public class Display{
 		frame.pack();
 		frame.setVisible(true);
 		
-		
+		pane.addMouseListener(getMouseListener());
 		
 		graphics = (Graphics2D) frame.getContentPane().getGraphics();
 	}
@@ -42,13 +40,16 @@ public class Display{
 	public class DrawPane extends JPanel{
 		private static final long serialVersionUID = -6825107813851526680L;
 		public void paintComponent(Graphics g){
-			for(GObject b : objects){
-				b.Draw((Graphics2D) g);
-			}
-			gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
-					GrapicsLayer g = (GrapicsLayer) o;
-					g.Draw((Graphics2D) g);
-			}});
+			if(gameState.getGObjects() != null)
+				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
+					GObject g = (GObject) o;
+					g.Draw(graphics);
+				}});
+			if(gameState.getGraphicsLayers() != null)
+				gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
+						GrapicsLayer g = (GrapicsLayer) o;
+						g.Draw((Graphics2D) g);
+				}});
 		}
 	}
 	
@@ -66,10 +67,6 @@ public class Display{
 	
 	public DrawPane getPanel(){
 		return pane;
-	}
-	
-	public synchronized void add(GObject object){
-		objects.add(object);
 	}
 	
 	private MouseListener getMouseListener(){
@@ -92,21 +89,23 @@ public class Display{
 			}
 			
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				for(GObject b : objects){
-					b.MouseClick(arg0);
-				}
+			public void mouseClicked(final MouseEvent arg0) {
+				if(gameState.getGObjects() != null)
+					gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
+					GObject g = (GObject) o;
+					g.MouseClick(arg0);
+				}});
 			}
 		};
 	}
 	
 	public void setGameState(GameState t){
-		this.gameState = t;
-		pane.addMouseListener(getMouseListener());
-		if(t.getMouseListener() != null)
-			pane.addMouseListener(t.getMouseListener());
-		if(t.getKeyListener() != null)
-			pane.addKeyListener(t.getKeyListener());
-		
+		pane.removeMouseListener(gameState.getMouseListener());
+		pane.removeKeyListener(gameState.getKeyListener());
+		gameState = t;
+		if(gameState.getMouseListener() != null)
+			pane.addMouseListener(gameState.getMouseListener());
+		if(gameState.getKeyListener() != null)
+			pane.addKeyListener(gameState.getKeyListener());
 	}
 }
