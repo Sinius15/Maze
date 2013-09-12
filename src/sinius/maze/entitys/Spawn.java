@@ -66,10 +66,6 @@ public class Spawn implements Entity{
 	}
 
 	@Override
-	public void advancedRender(Graphics2D graphics, boolean editMode) {
-	}
-
-	@Override
 	public boolean onGrid() {
 		return true;
 	}
@@ -77,6 +73,10 @@ public class Spawn implements Entity{
 	@Override
 	public Dimension getSize() {
 		return null;
+	}
+
+	@Override
+	public void advancedRender(Graphics2D graphics) {
 	}
 
 	

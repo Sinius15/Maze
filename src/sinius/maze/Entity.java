@@ -17,7 +17,7 @@ public interface Entity {
 	int getY();										//		
 	void onPlayerTouch(Player p);					//
 	void onTick(Level l);							//
-	void advancedRender(Graphics2D graphics, boolean editMode);
+	void advancedRender(Graphics2D graphics);
 	boolean onGrid();								//
 	Dimension getSize();							//
 	Image getFont();								//

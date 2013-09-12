@@ -55,4 +55,8 @@ public class MenuState implements GameState{
 		return null;
 	}
 
+	@Override
+	public void tick() {
+	}
+
 }

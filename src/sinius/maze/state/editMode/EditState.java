@@ -53,7 +53,7 @@ public class EditState implements GameState{
 	
 	@Override
 	public String getName() {
-		return "Editor";
+		return "editor";
 	}
 
 	@Override
@@ -74,6 +74,10 @@ public class EditState implements GameState{
 	@Override
 	public KeyListener getKeyListener() {
 		return keys;
+	}
+
+	@Override
+	public void tick() {
 	}
 
 }

@@ -27,7 +27,7 @@ public class Engine{
 	public Runnable tickThread() {
 		return new Runnable() { @Override public void run() {
 			while(isRunning){
-				Game.doTick();
+				//Game.doTick();
 				try {
 					Thread.sleep(10000);
 				} catch (InterruptedException e) {

@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import sinius.maze.Game;
 import sinius.maze.state.GrapicsLayer;
 
-public class Time implements GrapicsLayer{
+public class Layer_Time implements GrapicsLayer{
 
 	@Override
 	public String getName() {

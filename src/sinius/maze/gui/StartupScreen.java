@@ -12,6 +12,9 @@ import javax.swing.border.EmptyBorder;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
+import sinius.maze.state.GameState;
+import sinius.maze.state.playMode.PlayState;
+
 import javax.swing.JToggleButton;
 import javax.swing.SwingConstants;
 
@@ -21,6 +24,7 @@ public class StartupScreen extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private int levelNr;
+	private GameState beginState = new PlayState();
 	
 
 	public StartupScreen() {
@@ -47,7 +51,7 @@ public class StartupScreen extends JFrame {
 		JButton PlayLevel = new JButton("Play This level");
 		PlayLevel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MainProgram.game = new Game(MainProgram.levels.get(levelNr), useEditor.isSelected());
+				MainProgram.game = new Game(MainProgram.levels.get(levelNr), beginState);
 				MainProgram.startupScreen.dispose();
 				if(useEditor.isSelected()){
 					Game.options = new EditorOptionScreen();

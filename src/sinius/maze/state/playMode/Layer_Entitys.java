@@ -5,12 +5,10 @@ import java.awt.Graphics2D;
 
 import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.MainProgram;
 import sinius.maze.core.SynchroniezedList.editAction;
-import sinius.maze.entitys.Player;
 import sinius.maze.state.GrapicsLayer;
 
-public class Entitys implements GrapicsLayer{
+public class Layer_Entitys implements GrapicsLayer{
 
 	@Override
 	public String getName() {
@@ -32,19 +30,17 @@ public class Entitys implements GrapicsLayer{
 					graphics.drawImage(e.getFont(), e.getX(), e.getY(), Game.ppb_x, Game.ppb_y, null);
 			}
 			graphics.setColor(Color.black);
-			e.advancedRender(graphics, Game.editMode);
+			e.advancedRender(graphics);
 			
 		}});
 		
 		
-		if(!Game.editMode){
-			Player p = MainProgram.game.getPlayer();
-			try {
-				graphics.drawImage(p.getFont(), p.getX()-Game.ppb_x/2, p.getY()-Game.ppb_y/2, Game.ppb_x, Game.ppb_y, null);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+//		Player p = MainProgram.game.getPlayer();
+//		try {
+//			graphics.drawImage(p.getFont(), p.getX()-Game.ppb_x/2, p.getY()-Game.ppb_y/2, Game.ppb_x, Game.ppb_y, null);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 	

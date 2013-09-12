@@ -7,7 +7,7 @@ import sinius.maze.Game;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.state.GrapicsLayer;
 
-public class Maze implements GrapicsLayer{
+public class Layer_Maze implements GrapicsLayer{
 
 	@Override
 	public String getName() {

@@ -121,10 +121,6 @@ public class Player implements Entity{
 	}
 
 	@Override
-	public void advancedRender(Graphics2D graphics, boolean editMode) {
-	}
-
-	@Override
 	public boolean onGrid() {
 		return false;
 	}
@@ -161,6 +157,10 @@ public class Player implements Entity{
 	}
 	public void setY(int y){
 		this.y = y;
+	}
+
+	@Override
+	public void advancedRender(Graphics2D graphics) {
 	}
 
 }

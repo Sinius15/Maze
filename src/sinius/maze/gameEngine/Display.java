@@ -18,9 +18,11 @@ public class Display{
 	private JFrame frame;
 	private DrawPane pane;
 	private Graphics2D graphics;
-	private GameState gameState;
+	public GameState gameState;
 	
-	public Display(int width, int height, String title){
+	public Display(int width, int height, String title, GameState state){
+		gameState = state;
+		System.out.println("the state is: " + gameState.getName());
 		frame = new JFrame();
 		pane = new DrawPane();
 		frame.setResizable(false);
@@ -33,7 +35,10 @@ public class Display{
 		frame.setVisible(true);
 		
 		pane.addMouseListener(getMouseListener());
-		
+		if(gameState.getMouseListener() != null)
+			pane.addMouseListener(gameState.getMouseListener());
+		if(gameState.getKeyListener() != null)
+			pane.addKeyListener(gameState.getKeyListener());
 		graphics = (Graphics2D) frame.getContentPane().getGraphics();
 	}
 	
@@ -44,12 +49,12 @@ public class Display{
 				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
 					GObject g = (GObject) o;
 					g.Draw(graphics);
-				}});
+			}});
 			if(gameState.getGraphicsLayers() != null)
 				gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
 						GrapicsLayer g = (GrapicsLayer) o;
-						g.Draw((Graphics2D) g);
-				}});
+						g.Draw((Graphics2D) graphics);
+			}});
 		}
 	}
 	
