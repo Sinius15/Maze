@@ -1,8 +1,5 @@
 package sinius.maze.state;
 
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
-
 import sinius.maze.core.SynchroniezedList;
 
 public interface GameState {
@@ -11,7 +8,7 @@ public interface GameState {
 	public void tick();
 	public SynchroniezedList getGObjects();
 	public SynchroniezedList getGraphicsLayers();
-	public MouseListener getMouseListener();
-	public KeyListener getKeyListener();
+	public void mouseEvent(int button);
+	public void keyEvent(int button);
 	
 }

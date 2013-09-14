@@ -19,6 +19,7 @@ public class LevelLoader {
 	static int i = 0;
 	
 	public static void SaveLevel(Level l, String place) throws Exception{
+		saveFile = new YAMLFile();
 		saveFile.addInt("levelWidht", l.getWidth());
 		saveFile.addInt("levelHeight", l.getHeight());
 		saveFile.addString("levelName", l.getName());
@@ -50,7 +51,7 @@ public class LevelLoader {
 			if(t.getSaveData() != null)
 				saveFile.addString("entitys." + i + ".data", t.getSaveData());
 			i++;
-			
+			System.out.println("saved a entity: " + t.getName());
 		}});
 		
 		saveFile.addInt("spawn.x", l.getSpawn().getX());
@@ -60,6 +61,7 @@ public class LevelLoader {
 	}
 	
 	public static Level LoadLevel(File f){
+		saveFile = new YAMLFile();
 		saveFile.Load(f);
 		
 		Level level = new Level(saveFile.getInt("levelWidht"), saveFile.getInt("levelHeight"), saveFile.getString("levelName"));
@@ -83,6 +85,7 @@ public class LevelLoader {
 					entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"), saveFile.getString("entitys." + i + ".data"));
 				}
 				level.getEntitys().add(entity);
+				System.out.println("added entity");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

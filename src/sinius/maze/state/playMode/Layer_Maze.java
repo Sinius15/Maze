@@ -23,7 +23,6 @@ public class Layer_Maze implements GrapicsLayer{
 				if(Game.level.getBlock(x, y).getType() == Block.WALL){
 					graphics.setColor(Game.level.getBlock(x, y).getColor());
 					graphics.fillRect(x * Game.ppb_x, y * Game.ppb_y, Game.ppb_x, Game.ppb_y);
-					
 				}
 				
 			}

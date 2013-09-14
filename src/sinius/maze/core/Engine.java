@@ -26,10 +26,10 @@ public class Engine{
 	
 	public Runnable tickThread() {
 		return new Runnable() { @Override public void run() {
-			while(isRunning){
-				//Game.doTick();
+			while(isRunning){ 
+				Game.doTick();
 				try {
-					Thread.sleep(10000);
+					Thread.sleep(10);   //aiming for 100tps
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -66,5 +66,6 @@ public class Engine{
 		//TODO: save level
 		
 		isRunning = false;
+		Game.quitGame();
 	}
 }

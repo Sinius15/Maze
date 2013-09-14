@@ -17,8 +17,9 @@ public class Display{
 
 	private JFrame frame;
 	private DrawPane pane;
-	private Graphics2D graphics;
+	private GeneralListener listner = new GeneralListener();
 	public GameState gameState;
+	
 	
 	public Display(int width, int height, String title, GameState state){
 		gameState = state;
@@ -34,32 +35,46 @@ public class Display{
 		frame.pack();
 		frame.setVisible(true);
 		
+		
+		pane.addMouseListener(listner);
+		pane.addMouseMotionListener(listner);
+		frame.addKeyListener(listner);
+		frame.addComponentListener(listner);
+		
 		pane.addMouseListener(getMouseListener());
-		if(gameState.getMouseListener() != null)
-			pane.addMouseListener(gameState.getMouseListener());
-		if(gameState.getKeyListener() != null)
-			pane.addKeyListener(gameState.getKeyListener());
-		graphics = (Graphics2D) frame.getContentPane().getGraphics();
+	}
+	
+	public void onTick(){
+		listner.pressedKeys.doForAll(new editAction() {
+			@Override
+			public void action(Object o) {
+				gameState.keyEvent((int) o);
+			}
+		});
+		
+		listner.pressedMouse.doForAll(new editAction() {
+			@Override
+			public void action(Object o) {
+				gameState.mouseEvent((int)o);
+				//listner.pressedMouse.removeLater((int)o);
+			}
+		});
 	}
 	
 	public class DrawPane extends JPanel{
 		private static final long serialVersionUID = -6825107813851526680L;
-		public void paintComponent(Graphics g){
+		public void paintComponent(final Graphics g){
 			if(gameState.getGObjects() != null)
 				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
 					GObject g = (GObject) o;
-					g.Draw(graphics);
+					g.Draw((Graphics2D)g);
 			}});
 			if(gameState.getGraphicsLayers() != null)
 				gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
-						GrapicsLayer g = (GrapicsLayer) o;
-						g.Draw((Graphics2D) graphics);
+						GrapicsLayer l = (GrapicsLayer) o;
+						l.Draw((Graphics2D) g);
 			}});
 		}
-	}
-	
-	public Graphics2D getGraphics(){
-		return graphics;
 	}
 	
 	public void reDraw(){
@@ -105,12 +120,6 @@ public class Display{
 	}
 	
 	public void setGameState(GameState t){
-		pane.removeMouseListener(gameState.getMouseListener());
-		pane.removeKeyListener(gameState.getKeyListener());
 		gameState = t;
-		if(gameState.getMouseListener() != null)
-			pane.addMouseListener(gameState.getMouseListener());
-		if(gameState.getKeyListener() != null)
-			pane.addKeyListener(gameState.getKeyListener());
 	}
 }

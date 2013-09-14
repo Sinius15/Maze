@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 import sinius.maze.core.SynchroniezedList;
+import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Spawn;
 
 public class Level {
@@ -21,6 +22,8 @@ public class Level {
 	private Block[][] blocks;
 	private SynchroniezedList entitys = new SynchroniezedList();
 	private Spawn spawn;
+	
+	private boolean out = false;
 	
 	
 	public Level(int width, int height, String name){
@@ -52,6 +55,43 @@ public class Level {
 		
 		return false;
 	}
+	
+	public boolean isEntityOnCoord(final int x, final int y){
+		out = false;
+		getEntitys().doForAll(new editAction() {
+			@Override
+			public void action(Object o) {
+				Entity e = (Entity) o;
+				if(e.onGrid())
+					if(e.getX()*Game.ppb_x == x && e.getY()*Game.ppb_y == y)
+						out = true;
+				if(!e.onGrid())
+					if(e.getX() == x && e.getY() == y)
+						out = true;
+			}
+		});
+		
+		return out;
+	}
+	
+	public boolean isEntityOnBlock(final int x, final int y){
+		out = false;
+		getEntitys().doForAll(new editAction() {
+			@Override
+			public void action(Object o) {
+				Entity e = (Entity) o;
+				if(e.onGrid())
+					if(x == e.getX() && y == e.getY())
+						out = true;
+				if(!e.onGrid())
+					if(e.getX()/Game.ppb_x == x && e.getY()/Game.ppb_y == y)
+						out = true;
+			}
+		});
+		
+		return out;
+	}
+	
 	
 	public int getWidth() {
 		return width;

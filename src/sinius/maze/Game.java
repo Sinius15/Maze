@@ -6,6 +6,7 @@ import sinius.maze.gameEngine.Display;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
+import sinius.maze.state.playMode.PlayState;
 import sinius.maze.timing.FPSTimer;
 import sinius.maze.timing.TimeTimer;
 
@@ -25,20 +26,23 @@ public class Game {
 	public Game(Level l, GameState state){
 		
 		level = l;
-		display = new Display(800, 800, "Sinius's Maze", state);
 		ppb_x = 800 / l.getWidth();
 		ppb_y = 800 / l.getHeight();
+		if(state == null)
+			display = new Display(800, 800, "Sinius's Maze", new PlayState());
+		else
+			display = new Display(800, 800, "Sinius's Maze", state);
 		
 		MainProgram.engine = new Engine();
 		timer.Start();
 		fps.Start();
 		
 	}
-	
-		
-	public void quitGame(){
+
+	public static void quitGame(){
 		try {
 			LevelLoader.SaveLevel(level, MainProgram.SAVEMAP + "\\saves\\" + level.getName() + ".maze" );
+			System.out.println("saving");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,5 +52,9 @@ public class Game {
 	public Player getPlayer() {
 		return player;
 	}
-		
+
+	public static void doTick() {
+		display.onTick();
+		display.gameState.tick();
+	}
 }

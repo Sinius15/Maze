@@ -8,15 +8,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
-import sinius.maze.state.GameState;
-import sinius.maze.state.playMode.PlayState;
-
-import javax.swing.JToggleButton;
-import javax.swing.SwingConstants;
+import sinius.maze.state.editMode.EditState;
 
 public class StartupScreen extends JFrame {
 
@@ -24,7 +21,6 @@ public class StartupScreen extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private int levelNr;
-	private GameState beginState = new PlayState();
 	
 
 	public StartupScreen() {
@@ -43,20 +39,11 @@ public class StartupScreen extends JFrame {
 		
 		contentPane.add(LevelPic);
 		
-		
-		final JToggleButton useEditor = new JToggleButton("Edit mode");
-		useEditor.setBounds(171, 248, 91, 26);
-		contentPane.add(useEditor);
-		
 		JButton PlayLevel = new JButton("Play This level");
 		PlayLevel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MainProgram.game = new Game(MainProgram.levels.get(levelNr), beginState);
+				MainProgram.game = new Game(MainProgram.levels.get(levelNr), null);
 				MainProgram.startupScreen.dispose();
-				if(useEditor.isSelected()){
-					Game.options = new EditorOptionScreen();
-					Game.options.setVisible(true);
-				}
 			}
 		});
 		PlayLevel.setBounds(61, 204, 312, 32);
@@ -101,6 +88,19 @@ public class StartupScreen extends JFrame {
 		JButton btnKnopje = new JButton("knopje?");
 		btnKnopje.setBounds(61, 248, 98, 26);
 		contentPane.add(btnKnopje);
+		
+		JButton btnEdit = new JButton("Edit");
+		btnEdit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				Game.options = new EditorOptionScreen();
+				Game.options.setVisible(true);
+				MainProgram.game = new Game(MainProgram.levels.get(levelNr), new EditState());
+				MainProgram.startupScreen.dispose();
+			}
+		});
+		btnEdit.setBounds(171, 248, 91, 26);
+		contentPane.add(btnEdit);
 
 		
 		nextLevel();

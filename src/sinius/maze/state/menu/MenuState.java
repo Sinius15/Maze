@@ -3,8 +3,6 @@ package sinius.maze.state.menu;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseListener;
 
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
@@ -46,17 +44,15 @@ public class MenuState implements GameState{
 	}
 
 	@Override
-	public MouseListener getMouseListener() {
-		return null;
-	}
-
-	@Override
-	public KeyListener getKeyListener() {
-		return null;
-	}
-
-	@Override
 	public void tick() {
+	}
+
+	@Override
+	public void mouseEvent(int button) {
+	}
+
+	@Override
+	public void keyEvent(int button) {
 	}
 
 }

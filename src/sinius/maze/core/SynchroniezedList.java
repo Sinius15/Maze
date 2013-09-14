@@ -28,7 +28,7 @@ public class SynchroniezedList{
 		public void action(Object o);
 	}
 	
-	public void doForAll(editAction e){
+	public synchronized void doForAll(editAction e){
 		synchronized (listLock) {
 			for(Object o : list){
 				e.action(o);
@@ -43,13 +43,30 @@ public class SynchroniezedList{
 		
 	}
 	
-	public void add(Object o){
+	public synchronized void addRemoveUpdate(){
+		synchronized (removeLock) {
+			list.removeAll(remove);
+		}
+		synchronized (addLock) {
+			list.addAll(add);
+		}
+	}
+	
+	public synchronized boolean contains(Object o){
+		synchronized (listLock) {
+			if(list.contains(o))
+				return true;
+		}
+		return false;
+	}
+	
+	public synchronized void add(Object o){
 		synchronized (listLock) {
 			list.add(o);
 		}
 	}
 	
-	public void remove(Object o){
+	public synchronized void remove(Object o){
 		synchronized (listLock) {
 			list.remove(o);
 		}
@@ -58,19 +75,19 @@ public class SynchroniezedList{
 	/**
 	 * if you want to remove a object inside the doForAll loop
 	 */
-	public void removeLater(Object o){
+	public synchronized void removeLater(Object o){
 		synchronized (removeLock) {
 			remove.add(o);
 		}
 	}
 	
-	public void addLater(Object o){
+	public synchronized void addLater(Object o){
 		synchronized (removeLock) {
 			add.add(o);
 		}
 	}
 	
-	public int size(){
+	public synchronized int size(){
 		synchronized (addLock) {
 			return list.size();
 		}

@@ -33,15 +33,6 @@ public class Layer_Entitys implements GrapicsLayer{
 			e.advancedRender(graphics);
 			
 		}});
-		
-		
-//		Player p = MainProgram.game.getPlayer();
-//		try {
-//			graphics.drawImage(p.getFont(), p.getX()-Game.ppb_x/2, p.getY()-Game.ppb_y/2, Game.ppb_x, Game.ppb_y, null);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-		
 	}
 	
 	@Override

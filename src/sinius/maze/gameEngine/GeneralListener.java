@@ -9,12 +9,23 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import sinius.maze.Game;
-import sinius.maze.MainProgram;
+import sinius.maze.core.SynchroniezedList;
 
 public class GeneralListener implements ComponentListener, KeyListener, MouseListener, MouseMotionListener{
 
+	public SynchroniezedList pressedKeys = new SynchroniezedList();
+	public SynchroniezedList pressedMouse = new SynchroniezedList();
+
+	public boolean mouseMovedAfterDrag = false;
+
+	public MouseEvent latestMouseEvent = null;
+
 	@Override
 	public void mouseDragged(MouseEvent event) {
+		if(event.getX() == Game.mouseX && event.getY() == Game.mouseY){
+			return;
+		}
+		
 		if(event.getX() <800 && event.getX()>=0 && event.getY() <800 && event.getY()>=0){
 			Game.latestMouseX = Game.mouseX;
 			Game.latestMouseY = Game.mouseY;
@@ -26,12 +37,14 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 			Game.mouseX = -1;
 			Game.mouseY = -1;
 		}
-			
-		
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent event) {
+		if(event.getX() == Game.mouseX && event.getY() == Game.mouseY){
+			return;
+		}
+		
 		if(event.getX() <800 && event.getX()>=0 && event.getY() <800 && event.getY()>=0){
 			Game.latestMouseX = Game.mouseX;
 			Game.latestMouseY = Game.mouseY;
@@ -55,29 +68,40 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		Game.mouseX = -1;
+		Game.mouseY = -1;
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
+		if(!pressedMouse.contains((Integer)e.getButton())){
+			pressedMouse.add((Integer)e.getButton());
+		}
+			
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
+		if(pressedMouse.contains((Integer)e.getButton())){
+			pressedMouse.remove((Integer)e.getButton());
+		}
+			
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		if(!pressedKeys.contains(e.getKeyCode()))
+			pressedKeys.add(e.getKeyCode());
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
+		if(pressedKeys.contains(e.getKeyCode()))
+			pressedKeys.remove((Integer)e.getKeyCode());
 	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-			MainProgram.engine.stopGame();
-		}
 	}
 
 	@Override

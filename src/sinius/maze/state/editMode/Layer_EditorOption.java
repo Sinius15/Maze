@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import sinius.maze.MainProgram;
 import sinius.maze.state.GrapicsLayer;
 
-public class EditorOptionLayer implements GrapicsLayer{
+public class Layer_EditorOption implements GrapicsLayer{
 
 	@Override
 	public String getName() {
