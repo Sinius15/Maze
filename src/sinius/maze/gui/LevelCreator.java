@@ -141,7 +141,6 @@ public class LevelCreator extends JFrame {
 					return;
 				}
 				
-				MainProgram.loadAllLevels();
 				disposer();
 			}
 		});

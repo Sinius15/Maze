@@ -56,24 +56,24 @@ public class Display{
 			@Override
 			public void action(Object o) {
 				gameState.mouseEvent((int)o);
-				//listner.pressedMouse.removeLater((int)o);
 			}
 		});
 	}
 	
 	public class DrawPane extends JPanel{
 		private static final long serialVersionUID = -6825107813851526680L;
-		public void paintComponent(final Graphics g){
-			if(gameState.getGObjects() != null)
-				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
-					GObject g = (GObject) o;
-					g.Draw((Graphics2D)g);
-			}});
+		public void paintComponent(final Graphics graphics){
 			if(gameState.getGraphicsLayers() != null)
 				gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
 						GrapicsLayer l = (GrapicsLayer) o;
-						l.Draw((Graphics2D) g);
+						l.Draw((Graphics2D) graphics);
 			}});
+			if(gameState.getGObjects() != null)
+				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
+					GObject g = (GObject) o;
+					g.Draw((Graphics2D)graphics);
+			}});
+			
 		}
 	}
 	

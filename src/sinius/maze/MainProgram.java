@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import sinius.maze.core.Engine;
 import sinius.maze.gui.StartupScreen;
-import sinius.maze.io.LevelLoader;
 import sinius.maze.io.MapStructureCreator;
+import sinius.maze.state.menu.MenuState;
 
 public class MainProgram {
 
@@ -17,7 +17,7 @@ public class MainProgram {
 	public static Engine engine;
 	
 	public static String SAVEMAP = System.getenv("APPDATA") + "\\Sinius Maze";
-	
+	public static String MAP_SAVES = SAVEMAP  + "\\saves";
 	
 	
 	public static void main(String[] args) {
@@ -37,13 +37,9 @@ public class MainProgram {
 		entityManager.initEntitys();
 		editorObjManager.initEditorObj();
 		
-		loadAllLevels();
-		reDrawStartupScreen();
 		
-	}
-	
-	public static void loadAllLevels(){
-		levels = LevelLoader.getLevelList(System.getenv("APPDATA") + "\\Sinius Maze\\saves");
+		game = new Game(null, new MenuState());
+		
 	}
 	
 	public static void reDrawStartupScreen(){

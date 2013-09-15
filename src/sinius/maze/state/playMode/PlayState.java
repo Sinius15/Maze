@@ -8,21 +8,25 @@ import sinius.maze.core.SynchroniezedList;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 import sinius.maze.state.GameState;
+import sinius.maze.timing.TimeTimer;
 
 public class PlayState implements GameState{
 	
 	private SynchroniezedList gObjects = new SynchroniezedList();
 	private SynchroniezedList gLayers = new SynchroniezedList();
+	
+	public TimeTimer timer = new TimeTimer();
 
 	public PlayState(){
 		gLayers.add(new Layer_Maze());
 		gLayers.add(new Layer_Entitys());
-		gLayers.add(new Layer_Time());
+		gLayers.add(new Layer_Time(timer));
 		gLayers.add(new Layer_Player());
 		Game.player = new Player();
 		int x = Game.level.getSpawn().getX();
 		int y = Game.level.getSpawn().getY();
 		Game.player.Create((x*Game.ppb_x)+Game.ppb_x/2, (y*Game.ppb_y)+Game.ppb_y/2, "");
+		timer.Start();
 	}
 	
 	@Override

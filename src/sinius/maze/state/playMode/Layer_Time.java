@@ -3,11 +3,17 @@ package sinius.maze.state.playMode;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-import sinius.maze.Game;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.timing.TimeTimer;
 
 public class Layer_Time implements GrapicsLayer{
 
+	TimeTimer timer;
+	
+	public Layer_Time(TimeTimer t){
+		this.timer = t;
+	}
+	
 	@Override
 	public String getName() {
 		return null;
@@ -16,7 +22,7 @@ public class Layer_Time implements GrapicsLayer{
 	@Override
 	public void Draw(Graphics2D graphics) {
 		graphics.setColor(Color.black);
-		graphics.drawString(Game.timer.getTime(), 100, 100);
+		graphics.drawString(timer.getTime(), 100, 100);
 	}
 
 	@Override

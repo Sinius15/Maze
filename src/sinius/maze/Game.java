@@ -8,13 +8,12 @@ import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
 import sinius.maze.state.playMode.PlayState;
 import sinius.maze.timing.FPSTimer;
-import sinius.maze.timing.TimeTimer;
 
 public class Game {
 	
 	public static Level level;
 	public static EditorOptionScreen options;
-	public static TimeTimer timer = new TimeTimer();
+
 	public static FPSTimer fps = new FPSTimer();
 	public static Display display;
 	
@@ -24,21 +23,24 @@ public class Game {
 	public static int ppb_x, ppb_y, mouseX = -1, mouseY = -1, latestMouseX = -1, latestMouseY = -1;
 	
 	public Game(Level l, GameState state){
-		
+		fps.Start();
 		level = l;
-		ppb_x = 800 / l.getWidth();
-		ppb_y = 800 / l.getHeight();
+		if(level != null){
+			ppb_x = 800 / l.getWidth();
+			ppb_y = 800 / l.getHeight();
+		}
+		
 		if(state == null)
 			display = new Display(800, 800, "Sinius's Maze", new PlayState());
 		else
 			display = new Display(800, 800, "Sinius's Maze", state);
 		
 		MainProgram.engine = new Engine();
-		timer.Start();
-		fps.Start();
+		
+		
 		
 	}
-
+	
 	public static void quitGame(){
 		try {
 			LevelLoader.SaveLevel(level, MainProgram.SAVEMAP + "\\saves\\" + level.getName() + ".maze" );
