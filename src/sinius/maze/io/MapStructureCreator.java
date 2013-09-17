@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -36,22 +37,29 @@ public class MapStructureCreator {
 			entitys.mkdirs();
 		
 			
-		if(!s.endsWith(".jar")){	
-			for(File f : Util.getFileList("res\\pics_Entity\\")){
-				File to = new File(MainProgram.SAVEMAP + "\\res\\" + f.getName());
-				if(!to.exists())
-					Files.copy(f.toPath(), to.toPath());
-			}
-			for(File f : Util.getFileList("res\\levels\\")){
-				File to = new File(MainProgram.SAVEMAP + "\\levels\\" + f.getName());
-				if(!to.exists())
-					Files.copy(f.toPath(), to.toPath());
-			}
-			for(File f : Util.getFileList("res\\entitys\\")){
-				File to = new File(MainProgram.SAVEMAP + "\\entitys\\" + f.getName());
-				if(!to.exists())
-					Files.copy(f.toPath(), to.toPath());
-			}
+		if(!s.endsWith(".jar")){
+			ArrayList<File> temp;
+			temp = Util.getFileList("res\\pics_Entity\\");
+			if(temp != null)
+				for(File f : temp){
+					File to = new File(MainProgram.SAVEMAP + "\\res\\" + f.getName());
+					if(!to.exists())
+						Files.copy(f.toPath(), to.toPath());
+				}
+			temp = Util.getFileList("res\\levels\\");
+			if(temp != null)
+				for(File f : temp){
+					File to = new File(MainProgram.SAVEMAP + "\\levels\\" + f.getName());
+					if(!to.exists())
+						Files.copy(f.toPath(), to.toPath());
+				}
+			temp = Util.getFileList("res\\entitys\\");
+			if(temp != null)
+				for(File f : temp){
+					File to = new File(MainProgram.SAVEMAP + "\\entitys\\" + f.getName());
+					if(!to.exists())
+						Files.copy(f.toPath(), to.toPath());
+				}
 		}else{
 			JarFile jar = new JarFile(s);
 			Enumeration<JarEntry> entrys = jar.entries();

@@ -11,6 +11,7 @@ import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Spawn;
+import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.state.GameState;
 import sinius.maze.state.playMode.Layer_Entitys;
 import sinius.maze.state.playMode.Layer_Maze;
@@ -26,6 +27,8 @@ public class EditState implements GameState{
 		gLayers.add(new Layer_Maze());
 		gLayers.add(new Layer_EditorOption());
 		gLayers.add(new Layer_Entitys());
+		Game.options = new EditorOptionScreen();
+		Game.options.setVisible(true);
 	}
 	
 	@Override
@@ -98,9 +101,6 @@ public class EditState implements GameState{
 					b.setType(Block.AIR);
 				}
 			}else{
-				
-				
-				
 				final Entity x = MainProgram.entityManager.getEntityByName(Game.options.getBrush());
 				if(x != null){
 					if(x.onGrid()){

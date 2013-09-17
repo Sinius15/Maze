@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,6 +20,8 @@ public class Display{
 	private DrawPane pane;
 	private GeneralListener listner = new GeneralListener();
 	public GameState gameState;
+	private BufferedImage img = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
+	public Camera camera = new Camera();
 	
 	
 	public Display(int width, int height, String title, GameState state){
@@ -63,21 +66,23 @@ public class Display{
 	public class DrawPane extends JPanel{
 		private static final long serialVersionUID = -6825107813851526680L;
 		public void paintComponent(final Graphics graphics){
-			if(gameState.getGraphicsLayers() != null)
-				gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
-						GrapicsLayer l = (GrapicsLayer) o;
-						l.Draw((Graphics2D) graphics);
-			}});
+			graphics.drawImage(img, 0, 0, pane.getWidth(), pane.getHeight(), camera.getP1().x, camera.getP1().y, camera.getP2().x, camera.getP2().y, null);
+			
 			if(gameState.getGObjects() != null)
 				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
 					GObject g = (GObject) o;
-					g.Draw((Graphics2D)graphics);
+					g.Draw((Graphics2D) graphics);
 			}});
-			
 		}
 	}
 	
 	public void reDraw(){
+		if(gameState.getGraphicsLayers() != null)
+			gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
+					GrapicsLayer l = (GrapicsLayer) o;
+					l.Draw((Graphics2D) img.getGraphics());
+		}});
+		
 		frame.repaint();
 	}
 	

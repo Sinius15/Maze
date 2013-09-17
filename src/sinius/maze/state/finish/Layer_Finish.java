@@ -5,18 +5,16 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 
 import sinius.maze.state.GrapicsLayer;
-import sinius.maze.timing.TimeTimer;
 
-public class FinishLayer implements GrapicsLayer{
+public class Layer_Finish implements GrapicsLayer{
 
 	static Color gray = new Color(0f, 0f, 0f, 0.85f);
 	static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
 	
-	TimeTimer time;
+	String time;
 	
-	FinishLayer(TimeTimer time){
+	Layer_Finish(String time){
 		this.time = time;
-		time.Start();
 	}
 	
 	@Override
@@ -34,8 +32,7 @@ public class FinishLayer implements GrapicsLayer{
 		g.drawString("Congratulations!", 200, 200);
 		g.drawString("You finished this maze.", 200, 230);
 		
-		g.drawString("Press the X to exit!", 200, 260);
-		g.drawString("Time: " + time.getTime(), 200, 300);
+		g.drawString("Time: " + time, 200, 300);
 		
 	}
 

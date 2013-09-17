@@ -15,7 +15,7 @@ public class PlayState implements GameState{
 	private SynchroniezedList gObjects = new SynchroniezedList();
 	private SynchroniezedList gLayers = new SynchroniezedList();
 	
-	public TimeTimer timer = new TimeTimer();
+	public static TimeTimer timer = new TimeTimer();
 
 	public PlayState(){
 		gLayers.add(new Layer_Maze());
@@ -27,6 +27,8 @@ public class PlayState implements GameState{
 		int y = Game.level.getSpawn().getY();
 		Game.player.Create((x*Game.ppb_x)+Game.ppb_x/2, (y*Game.ppb_y)+Game.ppb_y/2, "");
 		timer.Start();
+		Game.display.camera.setSize(300, 300);
+		Game.display.camera.setLocation(Game.player.getX(), Game.player.getY());
 	}
 	
 	@Override
@@ -60,6 +62,7 @@ public class PlayState implements GameState{
 	@Override
 	public void keyEvent(int button) {
 		
+		
 		if(button == KeyEvent.VK_UP)
 			Game.player.up(Game.level);
 		if(button == KeyEvent.VK_DOWN)
@@ -68,6 +71,7 @@ public class PlayState implements GameState{
 			Game.player.left(Game.level);
 		if(button == KeyEvent.VK_RIGHT)
 			Game.player.right(Game.level);
+		Game.display.camera.setLocation(Game.player.getX(), Game.player.getY());
 	}
 
 }

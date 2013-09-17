@@ -28,7 +28,9 @@ public class Util {
 		ArrayList<File> files = new ArrayList<File>();
 		File folder = new File(path);
 		folder.getParentFile().mkdirs();
-		File[] listOfFiles = folder.listFiles(); 
+		File[] listOfFiles = folder.listFiles();
+		if(listOfFiles == null)
+			return null;
 		for (int i = 0; i < listOfFiles.length; i++){
 			if (listOfFiles[i].isFile()) {
 				files.add(listOfFiles[i]);

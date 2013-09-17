@@ -3,13 +3,11 @@ package sinius.maze;
 import java.util.ArrayList;
 
 import sinius.maze.core.Engine;
-import sinius.maze.gui.StartupScreen;
 import sinius.maze.io.MapStructureCreator;
 import sinius.maze.state.menu.MenuState;
 
 public class MainProgram {
 
-	public static StartupScreen startupScreen;
 	public static ArrayList<Level> levels;
 	public static Game game;
 	public static EntityManager entityManager = new EntityManager();
@@ -40,10 +38,5 @@ public class MainProgram {
 		
 		game = new Game(null, new MenuState());
 		
-	}
-	
-	public static void reDrawStartupScreen(){
-		startupScreen = new StartupScreen();
-		startupScreen.setVisible(true);
 	}
 }

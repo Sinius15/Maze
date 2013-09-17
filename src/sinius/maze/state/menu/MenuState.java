@@ -53,7 +53,6 @@ public class MenuState implements GameState{
 
 	@Override
 	public void mouseEvent(int button) {
-		System.out.println("x: " + Game.mouseX + " y: " + Game.mouseY);
 	}
 
 	@Override
