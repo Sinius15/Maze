@@ -61,6 +61,7 @@ public class MapStructureCreator {
 						Files.copy(f.toPath(), to.toPath());
 				}
 		}else{
+			s = s.replaceAll("%20", " ");
 			JarFile jar = new JarFile(s);
 			Enumeration<JarEntry> entrys = jar.entries();
 			while(entrys.hasMoreElements()){

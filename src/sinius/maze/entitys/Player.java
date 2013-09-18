@@ -25,7 +25,7 @@ public class Player implements Entity{
 	public void Create(int x, int y, String saveData) {
 		this.x = x;
 		this.y = y;
-		speed =  3;
+		speed =  Game.ppb_x/8;
 		try {
 			upImg	= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Up.png"));
 			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Down.png"));

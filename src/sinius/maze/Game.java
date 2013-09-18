@@ -1,5 +1,7 @@
 package sinius.maze;
 
+import java.awt.Font;
+
 import sinius.maze.core.Engine;
 import sinius.maze.entitys.Player;
 import sinius.maze.gameEngine.Display;
@@ -21,6 +23,8 @@ public class Game {
 	
 	public static boolean mouseDrag = false;
 	public static int ppb_x, ppb_y, mouseX = -1, mouseY = -1, latestMouseX = -1, latestMouseY = -1;
+	
+	public static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
 	
 	public Game(Level l, GameState state){
 		fps.Start();
