@@ -9,10 +9,8 @@ public class Engine{
 	Thread tickThread;
 	Thread drawThread;
 	Thread saveThread;
-	SynchroniezedList list = new SynchroniezedList();
 	
 	public Engine(){
-		list.add("lalala");
 		tickThread = new Thread(tickThread(), "tickThread");
 		tickThread.start();
 		
@@ -27,7 +25,7 @@ public class Engine{
 	public Runnable tickThread() {
 		return new Runnable() { @Override public void run() {
 			while(isRunning){ 
-				Game.doTick();
+				Game.get().doTick();
 				try {
 					Thread.sleep(10);   //aiming for 100tps
 				} catch (InterruptedException e) {
@@ -39,10 +37,10 @@ public class Engine{
 	public Runnable drawThread() {
 		return new Runnable() { @Override public void run() {
 			while(isRunning){
-				Game.fps.registerTick();
-				Game.display.reDraw();
+				Game.get().fps.registerTick();
+				Game.get().display.reDraw();
 				try {
-					Thread.sleep(17);
+					Thread.sleep(17);	//aiming for 60fps
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}		
@@ -66,6 +64,6 @@ public class Engine{
 		//TODO: save level
 		
 		isRunning = false;
-		Game.quitGame();
+		Game.get().quitGame();
 	}
 }

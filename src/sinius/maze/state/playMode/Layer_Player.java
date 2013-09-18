@@ -15,9 +15,9 @@ public class Layer_Player implements GrapicsLayer{
 
 	@Override
 	public void Draw(Graphics2D graphics) {
-		Player p = Game.player;
+		Player p = Game.get().player;
 		try {
-			graphics.drawImage(p.getFont(), p.getX()-Game.ppb_x/2, p.getY()-Game.ppb_y/2, Game.ppb_x, Game.ppb_y, null);
+			graphics.drawImage(p.getFont(), p.getX()-Game.get().ppb_x/2, p.getY()-Game.get().ppb_y/2, Game.get().ppb_x, Game.get().ppb_y, null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -11,15 +11,17 @@ import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Spawn;
+import sinius.maze.gameEngine.GObject;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.state.GameState;
+import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.playMode.Layer_Entitys;
 import sinius.maze.state.playMode.Layer_Maze;
 
 public class EditState implements GameState{
 
-	private SynchroniezedList gObjects = new SynchroniezedList();
-	private SynchroniezedList gLayers = new SynchroniezedList();
+	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
+	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
 	
 	boolean temp;
 	
@@ -27,8 +29,8 @@ public class EditState implements GameState{
 		gLayers.add(new Layer_Maze());
 		gLayers.add(new Layer_EditorOption());
 		gLayers.add(new Layer_Entitys());
-		Game.options = new EditorOptionScreen();
-		Game.options.setVisible(true);
+		Game.get().options = new EditorOptionScreen();
+		Game.get().options.setVisible(true);
 	}
 	
 	@Override
@@ -37,12 +39,12 @@ public class EditState implements GameState{
 	}
 
 	@Override
-	public SynchroniezedList getGObjects() {
+	public SynchroniezedList<GObject> getGObjects() {
 		return gObjects;
 	}
 
 	@Override
-	public SynchroniezedList getGraphicsLayers() {
+	public SynchroniezedList<GrapicsLayer> getGraphicsLayers() {
 		return gLayers;
 	}
 
@@ -53,55 +55,55 @@ public class EditState implements GameState{
 	@Override
 	public void mouseEvent(int button) {
 		
-		int mouseX = Game.mouseX;
-		int mouseY = Game.mouseY;
+		int mouseX = Game.get().mouseX;
+		int mouseY = Game.get().mouseY;
 		
-		int blockX = mouseX/Game.ppb_x;
-		int blockY = mouseY/Game.ppb_y;
+		int blockX = mouseX/Game.get().ppb_x;
+		int blockY = mouseY/Game.get().ppb_y;
 		
 		
 		if(mouseX != -1){
-			if(Game.options.getBrush().equals("Wall Brush")){
-				Block b = Game.level.getBlock(blockX, blockY);
+			if(Game.get().options.getBrush().equals("Wall Brush")){
+				Block b = Game.get().level.getBlock(blockX, blockY);
 				if(button == MouseEvent.BUTTON1){
 					b.setType(Block.WALL);
-					b.setColor(Game.options.getColor());
-					if(Game.latestMouseX != -1 && !Game.mouseDrag){
-						for(Block block : Util.getCrossedBlocks(mouseX, mouseY, Game.latestMouseX, Game.latestMouseY, Game.level)){
+					b.setColor(Game.get().options.getColor());
+					if(Game.get().latestMouseX != -1 && !Game.get().mouseDrag){
+						for(Block block : Util.getCrossedBlocks(mouseX, mouseY, Game.get().latestMouseX, Game.get().latestMouseY, Game.get().level)){
 							block.setType(1);
-							block.setColor(Game.options.getColor());
+							block.setColor(Game.get().options.getColor());
 						}
 					}
 					
 				}
 				if(button == MouseEvent.BUTTON3){
 					b.setType(Block.AIR);
-					if(Game.latestMouseX != -1 && !Game.mouseDrag){
-						for(Block block : Util.getCrossedBlocks(mouseX, mouseY, Game.latestMouseX, Game.latestMouseY, Game.level)){
+					if(Game.get().latestMouseX != -1 && !Game.get().mouseDrag){
+						for(Block block : Util.getCrossedBlocks(mouseX, mouseY, Game.get().latestMouseX, Game.get().latestMouseY, Game.get().level)){
 								block.setType(0);
 						}
 					}
 					
 				}
 				
-			}else if(Game.options.getBrush().equals("Spawn")){
+			}else if(Game.get().options.getBrush().equals("Spawn")){
 				if(button == MouseEvent.BUTTON1){
 					Spawn s = new Spawn();
 					s.Create(blockX, blockY, "");
-					Game.level.setSpawn(s);
+					Game.get().level.setSpawn(s);
 				}
 					
-			}else if(Game.options.getBrush().equals("Wall pencil")){
-				Block b = Game.level.getBlock(blockX, blockY);
+			}else if(Game.get().options.getBrush().equals("Wall pencil")){
+				Block b = Game.get().level.getBlock(blockX, blockY);
 				if(button == MouseEvent.BUTTON1){
 					b.setType(Block.WALL);
-					b.setColor(Game.options.getColor());
+					b.setColor(Game.get().options.getColor());
 				}
 				if(button == MouseEvent.BUTTON3){
 					b.setType(Block.AIR);
 				}
 			}else{
-				final Entity x = MainProgram.entityManager.getEntityByName(Game.options.getBrush());
+				final Entity x = MainProgram.entityManager.getEntityByName(Game.get().options.getBrush());
 				if(x != null){
 					if(x.onGrid()){
 						x.Create(blockX, blockY, "");
@@ -111,21 +113,20 @@ public class EditState implements GameState{
 					
 					if(button == MouseEvent.BUTTON1){
 						if(x.onGrid())
-							if(!Game.level.isEntityOnBlock(x.getX(), x.getY()))
-								Game.level.getEntitys().add(x);
+							if(!Game.get().level.isEntityOnBlock(x.getX(), x.getY()))
+								Game.get().level.getEntitys().add(x);
 						if(!x.onGrid())
-							if(!Game.level.isEntityOnCoord(x.getX(), x.getY()))
-								Game.level.getEntitys().add(x);
+							if(!Game.get().level.isEntityOnCoord(x.getX(), x.getY()))
+								Game.get().level.getEntitys().add(x);
 						
 					}else if(button == MouseEvent.BUTTON3){
-						Game.level.getEntitys().doForAll(new editAction() {@Override public void action(Object o) {
-							Entity e = (Entity) o;
-							if(e.getX() == Game.mouseX/Game.ppb_x && e.getY() == Game.mouseY/Game.ppb_y && e.getClass().equals(x.getClass()))
-								Game.level.getEntitys().removeLater(o);
+						Game.get().level.getEntitys().doForAll(new editAction<Entity>() {@Override public void action(Entity e) {
+							if(e.getX() == Game.get().mouseX/Game.get().ppb_x && e.getY() == Game.get().mouseY/Game.get().ppb_y && e.getClass().equals(x.getClass()))
+								Game.get().level.getEntitys().removeLater(e);
 						}});
 					}
 				}else{
-					MainProgram.editorObjManager.getByName(Game.options.getBrush()).mouseClick(button);;
+					MainProgram.editorObjManager.getByName(Game.get().options.getBrush()).mouseClick(button);;
 				}
 				
 				

@@ -41,8 +41,7 @@ public class LevelLoader {
 		saveFile.addInt("entityAmount", l.getEntitys().size());
 		i = 0;
 		
-		l.getEntitys().doForAll(new editAction() { @Override public void action(Object o) {
-			Entity t = (Entity) o;
+		l.getEntitys().doForAll(new editAction<Entity>() { @Override public void action(Entity t) {
 			saveFile.addInt("entitys." + i + ".x", t.getX());
 			saveFile.addInt("entitys." + i + ".y", t.getY());
 			saveFile.addString("entitys." + i + ".class",t.getClass().getName());
@@ -64,8 +63,8 @@ public class LevelLoader {
 		
 		Level level = new Level(saveFile.getInt("levelWidht"), saveFile.getInt("levelHeight"), saveFile.getString("levelName"));
 		
-		Game.ppb_x = 800 / level.getWidth();
-		Game.ppb_y = 800 / level.getHeight();
+		Game.get().ppb_x = 800 / level.getWidth();
+		Game.get().ppb_y = 800 / level.getHeight();
 		
 		for(int w = 0; w < level.getWidth(); w++){
 			for(int h = 0; h < level.getHeight(); h++){

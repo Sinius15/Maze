@@ -25,7 +25,7 @@ public class Player implements Entity{
 	public void Create(int x, int y, String saveData) {
 		this.x = x;
 		this.y = y;
-		speed =  Game.ppb_x/8;
+		speed =  Game.get().ppb_x/8;
 		try {
 			upImg	= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Up.png"));
 			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Down.png"));
@@ -44,9 +44,9 @@ public class Player implements Entity{
 
 	public void up(Level l){
 		lastMove = "up";
-		int x1 = (x - Game.ppb_x/2)+2;
-		int y0 = ((y-speed) - Game.ppb_y/2)+2;
-		int x2 = (x + Game.ppb_x/2)-2;
+		int x1 = (x - Game.get().ppb_x/2)+2;
+		int y0 = ((y-speed) - Game.get().ppb_y/2)+2;
+		int x2 = (x + Game.get().ppb_x/2)-2;
 		boolean wall = false;
 		if(y0<=0)
 			return;
@@ -59,9 +59,9 @@ public class Player implements Entity{
 	
 	public void down(Level l){
 		lastMove = "down";
-		int x1 = (x - Game.ppb_x/2)+2;
-		int y0 = ((y+speed) + Game.ppb_y/2)-2;
-		int x2 = (x + Game.ppb_x/2)-2;
+		int x1 = (x - Game.get().ppb_x/2)+2;
+		int y0 = ((y+speed) + Game.get().ppb_y/2)-2;
+		int x2 = (x + Game.get().ppb_x/2)-2;
 		boolean wall = false;
 		if(y0 >= 800)
 			return;
@@ -74,9 +74,9 @@ public class Player implements Entity{
 	
 	public void left(Level l){
 		lastMove = "left";
-		int y1 = (y - Game.ppb_y/2)+2;
-		int y2 = (y + Game.ppb_y/2)-2;
-		int x0 = ((x -speed) - Game.ppb_x/2)+2;
+		int y1 = (y - Game.get().ppb_y/2)+2;
+		int y2 = (y + Game.get().ppb_y/2)-2;
+		int x0 = ((x -speed) - Game.get().ppb_x/2)+2;
 		boolean wall = false;
 		if(x0<=0)
 			return;
@@ -89,9 +89,9 @@ public class Player implements Entity{
 	
 	public void right(Level l){
 		lastMove = "right";
-		int y1 = (y - Game.ppb_y/2)+2;
-		int y2 = (y + Game.ppb_y/2)-2;
-		int x0 = ((x +speed) + Game.ppb_x/2)-2;
+		int y1 = (y - Game.get().ppb_y/2)+2;
+		int y2 = (y + Game.get().ppb_y/2)-2;
+		int x0 = ((x +speed) + Game.get().ppb_x/2)-2;
 		boolean wall = false;
 		if(x0 >=800)
 			return;
@@ -144,7 +144,7 @@ public class Player implements Entity{
 
 	@Override
 	public Rectangle getCollisionBox() {
-		return new Rectangle(x-Game.ppb_x/2, y-Game.ppb_y/2, Game.ppb_x, Game.ppb_y);
+		return new Rectangle(x-Game.get().ppb_x/2, y-Game.get().ppb_y/2, Game.get().ppb_x, Game.get().ppb_y);
 	}
 
 	@Override

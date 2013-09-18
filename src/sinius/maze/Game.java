@@ -13,20 +13,23 @@ import sinius.maze.timing.FPSTimer;
 
 public class Game {
 	
-	public static Level level;
-	public static EditorOptionScreen options;
+	public Level level;
+	public EditorOptionScreen options;
 
-	public static FPSTimer fps = new FPSTimer();
-	public static Display display;
+	public FPSTimer fps = new FPSTimer();
+	public Display display;
 	
-	public static Player player;
+	public Player player;
 	
-	public static boolean mouseDrag = false;
-	public static int ppb_x, ppb_y, mouseX = -1, mouseY = -1, latestMouseX = -1, latestMouseY = -1;
+	public boolean mouseDrag = false;
+	public int ppb_x, ppb_y, mouseX = -1, mouseY = -1, latestMouseX = -1, latestMouseY = -1;
 	
-	public static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
+	public Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
+	
+	private static Game theGame;
 	
 	public Game(Level l, GameState state){
+		theGame = this;
 		fps.Start();
 		level = l;
 		if(level != null){
@@ -45,7 +48,11 @@ public class Game {
 		
 	}
 	
-	public static void quitGame(){
+	public static Game get(){
+		return theGame;
+	}
+	
+	public void quitGame(){
 		try {
 			LevelLoader.SaveLevel(level, MainProgram.SAVEMAP + "\\saves\\" + level.getName() + ".maze" );
 			System.out.println("saving");
@@ -59,7 +66,7 @@ public class Game {
 		return player;
 	}
 
-	public static void doTick() {
+	public void doTick() {
 		display.onTick();
 		display.gameState.tick();
 	}

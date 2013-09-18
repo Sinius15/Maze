@@ -5,32 +5,32 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-public class SynchroniezedList{
+public class SynchroniezedList<E>{
 	
 	private String listLock = "qjeifaopjdfsal;h";
 	private String removeLock = "34ifaiofdncvkafead236";
 	private String addLock = "fefahrgjgrjrgairge4u904f9";
 	
-	private List<Object> list;
+	private List<E> list;
 	
-	private Collection<Object> remove;
-	private Collection<Object> add;
+	private Collection<E> remove;
+	private Collection<E> add;
 	
 	public SynchroniezedList(){
 		listLock = String.valueOf(new Random().nextInt());
 		removeLock = String.valueOf(new Random().nextInt());
-		list = new ArrayList<Object>();
-		remove = new ArrayList<Object>();
-		add = new ArrayList<Object>();
+		list = new ArrayList<E>();
+		remove = new ArrayList<E>();
+		add = new ArrayList<E>();
 	}
 	
-	public interface editAction{
-		public void action(Object o);
+	public interface editAction<E>{
+		public void action(E o);
 	}
 	
-	public synchronized void doForAll(editAction e){
+	public synchronized void doForAll(editAction<E> e){
 		synchronized (listLock) {
-			for(Object o : list){
+			for(E o : list){
 				e.action(o);
 			}
 		}
@@ -52,7 +52,7 @@ public class SynchroniezedList{
 		}
 	}
 	
-	public synchronized boolean contains(Object o){
+	public synchronized boolean contains(E o){
 		synchronized (listLock) {
 			if(list.contains(o))
 				return true;
@@ -60,28 +60,28 @@ public class SynchroniezedList{
 		return false;
 	}
 	
-	public synchronized void add(Object o){
+	public synchronized void add(E o){
 		synchronized (listLock) {
 			list.add(o);
 		}
 	}
 	
-	public synchronized void remove(Object o){
+	public synchronized void remove(E o){
 		synchronized (listLock) {
 			list.remove(o);
 		}
 	}
 	
 	/**
-	 * if you want to remove a object inside the doForAll loop
+	 * if you want to remove a E inside the doForAll loop
 	 */
-	public synchronized void removeLater(Object o){
+	public synchronized void removeLater(E o){
 		synchronized (removeLock) {
 			remove.add(o);
 		}
 	}
 	
-	public synchronized void addLater(Object o){
+	public synchronized void addLater(E o){
 		synchronized (removeLock) {
 			add.add(o);
 		}

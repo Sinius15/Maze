@@ -17,17 +17,14 @@ public class Layer_Entitys implements GrapicsLayer{
 
 	@Override
 	public void Draw(final Graphics2D graphics) {
-		Game.level.getEntitys().doForAll(new editAction() { @Override public void action(Object o) {
-			
-			Entity e = (Entity) o;
-			
+		Game.get().level.getEntitys().doForAll(new editAction<Entity>() { @Override public void action(Entity e) {
 			if(e.onGrid())
-				graphics.drawImage(e.getFont(), e.getX()*Game.ppb_x, e.getY()*Game.ppb_y, Game.ppb_x, Game.ppb_y, null);
+				graphics.drawImage(e.getFont(), e.getX()*Game.get().ppb_x, e.getY()*Game.get().ppb_y, Game.get().ppb_x, Game.get().ppb_y, null);
 			else{
 				if(e.getSize() != null)
 					graphics.drawImage(e.getFont(), e.getX(), e.getY(), e.getSize().width, e.getSize().height, null);
 				else
-					graphics.drawImage(e.getFont(), e.getX(), e.getY(), Game.ppb_x, Game.ppb_y, null);
+					graphics.drawImage(e.getFont(), e.getX(), e.getY(), Game.get().ppb_x, Game.get().ppb_y, null);
 			}
 			graphics.setColor(Color.black);
 			e.advancedRender(graphics);

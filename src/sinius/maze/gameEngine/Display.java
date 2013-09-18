@@ -48,16 +48,11 @@ public class Display{
 	}
 	
 	public void onTick(){
-		listner.pressedKeys.doForAll(new editAction() {
-			@Override
-			public void action(Object o) {
-				gameState.keyEvent((int) o);
-			}
-		});
+		listner.pressedKeys.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
+			gameState.keyEvent((int) o);
+		}});
 		
-		listner.pressedMouse.doForAll(new editAction() {
-			@Override
-			public void action(Object o) {
+		listner.pressedKeys.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
 				gameState.mouseEvent((int)o);
 			}
 		});
@@ -68,19 +63,17 @@ public class Display{
 		public void paintComponent(final Graphics graphics){
 			graphics.drawImage(img, 0, 0, pane.getWidth(), pane.getHeight(), camera.getP1().x, camera.getP1().y, camera.getP2().x, camera.getP2().y, null);
 			
-			if(gameState.getGObjects() != null)
-				gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
-					GObject g = (GObject) o;
+			if(gameState.getGObjects() != null)	
+				gameState.getGObjects().doForAll(new editAction<GObject>() { @Override public void action(GObject g) {
 					g.Draw((Graphics2D) graphics);
-			}});
+				}});
 		}
 	}
 	
 	public void reDraw(){
 		if(gameState.getGraphicsLayers() != null)
-			gameState.getGraphicsLayers().doForAll(new editAction() { @Override public void action(Object o) {
-					GrapicsLayer l = (GrapicsLayer) o;
-					l.Draw((Graphics2D) img.getGraphics());
+			gameState.getGraphicsLayers().doForAll(new editAction<GrapicsLayer>() { @Override public void action(GrapicsLayer l) {
+					l.Draw(img.createGraphics());
 		}});
 		
 		frame.repaint();
@@ -116,10 +109,9 @@ public class Display{
 			@Override
 			public void mouseClicked(final MouseEvent arg0) {
 				if(gameState.getGObjects() != null)
-					gameState.getGObjects().doForAll(new editAction() { @Override public void action(Object o) {
-					GObject g = (GObject) o;
-					g.MouseClick(arg0);
-				}});
+					gameState.getGObjects().doForAll(new editAction<GObject>() { @Override public void action(GObject o) {
+						o.MouseClick(arg0);
+					}});
 			}
 		};
 	}

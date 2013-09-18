@@ -11,15 +11,18 @@ import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
+import sinius.maze.gameEngine.GObject;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
+import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.editMode.EditState;
 import sinius.maze.state.playMode.PlayState;
 
 public class LevelChoserState implements GameState{
 	
-	private SynchroniezedList gObjects = new SynchroniezedList();
-	SynchroniezedList gLayers = new SynchroniezedList();
+	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
+	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
+	
 	private GButton latestButton = new GButton(0, 0, 0, 0);
 	private String selected = "";
 	
@@ -38,12 +41,12 @@ public class LevelChoserState implements GameState{
 	}
 
 	@Override
-	public SynchroniezedList getGObjects() {
+	public SynchroniezedList<GObject> getGObjects() {
 		return gObjects;
 	}
 
 	@Override
-	public SynchroniezedList getGraphicsLayers() {
+	public SynchroniezedList<GrapicsLayer> getGraphicsLayers() {
 		return gLayers;
 	}
 
@@ -60,7 +63,7 @@ public class LevelChoserState implements GameState{
 	}
 	
 	private synchronized void refresh(){
-		gObjects = new SynchroniezedList();
+		gObjects = new SynchroniezedList<GObject>();
 		
 		
 		GButton play = new GButton(500, 680, 100, 50);
@@ -70,8 +73,8 @@ public class LevelChoserState implements GameState{
 		play.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
 			if(selected == "")
 				return;
-			Game.level = getLevel();
-			Game.display.setGameState(new PlayState());
+			Game.get().level = getLevel();
+			Game.get().display.setGameState(new PlayState());
 		}});
 		gObjects.add(play);
 		
@@ -82,8 +85,8 @@ public class LevelChoserState implements GameState{
 		edit.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
 				if(selected == "")
 					return;
-			Game.level = getLevel();
-			Game.display.setGameState(new EditState());
+			Game.get().level = getLevel();
+			Game.get().display.setGameState(new EditState());
 		}});
 		gObjects.add(edit);
 		

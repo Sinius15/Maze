@@ -24,7 +24,7 @@ public class StatsOverlay implements GrapicsLayer{
 		g.setColor(Color.white);
 		g.setFont(font);
 		
-		g.drawString("FPS: " + Game.fps.getFPS(), 700, 22);
+		g.drawString("FPS: " + Game.get().fps.getFPS(), 700, 22);
 		
 		g.drawString("Player:" , 10, 22);
 		g.drawString("x: " + MainProgram.game.getPlayer().getX() , 15, 42);

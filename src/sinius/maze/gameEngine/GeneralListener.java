@@ -13,8 +13,8 @@ import sinius.maze.core.SynchroniezedList;
 
 public class GeneralListener implements ComponentListener, KeyListener, MouseListener, MouseMotionListener{
 
-	public SynchroniezedList pressedKeys = new SynchroniezedList();
-	public SynchroniezedList pressedMouse = new SynchroniezedList();
+	public SynchroniezedList<Integer> pressedKeys = new SynchroniezedList<Integer>();
+	public SynchroniezedList<Integer> pressedMouse = new SynchroniezedList<Integer>();
 
 	public boolean mouseMovedAfterDrag = false;
 
@@ -22,39 +22,39 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void mouseDragged(MouseEvent event) {
-		if(event.getX() == Game.mouseX && event.getY() == Game.mouseY){
+		if(event.getX() == Game.get().mouseX && event.getY() == Game.get().mouseY){
 			return;
 		}
 		
 		if(event.getX() <800 && event.getX()>=0 && event.getY() <800 && event.getY()>=0){
-			Game.latestMouseX = Game.mouseX;
-			Game.latestMouseY = Game.mouseY;
-			Game.mouseX = event.getX();
-			Game.mouseY = event.getY();
-			Game.mouseDrag = false;
+			Game.get().latestMouseX = Game.get().mouseX;
+			Game.get().latestMouseY = Game.get().mouseY;
+			Game.get().mouseX = event.getX();
+			Game.get().mouseY = event.getY();
+			Game.get().mouseDrag = false;
 		}else{
-			Game.latestMouseX = -1;
-			Game.mouseX = -1;
-			Game.mouseY = -1;
+			Game.get().latestMouseX = -1;
+			Game.get().mouseX = -1;
+			Game.get().mouseY = -1;
 		}
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent event) {
-		if(event.getX() == Game.mouseX && event.getY() == Game.mouseY){
+		if(event.getX() == Game.get().mouseX && event.getY() == Game.get().mouseY){
 			return;
 		}
 		
 		if(event.getX() <800 && event.getX()>=0 && event.getY() <800 && event.getY()>=0){
-			Game.latestMouseX = Game.mouseX;
-			Game.latestMouseY = Game.mouseY;
-			Game.mouseX = event.getX();
-			Game.mouseY = event.getY();
-			Game.mouseDrag = true;
+			Game.get().latestMouseX = Game.get().mouseX;
+			Game.get().latestMouseY = Game.get().mouseY;
+			Game.get().mouseX = event.getX();
+			Game.get().mouseY = event.getY();
+			Game.get().mouseDrag = true;
 		}else{
-			Game.latestMouseX = -1;
-			Game.mouseX = -1;
-			Game.mouseY = -1;
+			Game.get().latestMouseX = -1;
+			Game.get().mouseX = -1;
+			Game.get().mouseY = -1;
 		}
 	}
 
@@ -68,8 +68,8 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		Game.mouseX = -1;
-		Game.mouseY = -1;
+		Game.get().mouseX = -1;
+		Game.get().mouseY = -1;
 	}
 
 	@Override

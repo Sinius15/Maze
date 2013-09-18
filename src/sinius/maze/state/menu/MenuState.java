@@ -7,13 +7,15 @@ import java.awt.event.ActionListener;
 import sinius.maze.Game;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
+import sinius.maze.gameEngine.GObject;
 import sinius.maze.state.GameState;
+import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.levelChoser.LevelChoserState;
 
 public class MenuState implements GameState{
 
-	private SynchroniezedList gObjects = new SynchroniezedList();
-	private SynchroniezedList gLayers = new SynchroniezedList();
+	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
+	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
 	
 	private GButton b_start;
 	
@@ -26,7 +28,7 @@ public class MenuState implements GameState{
 		b_start.setText("Start the Game!");
 		b_start.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
 				
-				Game.display.setGameState(new LevelChoserState());
+				Game.get().display.setGameState(new LevelChoserState());
 				
 		}});
 		gObjects.add(b_start);
@@ -38,12 +40,12 @@ public class MenuState implements GameState{
 	}
 
 	@Override
-	public SynchroniezedList getGObjects() {
+	public SynchroniezedList<GObject> getGObjects() {
 		return gObjects;
 	}
 
 	@Override
-	public SynchroniezedList getGraphicsLayers() {
+	public SynchroniezedList<GrapicsLayer> getGraphicsLayers() {
 		return gLayers;
 	}
 
