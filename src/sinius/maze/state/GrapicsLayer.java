@@ -25,4 +25,6 @@ public interface GrapicsLayer {
 	 */
 	int priority();
 	
+	boolean drawAfter();
+	
 }

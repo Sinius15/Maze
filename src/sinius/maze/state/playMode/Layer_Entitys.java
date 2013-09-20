@@ -37,4 +37,9 @@ public class Layer_Entitys implements GrapicsLayer{
 		return 2;
 	}
 
+	@Override
+	public boolean drawAfter() {
+		return false;
+	}
+
 }

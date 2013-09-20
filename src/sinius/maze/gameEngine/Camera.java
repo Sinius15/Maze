@@ -3,6 +3,8 @@ package sinius.maze.gameEngine;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import sinius.maze.Game;
+
 
 public class Camera {
 
@@ -52,5 +54,23 @@ public class Camera {
 	
 	public int getY(){
 		return rec.y + rec.height/2;
+	}
+	
+	public int getW(){
+		return rec.width;
+	}
+	
+	public int getH(){
+		return rec.height;
+	}
+	
+	public Point getPointOnScreen(Point in){
+		Point out = new Point();
+		int zoomX = 800/Game.get().display.camera.getW();
+		int zoomY = 800/Game.get().display.camera.getH();
+		
+		out.setLocation(((in.x - getX())*zoomX) + 400, ((in.y - getY()) * zoomY)+400);
+		
+		return out;
 	}
 }

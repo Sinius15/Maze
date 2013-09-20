@@ -62,7 +62,10 @@ public class Display{
 		private static final long serialVersionUID = -6825107813851526680L;
 		public void paintComponent(final Graphics graphics){
 			graphics.drawImage(img, 0, 0, pane.getWidth(), pane.getHeight(), camera.getP1().x, camera.getP1().y, camera.getP2().x, camera.getP2().y, null);
-			
+			gameState.getGraphicsLayers().doForAll(new editAction<GrapicsLayer>() { @Override public void action(GrapicsLayer l) {
+				if(l.drawAfter())
+					l.Draw((Graphics2D) graphics);
+			}});
 			if(gameState.getGObjects() != null)	
 				gameState.getGObjects().doForAll(new editAction<GObject>() { @Override public void action(GObject g) {
 					g.Draw((Graphics2D) graphics);
@@ -73,6 +76,7 @@ public class Display{
 	public void reDraw(){
 		if(gameState.getGraphicsLayers() != null)
 			gameState.getGraphicsLayers().doForAll(new editAction<GrapicsLayer>() { @Override public void action(GrapicsLayer l) {
+				if(!l.drawAfter())
 					l.Draw(img.createGraphics());
 		}});
 		

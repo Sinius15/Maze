@@ -23,6 +23,11 @@ public class BackGround implements GrapicsLayer{
 		return 0;
 	}
 
+	@Override
+	public boolean drawAfter() {
+		return false;
+	}
+
 	
 	
 }

@@ -41,5 +41,10 @@ public class Layer_Finish implements GrapicsLayer{
 		return 9;
 	}
 
+	@Override
+	public boolean drawAfter() {
+		return false;
+	}
+
 
 }

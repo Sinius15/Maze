@@ -1,6 +1,7 @@
 package sinius.maze.state.playMode;
 
 import java.awt.Graphics2D;
+import java.awt.Point;
 
 import sinius.maze.Game;
 import sinius.maze.entitys.Player;
@@ -16,8 +17,10 @@ public class Layer_Player implements GrapicsLayer{
 	@Override
 	public void Draw(Graphics2D graphics) {
 		Player p = Game.get().player;
+		Point point = Game.get().display.camera.getPointOnScreen(new Point(p.getX(), p.getY()));
 		try {
-			graphics.drawImage(p.getFont(), p.getX()-Game.get().ppb_x/2, p.getY()-Game.get().ppb_y/2, Game.get().ppb_x, Game.get().ppb_y, null);
+			
+			graphics.drawImage(p.getFont(), point.x-40, point.y-40, 80, 80, null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -26,6 +29,11 @@ public class Layer_Player implements GrapicsLayer{
 	@Override
 	public int priority() {
 		return 3;
+	}
+
+	@Override
+	public boolean drawAfter() {
+		return true;
 	}
 
 }

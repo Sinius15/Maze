@@ -22,4 +22,9 @@ public class Layer_EditorOption implements GrapicsLayer{
 		return 4;
 	}
 
+	@Override
+	public boolean drawAfter() {
+		return false;
+	}
+
 }

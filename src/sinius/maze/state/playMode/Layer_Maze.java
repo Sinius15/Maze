@@ -38,4 +38,9 @@ public class Layer_Maze implements GrapicsLayer{
 		return 0;
 	}
 
+	@Override
+	public boolean drawAfter() {
+		return false;
+	}
+
 }

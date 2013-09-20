@@ -36,4 +36,9 @@ public class StatsOverlay implements GrapicsLayer{
 		return 10;
 	}
 
+	@Override
+	public boolean drawAfter() {
+		return true;
+	}
+
 }

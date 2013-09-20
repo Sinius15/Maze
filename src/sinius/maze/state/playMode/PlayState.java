@@ -25,7 +25,6 @@ public class PlayState implements GameState{
 	public PlayState(){
 		gLayers.add(new Layer_Maze());
 		gLayers.add(new Layer_Entitys());
-		
 		gLayers.add(new Layer_Player());
 		Game.get().player = new Player();
 		int x = Game.get().level.getSpawn().getX();
