@@ -26,7 +26,6 @@ public class Display{
 	
 	public Display(int width, int height, String title, GameState state){
 		gameState = state;
-		System.out.println("the state is: " + gameState.getName());
 		frame = new JFrame();
 		pane = new DrawPane();
 		frame.setResizable(false);
@@ -49,11 +48,11 @@ public class Display{
 	
 	public void onTick(){
 		listner.pressedKeys.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
-			gameState.keyEvent((int) o);
+			gameState.keyEvent(o);
 		}});
 		
-		listner.pressedKeys.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
-				gameState.mouseEvent((int)o);
+		listner.pressedMouse.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
+				gameState.mouseEvent(o);
 			}
 		});
 	}

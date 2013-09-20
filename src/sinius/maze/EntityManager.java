@@ -58,7 +58,6 @@ public class EntityManager {
 				BufferedReader br = new BufferedReader(new FileReader(entityTxt));  
 				String line = null;  
 				while ((line = br.readLine()) != null){
-					System.out.println("i read from the entitys.txt: " + line);
 					entitys.add(Class.forName(line));
 				} 
 			}catch(Exception e){
@@ -135,17 +134,6 @@ public class EntityManager {
 				if(f.getName().endsWith(suffix))
 					files.add(f);
 		}
-		
-//		File[] listOfFiles = folder.listFiles(); 
-//		for(int i = 0; i < listOfFiles.length; i++){
-//			if (listOfFiles[i].isFile()) {
-//				String txt = listOfFiles[i].getName();
-//				System.out.println(txt);
-//				if(txt.toLowerCase().endsWith(suffix)){
-//					files.add(listOfFiles[i]);
-//				}
-//			}
-//		}
 		return files;
 	}
 }

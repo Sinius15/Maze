@@ -54,7 +54,6 @@ public class EditState implements GameState{
 
 	@Override
 	public void mouseEvent(int button) {
-		
 		int mouseX = Game.get().mouseX;
 		int mouseY = Game.get().mouseY;
 		
@@ -64,26 +63,16 @@ public class EditState implements GameState{
 		
 		if(mouseX != -1){
 			if(Game.get().options.getBrush().equals("Wall Brush")){
-				Block b = Game.get().level.getBlock(blockX, blockY);
 				if(button == MouseEvent.BUTTON1){
-					b.setType(Block.WALL);
-					b.setColor(Game.get().options.getColor());
-					if(Game.get().latestMouseX != -1 && !Game.get().mouseDrag){
-						for(Block block : Util.getCrossedBlocks(mouseX, mouseY, Game.get().latestMouseX, Game.get().latestMouseY, Game.get().level)){
-							block.setType(1);
-							block.setColor(Game.get().options.getColor());
-						}
+					for(Block b : Util.getBlocksAround(blockX, blockY, Game.get().level)){
+						b.setType(Block.WALL);
+						b.setColor(Game.get().options.getColor());
 					}
 					
 				}
 				if(button == MouseEvent.BUTTON3){
-					b.setType(Block.AIR);
-					if(Game.get().latestMouseX != -1 && !Game.get().mouseDrag){
-						for(Block block : Util.getCrossedBlocks(mouseX, mouseY, Game.get().latestMouseX, Game.get().latestMouseY, Game.get().level)){
-								block.setType(0);
-						}
-					}
-					
+					for(Block b : Util.getBlocksAround(blockX, blockY, Game.get().level))
+						b.setType(Block.AIR);
 				}
 				
 			}else if(Game.get().options.getBrush().equals("Spawn")){

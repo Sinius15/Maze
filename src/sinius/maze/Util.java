@@ -24,6 +24,24 @@ public class Util {
 		return out;
 	}
 	
+	public static ArrayList<Block> getBlocksAround(int x, int y, Level level){
+		ArrayList<Block> out = new ArrayList<Block>();
+		try{
+			out.add(level.getBlocks()[x+1] [y+1]);
+			out.add(level.getBlocks()[x+1] [y-1]);
+			out.add(level.getBlocks()[x-1] [y+1]);
+			out.add(level.getBlocks()[x-1] [y-1]);
+			out.add(level.getBlocks()[x+1] [y]);
+			out.add(level.getBlocks()[x]   [y+1]);
+			out.add(level.getBlocks()[x-1] [y]);
+			out.add(level.getBlocks()[x]   [y-1]);
+		}catch(ArrayIndexOutOfBoundsException e){
+		}
+		
+		
+		return out;
+	}
+	
 	public static ArrayList<File> getFileList(String path){
 		ArrayList<File> files = new ArrayList<File>();
 		File folder = new File(path);

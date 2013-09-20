@@ -55,7 +55,6 @@ public class Game {
 	public void quitGame(){
 		try {
 			LevelLoader.SaveLevel(level, MainProgram.SAVEMAP + "\\saves\\" + level.getName() + ".maze" );
-			System.out.println("saving");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

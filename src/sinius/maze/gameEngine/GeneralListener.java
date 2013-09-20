@@ -90,13 +90,13 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(!pressedKeys.contains(e.getKeyCode()))
-			pressedKeys.add(e.getKeyCode());
+		if(!pressedKeys.contains((Integer)e.getKeyCode()))
+			pressedKeys.add((Integer)e.getKeyCode());
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		if(pressedKeys.contains(e.getKeyCode()))
+		if(pressedKeys.contains((Integer)e.getKeyCode()))
 			pressedKeys.remove((Integer)e.getKeyCode());
 	}
 

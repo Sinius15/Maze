@@ -49,6 +49,10 @@ public class Level {
 		return null;
 	}
 	
+	public Block[][] getBlocks(){
+		return blocks;
+	}
+	
 	public boolean isPixelWall(int x, int y){
 		if(getBlock(x/(800/getWidth()), y/(800/getHeight())).getType() == Block.WALL)
 			return true;

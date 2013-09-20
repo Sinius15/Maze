@@ -58,7 +58,6 @@ public class EditorObjectManager {
 				BufferedReader br = new BufferedReader(new FileReader(entityTxt));  
 				String line = null;  
 				while ((line = br.readLine()) != null){
-					System.out.println("i read from the editorObj.txt: " + line);
 					editorObj.add((EditorObject)Class.forName(line).newInstance());
 				} 
 			}catch(Exception e){

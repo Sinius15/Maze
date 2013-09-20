@@ -113,6 +113,20 @@ public class LevelChoserState implements GameState{
 		}});
 		gObjects.add(create);
 		
+		GButton del = new GButton(50, 700, 130, 55);
+		del.setButtonColor(Color.orange);
+		del.setTextColor(Color.black);
+		del.setText("delete level");
+		del.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			if(selected != null){
+				File f =new File(MainProgram.MAP_SAVES + "\\" + selected + ".maze");
+				f.delete();
+				refresh();
+			}
+				
+		}});
+		gObjects.add(del);
+		
 		
 		selected = "";
 		int i = 0;

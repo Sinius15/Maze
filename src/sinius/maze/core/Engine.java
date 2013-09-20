@@ -19,7 +19,6 @@ public class Engine{
 		
 		saveThread = new Thread(saveThread(), "saveThread");
 		saveThread.start();
-		System.out.println("Starting the gameloop");
 	}
 	
 	public Runnable tickThread() {

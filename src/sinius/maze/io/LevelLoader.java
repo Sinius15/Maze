@@ -82,7 +82,6 @@ public class LevelLoader {
 					entity.Create(saveFile.getInt("entitys." + i + ".x"), saveFile.getInt("entitys." + i + ".y"), saveFile.getString("entitys." + i + ".data"));
 				}
 				level.getEntitys().add(entity);
-				System.out.println("added entity");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
