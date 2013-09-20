@@ -15,10 +15,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import sinius.maze.Game;
 import sinius.maze.Level;
 import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.io.LevelLoader;
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class LevelCreator extends JFrame {
 
@@ -30,6 +34,12 @@ public class LevelCreator extends JFrame {
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public LevelCreator() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent e) {
+				Game.get().display.getFrame().setVisible(true);
+			}
+		});
 		setResizable(false);
 		setTitle("Create Maze");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

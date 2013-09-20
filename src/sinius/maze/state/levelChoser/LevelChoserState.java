@@ -12,6 +12,7 @@ import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
+import sinius.maze.gui.LevelCreator;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
@@ -22,6 +23,8 @@ public class LevelChoserState implements GameState{
 	
 	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
 	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
+	
+	private LevelCreator levelCreator = new LevelCreator();
 	
 	private GButton latestButton = new GButton(0, 0, 0, 0);
 	private String selected = "";
@@ -62,11 +65,11 @@ public class LevelChoserState implements GameState{
 		return LevelLoader.LoadLevel(new File(MainProgram.MAP_SAVES + "\\" + selected + ".maze"));
 	}
 	
-	private synchronized void refresh(){
+	private final synchronized void refresh(){
 		gObjects = new SynchroniezedList<GObject>();
 		
 		
-		GButton play = new GButton(500, 680, 100, 50);
+		GButton play = new GButton(626,700,130,55);
 		play.setButtonColor(Color.orange);
 		play.setTextColor(Color.black);
 		play.setText("Play this level");
@@ -78,7 +81,7 @@ public class LevelChoserState implements GameState{
 		}});
 		gObjects.add(play);
 		
-		GButton edit = new GButton(300, 680, 100, 50);
+		GButton edit = new GButton(484,700,130,55);
 		edit.setButtonColor(Color.orange);
 		edit.setTextColor(Color.black);
 		edit.setText("Edit");
@@ -90,11 +93,32 @@ public class LevelChoserState implements GameState{
 		}});
 		gObjects.add(edit);
 		
+		GButton refresh = new GButton(342, 700, 130, 55);
+		refresh.setButtonColor(Color.orange);
+		refresh.setTextColor(Color.black);
+		refresh.setText("refresh list");
+		refresh.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			refresh();
+		}});
+		gObjects.add(refresh);
+		
+		GButton create = new GButton(200,700,130,55);
+		create.setButtonColor(Color.orange);
+		create.setTextColor(Color.black);
+		create.setText("new level");
+		create.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			levelCreator = new LevelCreator();
+			levelCreator.setVisible(true);
+			Game.get().display.getFrame().setVisible(false);
+		}});
+		gObjects.add(create);
+		
+		
 		selected = "";
 		int i = 0;
 		for(File f : Util.getFileList(MainProgram.MAP_SAVES)){
 			i = i + 50;
-			final GButton b = new GButton(100, i, 600, 40);
+			final GButton b = new GButton(50, i, 700, 40);
 			b.setText(f.getName().replace(".maze", ""));
 			b.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent arg0) {
 				if(b.getText().equals(selected))
