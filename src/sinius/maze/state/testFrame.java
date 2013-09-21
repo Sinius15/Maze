@@ -1,14 +1,13 @@
 package sinius.maze.state;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import java.awt.Color;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("serial")
 public class testFrame extends JFrame {
@@ -54,7 +53,7 @@ public class testFrame extends JFrame {
 		contentPane.add(label);
 		
 		JButton button = new JButton("Create");
-		button.setBounds(50, 700, 130, 55);
+		button.setBounds(58, 700, 130, 55);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Create");

@@ -1,5 +1,6 @@
 package sinius.maze.state.playMode;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
@@ -19,7 +20,8 @@ public class Layer_Player implements GrapicsLayer{
 		Player p = Game.get().player;
 		Point point = Game.get().display.camera.getPointOnScreen(new Point(p.getX(), p.getY()));
 		try {
-			
+			graphics.setColor(Color.ORANGE);
+			graphics.drawRect(point.x, point.y, 2, 2);
 			graphics.drawImage(p.getFont(), point.x-40, point.y-40, 80, 80, null);
 		} catch (Exception e) {
 			e.printStackTrace();

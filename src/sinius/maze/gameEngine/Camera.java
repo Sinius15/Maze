@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 
 import sinius.maze.Game;
+import sinius.maze.Level;
 
 
 public class Camera {
@@ -66,10 +67,17 @@ public class Camera {
 	
 	public Point getPointOnScreen(Point in){
 		Point out = new Point();
-		int zoomX = 800/Game.get().display.camera.getW();
-		int zoomY = 800/Game.get().display.camera.getH();
+		float zoomX = 800/rec.width;
+		float zoomY = 800/rec.height;
 		
-		out.setLocation(((in.x - getX())*zoomX) + 400, ((in.y - getY()) * zoomY)+400);
+		if(Game.get().level.getWidth() == Level.SIZE_SMALL){
+			zoomX += 0.5f;
+			zoomY += 0.5f; 
+		}
+			
+		out.setLocation((in.x-rec.getX())*zoomX, (in.y-rec.getY())*zoomY);
+		
+		System.out.println("x1: " + in.x + " xn: " + out.x + " zoomX: " + zoomX + " cameraX: " + getX());
 		
 		return out;
 	}

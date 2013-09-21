@@ -26,6 +26,8 @@ public class PlayState implements GameState{
 		gLayers.add(new Layer_Maze());
 		gLayers.add(new Layer_Entitys());
 		gLayers.add(new Layer_Player());
+		gLayers.add(new OldPlayer());
+		
 		Game.get().player = new Player();
 		int x = Game.get().level.getSpawn().getX();
 		int y = Game.get().level.getSpawn().getY();
@@ -41,6 +43,8 @@ public class PlayState implements GameState{
 		gObjects.add(timeText);
 		
 		Game.get().display.camera.setSize(10*Game.get().ppb_x, 10*Game.get().ppb_y);
+//		Game.get().display.camera.setLocation(500, 400);
+//		Game.get().display.camera.setSize(700, 700);
 		Game.get().display.camera.setLocation(Game.get().player.getX(), Game.get().player.getY());
 	}
 	

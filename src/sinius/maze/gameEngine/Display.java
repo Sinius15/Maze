@@ -27,17 +27,17 @@ public class Display{
 	public Display(int width, int height, String title, GameState state){
 		gameState = state;
 		frame = new JFrame();
+		
 		pane = new DrawPane();
 		frame.setResizable(false);
 		pane.setPreferredSize(new Dimension(width, height));
 		frame.setContentPane(pane);
 		frame.setTitle(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
 		frame.pack();
+
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
-		
-		
 		pane.addMouseListener(listner);
 		pane.addMouseMotionListener(listner);
 		frame.addKeyListener(listner);
@@ -68,7 +68,7 @@ public class Display{
 			if(gameState.getGObjects() != null)	
 				gameState.getGObjects().doForAll(new editAction<GObject>() { @Override public void action(GObject g) {
 					g.Draw((Graphics2D) graphics);
-				}});
+			}});
 		}
 	}
 	
