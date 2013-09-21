@@ -12,7 +12,7 @@ import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
-import sinius.maze.state.pause.PauseState;
+import sinius.maze.state.pause.PausePlayState;
 import sinius.maze.timing.TimeTimer;
 
 public class PlayState implements GameState{
@@ -87,7 +87,7 @@ public class PlayState implements GameState{
 		if(button == KeyEvent.VK_RIGHT)
 			Game.get().player.right(Game.get().level);
 		if(button == KeyEvent.VK_ESCAPE)
-			Game.get().display.setGameState(new PauseState(this));
+			Game.get().display.setGameState(new PausePlayState(this));
 	}
 	
 	public TimeTimer getTimer(){

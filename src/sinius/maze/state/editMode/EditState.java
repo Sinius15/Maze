@@ -15,6 +15,7 @@ import sinius.maze.gameEngine.GObject;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.state.pause.PauseEditState;
 import sinius.maze.state.playMode.Layer_Entitys;
 import sinius.maze.state.playMode.Layer_Maze;
 
@@ -121,12 +122,14 @@ public class EditState implements GameState{
 				
 			}
 		}
+		
+		
 	}
 
 	@Override
 	public void keyEvent(int key) {
 		if(key == KeyEvent.VK_ESCAPE){
-			MainProgram.engine.stopGame();
+			Game.get().display.setGameState(new PauseEditState(this));
 		}
 	}
 

@@ -56,13 +56,12 @@ public class Game {
 		return theGame;
 	}
 	
-	public void quitGame(){
+	public void SaveGame(){
 		try {
 			LevelLoader.SaveLevel(level, MainProgram.SAVEMAP + "\\saves\\" + level.getName() + ".maze" );
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.exit(0);
 	}
 
 	public Player getPlayer() {

@@ -60,9 +60,6 @@ public class Engine{
 
 	
 	public void stopGame(){
-		//TODO: save level
-		
 		isRunning = false;
-		Game.get().quitGame();
 	}
 }
