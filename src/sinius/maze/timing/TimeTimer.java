@@ -5,11 +5,12 @@ import java.util.TimerTask;
 
 public class TimeTimer{
 
-	private Timer timer = new Timer();
+	private Timer timer;
 	private int min = 0;
 	private int sec = 0;
 	
 	public void Start(){
+		timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
 			
 			@Override

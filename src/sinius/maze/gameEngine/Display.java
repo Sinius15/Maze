@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.state.StatsOverlay;
 
 public class Display{
 
@@ -22,6 +23,10 @@ public class Display{
 	public GameState gameState;
 	private BufferedImage img = new BufferedImage(800, 800, BufferedImage.TYPE_INT_ARGB);
 	public Camera camera = new Camera();
+	
+	private int i;
+	
+	private StatsOverlay stats = new StatsOverlay();
 	
 	
 	public Display(int width, int height, String title, GameState state){
@@ -49,12 +54,12 @@ public class Display{
 	public void onTick(){
 		listner.pressedKeys.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
 			gameState.keyEvent(o);
+			
 		}});
 		
 		listner.pressedMouse.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
 				gameState.mouseEvent(o);
-			}
-		});
+		}});
 	}
 	
 	public class DrawPane extends JPanel{
@@ -69,15 +74,21 @@ public class Display{
 				gameState.getGObjects().doForAll(new editAction<GObject>() { @Override public void action(GObject g) {
 					g.Draw((Graphics2D) graphics);
 			}});
+			stats.Draw((Graphics2D) graphics);
 		}
 	}
 	
 	public void reDraw(){
 		if(gameState.getGraphicsLayers() != null)
-			gameState.getGraphicsLayers().doForAll(new editAction<GrapicsLayer>() { @Override public void action(GrapicsLayer l) {
-				if(!l.drawAfter())
-					l.Draw(img.createGraphics());
-		}});
+			for(i = 0 ; i<11 ; i++){
+				gameState.getGraphicsLayers().doForAll(new editAction<GrapicsLayer>() { @Override public void action(GrapicsLayer l) {
+					if(!l.drawAfter())
+						if(l.priority() == i)
+							l.Draw(img.createGraphics());
+				}});
+			}
+				
+			
 		
 		frame.repaint();
 	}

@@ -12,6 +12,7 @@ import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.state.pause.PauseState;
 import sinius.maze.timing.TimeTimer;
 
 public class PlayState implements GameState{
@@ -43,8 +44,6 @@ public class PlayState implements GameState{
 		gObjects.add(timeText);
 		
 		Game.get().display.camera.setSize(10*Game.get().ppb_x, 10*Game.get().ppb_y);
-//		Game.get().display.camera.setLocation(500, 400);
-//		Game.get().display.camera.setSize(700, 700);
 		Game.get().display.camera.setLocation(Game.get().player.getX(), Game.get().player.getY());
 	}
 	
@@ -70,6 +69,7 @@ public class PlayState implements GameState{
 				e.onPlayerTouch(Game.get().player);
 		}});
 		timeText.setText(timer.getTime());
+		Game.get().display.camera.setLocation(Game.get().player.getX(), Game.get().player.getY());
 	}
 
 	@Override
@@ -78,8 +78,6 @@ public class PlayState implements GameState{
 
 	@Override
 	public void keyEvent(int button) {
-		
-		
 		if(button == KeyEvent.VK_UP)
 			Game.get().player.up(Game.get().level);
 		if(button == KeyEvent.VK_DOWN)
@@ -88,7 +86,8 @@ public class PlayState implements GameState{
 			Game.get().player.left(Game.get().level);
 		if(button == KeyEvent.VK_RIGHT)
 			Game.get().player.right(Game.get().level);
-		Game.get().display.camera.setLocation(Game.get().player.getX(), Game.get().player.getY());
+		if(button == KeyEvent.VK_ESCAPE)
+			Game.get().display.setGameState(new PauseState(this));
 	}
 	
 	public TimeTimer getTimer(){

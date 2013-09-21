@@ -10,6 +10,7 @@ import java.awt.event.MouseMotionListener;
 
 import sinius.maze.Game;
 import sinius.maze.core.SynchroniezedList;
+import sinius.maze.state.StatsOverlay;
 
 public class GeneralListener implements ComponentListener, KeyListener, MouseListener, MouseMotionListener{
 
@@ -92,12 +93,16 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 	public void keyPressed(KeyEvent e) {
 		if(!pressedKeys.contains((Integer)e.getKeyCode()))
 			pressedKeys.add((Integer)e.getKeyCode());
+		if(e.getKeyCode() == KeyEvent.VK_F3)
+			StatsOverlay.show(true);
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		if(pressedKeys.contains((Integer)e.getKeyCode()))
 			pressedKeys.remove((Integer)e.getKeyCode());
+		if(e.getKeyCode() == KeyEvent.VK_F3)
+			StatsOverlay.show(false);
 	}
 
 	@Override

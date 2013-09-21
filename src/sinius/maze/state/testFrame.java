@@ -43,7 +43,7 @@ public class testFrame extends JFrame {
 		
 		JLabel lblLevel = new JLabel("Level");
 		lblLevel.setBackground(Color.BLUE);
-		lblLevel.setBounds(50, 50, 700, 40);
+		lblLevel.setBounds(70, 622, 700, 40);
 		contentPane.add(lblLevel);
 		
 		JLabel label = new JLabel("Level");
@@ -71,5 +71,9 @@ public class testFrame extends JFrame {
 		JButton button_4 = new JButton("Create");
 		button_4.setBounds(626, 700, 130, 55);
 		contentPane.add(button_4);
+		
+		JButton btnResume = new JButton("resume");
+		btnResume.setBounds(50, 50, 692, 40);
+		contentPane.add(btnResume);
 	}
 }

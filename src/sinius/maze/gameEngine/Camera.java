@@ -66,19 +66,12 @@ public class Camera {
 	}
 	
 	public Point getPointOnScreen(Point in){
-		Point out = new Point();
 		float zoomX = 800/rec.width;
 		float zoomY = 800/rec.height;
-		
 		if(Game.get().level.getWidth() == Level.SIZE_SMALL){
 			zoomX += 0.5f;
 			zoomY += 0.5f; 
 		}
-			
-		out.setLocation((in.x-rec.getX())*zoomX, (in.y-rec.getY())*zoomY);
-		
-		System.out.println("x1: " + in.x + " xn: " + out.x + " zoomX: " + zoomX + " cameraX: " + getX());
-		
-		return out;
+		return new Point((int)((in.x-rec.getX())*zoomX), (int)((in.y-rec.getY())*zoomY));
 	}
 }

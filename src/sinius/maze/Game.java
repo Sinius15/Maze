@@ -10,6 +10,7 @@ import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
 import sinius.maze.state.playMode.PlayState;
 import sinius.maze.timing.FPSTimer;
+import sinius.maze.timing.TPSTimer;
 
 public class Game {
 	
@@ -17,6 +18,8 @@ public class Game {
 	public EditorOptionScreen options;
 
 	public FPSTimer fps = new FPSTimer();
+	public TPSTimer tps = new TPSTimer();
+	
 	public Display display;
 	
 	public Player player;
@@ -29,6 +32,7 @@ public class Game {
 	private static Game theGame;
 	
 	public Game(Level l, GameState state){
+		tps.Start();
 		theGame = this;
 		fps.Start();
 		level = l;

@@ -2,7 +2,6 @@ package sinius.maze.core;
 
 import sinius.maze.Game;
 
-
 public class Engine{
 
 	boolean isRunning = true;
@@ -24,6 +23,7 @@ public class Engine{
 	public Runnable tickThread() {
 		return new Runnable() { @Override public void run() {
 			while(isRunning){ 
+				Game.get().tps.registerTick();
 				Game.get().doTick();
 				try {
 					Thread.sleep(10);   //aiming for 100tps

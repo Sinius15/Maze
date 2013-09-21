@@ -17,6 +17,7 @@ import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.editMode.EditState;
+import sinius.maze.state.menu.MenuState;
 import sinius.maze.state.playMode.PlayState;
 
 public class LevelChoserState implements GameState{
@@ -127,6 +128,14 @@ public class LevelChoserState implements GameState{
 		}});
 		gObjects.add(del);
 		
+		GButton back = new GButton(0, 0, 50, 30);
+		back.setButtonColor(Color.red);
+		back.setTextColor(Color.black);
+		back.setText("<=");
+		back.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			Game.get().display.setGameState(new MenuState());
+		}});
+		gObjects.add(back);
 		
 		selected = "";
 		int i = 0;
