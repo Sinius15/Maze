@@ -30,7 +30,49 @@ public class AStar {
 		
 	}
 	
-	public boolean[][] solve(){
+	public boolean[][] DumbSolve(){
+		boolean[][] output = new boolean[widht][height];
+		
+		lastChecked = new ArrayList<>();
+		toCheck = new ArrayList<>();
+		
+		lastChecked.add(in);
+		
+		int lock = 0;
+		boolean running = true;
+		while(running){
+			toCheck.clear();
+			for(Point p : lastChecked){
+				for(Point q : getPointsAround(p)){
+					doStuff(q);
+				}
+			}
+			
+			for(Point p : toCheck){
+				output[p.x][p.y] = true;
+				pathSize[p.x][p.y] = 1;
+				System.out.println(p.toString());
+				if(p.x == out.x && p.y == out.y){
+					running = false;
+					System.out.println("FOUND!!");
+					break;
+				}
+				
+			}
+			
+			lastChecked = new ArrayList<>(toCheck);
+			lock++;
+			if(lock > 999){
+				System.out.println("NOT FOUND");
+				break;
+			}
+		}
+		
+		
+		return output;
+	}
+	
+	public boolean[][] SmarSolve(){
 		lastChecked = new ArrayList<>();
 		toCheck = new ArrayList<>();
 		

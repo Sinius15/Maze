@@ -1,10 +1,10 @@
 package sinius.maze.state.solve;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 
 import sinius.maze.Game;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.state.StatsOverlay;
 
 public class Layer_Path implements GrapicsLayer{
 
@@ -21,7 +21,7 @@ public class Layer_Path implements GrapicsLayer{
 
 	@Override
 	public void Draw(Graphics2D graphics) {
-		graphics.setColor(Color.RED);
+		graphics.setColor(StatsOverlay.gray);
 		for(int x = 0; x < path.length ; x++){
 			for(int y = 0; y < path[0].length ; y++){
 				if(path[x][y])
