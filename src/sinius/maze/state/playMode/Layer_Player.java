@@ -1,6 +1,6 @@
 package sinius.maze.state.playMode;
 
-import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Point;
 
@@ -19,10 +19,9 @@ public class Layer_Player implements GrapicsLayer{
 	public void Draw(Graphics2D graphics) {
 		Player p = Game.get().player;
 		Point point = Game.get().display.camera.getPointOnScreen(new Point(p.getX(), p.getY()));
+		Dimension d = Game.get().display.camera.getBlockSize();
 		try {
-			graphics.setColor(Color.ORANGE);
-			graphics.drawRect(point.x, point.y, 2, 2);
-			graphics.drawImage(p.getFont(), point.x-40, point.y-40, 80, 80, null);
+			graphics.drawImage(p.getFont(), point.x-(d.width/2), point.y-(d.height/2), d.width, d.height, null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

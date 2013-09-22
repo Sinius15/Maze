@@ -1,5 +1,6 @@
 package sinius.maze.gameEngine;
 
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -65,13 +66,25 @@ public class Camera {
 		return rec.height;
 	}
 	
+	public float getZoomX(){
+		return 800/rec.width;
+	}
+	
+	public float getZoomY(){
+		return 800/rec.height;
+	}
+	
 	public Point getPointOnScreen(Point in){
 		float zoomX = 800/rec.width;
 		float zoomY = 800/rec.height;
-		if(Game.get().level.getWidth() == Level.SIZE_SMALL){
+		if(Game.get().level.getWidth() == Level.SIZE_SMALL && Game.get().display.gameState.getName().equals("play")){
 			zoomX += 0.5f;
 			zoomY += 0.5f; 
 		}
 		return new Point((int)((in.x-rec.getX())*zoomX), (int)((in.y-rec.getY())*zoomY));
+	}
+	
+	public Dimension getBlockSize(){
+		return new Dimension(Game.get().ppb_x*(800/rec.width), Game.get().ppb_y*(800/rec.height));
 	}
 }

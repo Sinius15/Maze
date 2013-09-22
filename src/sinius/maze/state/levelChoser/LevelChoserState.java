@@ -19,6 +19,7 @@ import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.editMode.EditState;
 import sinius.maze.state.menu.MenuState;
 import sinius.maze.state.playMode.PlayState;
+import sinius.maze.state.solve.SolveState;
 
 public class LevelChoserState implements GameState{
 	
@@ -136,6 +137,18 @@ public class LevelChoserState implements GameState{
 			Game.get().display.setGameState(new MenuState());
 		}});
 		gObjects.add(back);
+		
+		GButton solve = new GButton(450, 400, 80, 80);
+		solve.setButtonColor(Color.green);
+		solve.setTextColor(Color.black);
+		solve.setText("Solve this level");
+		solve.setAction(new ActionListener() {@Override public void actionPerformed(ActionEvent e) {
+			if(selected == "")
+				return;
+			Game.get().level = getLevel();
+			Game.get().display.setGameState(new SolveState(Game.get().level));
+		}});
+		gObjects.add(solve);
 		
 		selected = "";
 		int i = 0;

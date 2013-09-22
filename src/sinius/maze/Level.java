@@ -33,7 +33,7 @@ public class Level {
 		blocks = new Block[width][height];
 		for(int w = 0; w < width; w++){
 			for(int h = 0; h < height; h++){
-				blocks[w][h] = new Block(Block.AIR, w, h, 800/width, 800/height);
+				blocks[w][h] = new Block(Block.AIR, w, h);
 			}
 		}
 		spawn = new Spawn();

@@ -45,6 +45,8 @@ public class PausePlayState implements GameState{
 		quit.setTextColor(Color.black);
 		quit.setText("Quit to menu");
 		quit.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			Game.get().display.camera.setSize(800, 800);
+			Game.get().display.camera.setLocation(400, 400);
 			Game.get().display.setGameState(new MenuState());
 		}});
 		gObjects.add(quit);

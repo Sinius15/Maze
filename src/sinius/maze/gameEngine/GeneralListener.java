@@ -93,8 +93,7 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 	public void keyPressed(KeyEvent e) {
 		if(!pressedKeys.contains((Integer)e.getKeyCode()))
 			pressedKeys.add((Integer)e.getKeyCode());
-		if(e.getKeyCode() == KeyEvent.VK_F3)
-			StatsOverlay.show(true);
+		
 	}
 
 	@Override
@@ -102,7 +101,8 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 		if(pressedKeys.contains((Integer)e.getKeyCode()))
 			pressedKeys.remove((Integer)e.getKeyCode());
 		if(e.getKeyCode() == KeyEvent.VK_F3)
-			StatsOverlay.show(false);
+			StatsOverlay.show();
+		
 	}
 
 	@Override

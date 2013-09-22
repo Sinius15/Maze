@@ -18,6 +18,7 @@ public class LevelLoader {
 	
 	public static void SaveLevel(Level l, String place) throws Exception{
 		saveFile = new YAMLFile();
+		
 		saveFile.addInt("levelWidht", l.getWidth());
 		saveFile.addInt("levelHeight", l.getHeight());
 		saveFile.addString("levelName", l.getName());

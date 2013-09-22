@@ -49,8 +49,8 @@ public class StatsOverlay implements GrapicsLayer{
 		return true;
 	}
 
-	public static void show(boolean b) {
-		show = b;
+	public static void show() {
+		show = !show;
 	}
 	
 	public static boolean isShow(){
