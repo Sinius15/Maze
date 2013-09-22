@@ -21,10 +21,11 @@ public class Layer_Path implements GrapicsLayer{
 
 	@Override
 	public void Draw(Graphics2D graphics) {
+		graphics.setColor(Color.RED);
 		for(int x = 0; x < path.length ; x++){
 			for(int y = 0; y < path[0].length ; y++){
-				graphics.setColor(Color.RED);
-				graphics.fillRect(x*Game.get().ppb_x, y*Game.get().ppb_y, Game.get().ppb_x, Game.get().ppb_y);
+				if(path[x][y])
+					graphics.fillRect(x*Game.get().ppb_x, y*Game.get().ppb_y, Game.get().ppb_x, Game.get().ppb_y);
 			}
 		}
 	}

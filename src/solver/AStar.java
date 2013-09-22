@@ -1,11 +1,143 @@
 package solver;
 
+import java.awt.Point;
+import java.util.ArrayList;
+
+import sinius.maze.Block;
+import sinius.maze.Game;
+
 public class AStar {
 
-	boolean[][] map;
+	boolean[][] maze;
+	int[][] pathSize;
+	int widht, height;
+	Point in, out;
+	ArrayList<Point> lastChecked, toCheck;
 	
-	public AStar(boolean[][] input){
-		map = input;
+	public AStar(boolean[][] input, int w, int h, Point in, Point out){
+		maze = input;
+		widht = w;
+		height = h;
+		this.in = in;
+		this.out = out;
+		
+		pathSize = new int[widht][height];
+		for(int x=0; x < widht; x++){
+			for(int y=0; y < height; y++){
+				pathSize[x][y] = -1;
+			}
+		}
+		
+	}
+	
+	public boolean[][] solve(){
+		lastChecked = new ArrayList<>();
+		toCheck = new ArrayList<>();
+		
+		lastChecked.add(in);
+		
+		int lock = 0;
+		boolean running = true;
+		while(running){
+			toCheck.clear();
+			for(Point p : lastChecked){
+				for(Point q : getPointsAround(p)){
+					doStuff(q);
+				}
+			}
+			
+			for(Point p : toCheck){
+				if(p.x == out.x && p.y == out.y){
+					pathSize[p.x][p.y] = 0;
+					running = false;
+					System.out.println("FOUND!!");
+					break;
+				}
+					
+				int dX = p.x - out.x;
+				int dY = p.y - out.y;
+				if(String.valueOf(dX).startsWith("-"))
+					dX = dX *-1;
+				if(String.valueOf(dY).startsWith("-"))
+					dY = dY *-1;
+				pathSize[p.x][p.y] = dX + dY;
+				
+			}
+			
+			lastChecked = new ArrayList<>(toCheck);
+			lock++;
+			if(lock > 999){
+				System.out.println("NOT FOUND");
+				break;
+			}
+		}
+		
+		boolean[][] output = new boolean[widht][height];
+		running = true;
+		Point j = new Point(out);
+		while(running){
+			for(Point p : getPointsAround(j)){
+				
+				if(pathSize[p.x][p.y] != -1){
+					output[p.x][p.y] = true;
+					j = new Point(p.x, p.y);
+					break;
+				}else{
+					output[p.x][p.y]  = false;
+				}
+				
+			}
+				
+			if(j.equals(in)){
+				break;
+			}
+		}
+		
+		
+		
+		
+		
+		return output;
+	}
+	
+	private boolean ifOutOfMaze(Point p){
+		if(p.x < 0 || p.y<0 || p.x >= widht || p.y >= height){
+			return true;
+		}
+		return false;
+	}
+	
+	private void doStuff(Point temp){
+		if(!ifOutOfMaze(temp)){
+			if(pathSize[temp.x][temp.y] == -1){
+				if(Game.get().level.getBlock(temp.x, temp.y).getType() == Block.AIR)
+					toCheck.add(temp);
+			}
+		}
+	}
+	
+	private ArrayList<Point> getPointsAround(Point p){
+		ArrayList<Point> o = new ArrayList<>();
+		
+		o.add(new Point(p.x+1, p.y));
+		o.add(new Point(p.x, p.y+1));
+		o.add(new Point(p.x-1, p.y));
+		o.add(new Point(p.x, p.y-1));
+		
+		return o;
+	}
+	
+	private Point getLowestPathLength(ArrayList<Point> list){
+		Point o = null;
+		int lowest= 99999;
+		for(Point p : list){
+			if(pathSize[p.x][p.y] < lowest){
+				lowest = pathSize[p.x][p.y];
+				o = p;
+			}
+		}
+		
+		return o;
 	}
 	
 }
