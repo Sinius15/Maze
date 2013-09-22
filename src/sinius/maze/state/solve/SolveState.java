@@ -11,6 +11,7 @@ import sinius.maze.gameEngine.GObject;
 import sinius.maze.plugin.Exit;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.state.playMode.Layer_Entitys;
 import sinius.maze.state.playMode.Layer_Maze;
 import solver.AStar;
 
@@ -47,6 +48,7 @@ public class SolveState implements GameState{
 		
 		
 		gLayers.add(new Layer_Path(solver.DumbSolve(), out));
+		gLayers.add(new Layer_Entitys());
 		
 	}
 	

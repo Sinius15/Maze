@@ -134,11 +134,6 @@ public class AStar {
 				break;
 			}
 		}
-		
-		
-		
-		
-		
 		return output;
 	}
 	
@@ -169,6 +164,7 @@ public class AStar {
 		return o;
 	}
 	
+	@SuppressWarnings("unused")
 	private Point getLowestPathLength(ArrayList<Point> list){
 		Point o = null;
 		int lowest= 99999;
