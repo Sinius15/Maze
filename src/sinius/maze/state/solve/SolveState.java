@@ -46,7 +46,7 @@ public class SolveState implements GameState{
 		AStar solver = new AStar(input, l.getWidth(), l.getHeight(), in, out);
 		
 		
-		gLayers.add(new Layer_Path(solver.DumbSolve()));
+		gLayers.add(new Layer_Path(solver.DumbSolve(), out));
 		
 	}
 	
