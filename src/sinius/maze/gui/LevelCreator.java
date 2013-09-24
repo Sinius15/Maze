@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -21,9 +23,6 @@ import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.io.LevelLoader;
 
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-
 public class LevelCreator extends JFrame {
 
 	private static final long serialVersionUID = -8923472525792263271L;
@@ -32,6 +31,8 @@ public class LevelCreator extends JFrame {
 	private JTextField nameField;
 	private JTextField blockColorField;
 
+	private static String pattern = "[a-zA-Z]0-9";
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public LevelCreator() {
 		addWindowListener(new WindowAdapter() {
@@ -114,9 +115,14 @@ public class LevelCreator extends JFrame {
 		
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 				if(nameField.getText().equals("") || colorField.getText().length() != 9 || blockColorField.getText().length() != 9){
 					return;
 				}
+				if(!nameField.getText().matches(pattern)){
+					return;
+				}
+				
 				
 				
 				int size;		
@@ -155,7 +161,7 @@ public class LevelCreator extends JFrame {
 			}
 		});
 	}
-	
+
 	final void disposer(){
 		this.dispose();
 	}
