@@ -1,16 +1,22 @@
 package sinius.maze.state.solve;
 
+import java.awt.Color;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import sinius.maze.Block;
 import sinius.maze.Entity;
+import sinius.maze.Game;
 import sinius.maze.Level;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.core.SynchroniezedList.editAction;
+import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.plugin.Exit;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
+import sinius.maze.state.menu.MenuState;
 import sinius.maze.state.playMode.Layer_Entitys;
 import sinius.maze.state.playMode.Layer_Maze;
 import solver.AStar;
@@ -23,6 +29,7 @@ public class SolveState implements GameState{
 	Point in, out;
 	
 	public SolveState(Level l){
+		
 		gLayers.add(new Layer_Maze());
 		
 		l.getEntitys().doForAll(new editAction<Entity>() { @Override public void action(Entity o) {
@@ -46,10 +53,18 @@ public class SolveState implements GameState{
 		
 		AStar solver = new AStar(input, l.getWidth(), l.getHeight(), in, out);
 		
+		GButton back = new GButton(0, 0, 50, 30);
+		back.setButtonColor(Color.red);
+		back.setTextColor(Color.black);
+		back.setText("<=");
+		back.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			Game.get().display.setGameState(new MenuState());
+		}});
+		gObjects.add(back);
 		
 		gLayers.add(new Layer_Path(solver.DumbSolve(), out));
 		gLayers.add(new Layer_Entitys());
-		
+		Game.get().display.setGameState(this);
 	}
 	
 	@Override

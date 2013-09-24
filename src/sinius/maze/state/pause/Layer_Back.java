@@ -2,8 +2,8 @@ package sinius.maze.state.pause;
 
 import java.awt.Graphics2D;
 
+import sinius.maze.Util;
 import sinius.maze.state.GrapicsLayer;
-import sinius.maze.state.StatsOverlay;
 
 public class Layer_Back implements GrapicsLayer{
 	
@@ -14,7 +14,7 @@ public class Layer_Back implements GrapicsLayer{
 
 	@Override
 	public void Draw(Graphics2D graphics) {
-		graphics.setColor(StatsOverlay.gray);
+		graphics.setColor(Util.GRAY);
 		graphics.fillRect(0, 0, 800, 800);
 	}
 

@@ -13,6 +13,7 @@ public class AStar {
 	int widht, height;
 	Point in, out;
 	ArrayList<Point> lastChecked, toCheck;
+	public static String status;
 	
 	public AStar(boolean[][] input, int w, int h, Point in, Point out){
 		maze = input;
@@ -51,10 +52,10 @@ public class AStar {
 			for(Point p : toCheck){
 				output[p.x][p.y] = true;
 				pathSize[p.x][p.y] = 1;
-				System.out.println(p.toString());
+				status = "now checking " + p.toString(); 
 				if(p.x == out.x && p.y == out.y){
 					running = false;
-					System.out.println("FOUND!!");
+					status = "found!";
 					break;
 				}
 				
@@ -63,7 +64,7 @@ public class AStar {
 			lastChecked = new ArrayList<>(toCheck);
 			lock++;
 			if(lock > 999){
-				System.out.println("NOT FOUND");
+				status = "not found";
 				break;
 			}
 		}

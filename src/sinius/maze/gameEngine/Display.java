@@ -66,6 +66,7 @@ public class Display{
 		private static final long serialVersionUID = -6825107813851526680L;
 		public void paintComponent(final Graphics graphics){
 			graphics.drawImage(img, 0, 0, pane.getWidth(), pane.getHeight(), camera.getP1().x, camera.getP1().y, camera.getP2().x, camera.getP2().y, null);
+			if(gameState.getGraphicsLayers() != null)
 			gameState.getGraphicsLayers().doForAll(new editAction<GrapicsLayer>() { @Override public void action(GrapicsLayer l) {
 				if(l.drawAfter())
 					l.Draw((Graphics2D) graphics);

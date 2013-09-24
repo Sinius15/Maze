@@ -60,6 +60,12 @@ public class SynchroniezedList<E>{
 		return false;
 	}
 	
+	public synchronized void addAll(Collection<E> o){
+		synchronized (listLock) {
+			list.addAll(o);
+		}
+	}
+	
 	public synchronized void add(E o){
 		synchronized (listLock) {
 			list.add(o);

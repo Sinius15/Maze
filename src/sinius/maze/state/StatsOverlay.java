@@ -1,16 +1,15 @@
 package sinius.maze.state;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics2D;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
+import sinius.maze.Util;
 
 public class StatsOverlay implements GrapicsLayer{
 
-	public static Color gray = new Color(0f, 0f, 0f, 0.75f);
-	static Font font = new Font("Zolano Serif BTN", Font.PLAIN, 18);
+	
 	
 	private static boolean show = false;
 	
@@ -23,13 +22,14 @@ public class StatsOverlay implements GrapicsLayer{
 	public void Draw(Graphics2D g) {
 		if(!show)
 			return;
-		g.setColor(gray);
+		g.setColor(Util.GRAY);
 		g.fillRect(0, 0, 800, 150);	
 		g.setColor(Color.white);
-		g.setFont(font);
+		g.setFont(Util.MAIN_FONT);
 		
 		g.drawString("FPS: " + Game.get().fps.getFPS(), 700, 22);
 		g.drawString("TPS: " + Game.get().tps.getTPS(), 700, 44);
+		g.drawString("State: "+ Game.get().display.gameState.getName(), 400, 22);
 		if(Game.get().display.gameState.getName().equals("play")){
 			g.drawString("Player:" , 10, 22);
 			g.drawString("x: " + MainProgram.game.getPlayer().getX() , 15, 42);

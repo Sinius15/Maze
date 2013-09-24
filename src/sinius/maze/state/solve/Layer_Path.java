@@ -4,8 +4,8 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 
 import sinius.maze.Game;
+import sinius.maze.Util;
 import sinius.maze.state.GrapicsLayer;
-import sinius.maze.state.StatsOverlay;
 
 public class Layer_Path implements GrapicsLayer{
 
@@ -22,7 +22,7 @@ public class Layer_Path implements GrapicsLayer{
 
 	@Override
 	public void Draw(Graphics2D graphics) {
-		graphics.setColor(StatsOverlay.gray);
+		graphics.setColor(Util.GRAY);
 		for(int x = 0; x < path.length ; x++){
 			for(int y = 0; y < path[0].length ; y++){
 				if(path[x][y])
