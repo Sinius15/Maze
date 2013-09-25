@@ -2,6 +2,8 @@ package solver;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import sinius.maze.Block;
 import sinius.maze.Game;
@@ -12,7 +14,7 @@ public class AStar {
 	int[][] pathSize;
 	int widht, height;
 	Point in, out;
-	ArrayList<Point> lastChecked, toCheck;
+	Set<Point> lastChecked, toCheck;
 	public boolean isSolvable;
 	public String status;
 	
@@ -36,8 +38,8 @@ public class AStar {
 		boolean[][] output = new boolean[widht][height];
 		
 		
-		lastChecked = new ArrayList<>();
-		toCheck = new ArrayList<>();
+		lastChecked = new HashSet<Point>();
+		toCheck = new HashSet<Point>();
 		
 		lastChecked.add(in);
 		
@@ -64,9 +66,10 @@ public class AStar {
 				
 			}
 			
-			lastChecked = new ArrayList<>(toCheck);
+			lastChecked = new HashSet<Point>(toCheck);
 			lock++;
 			System.out.println(lock);
+			System.out.println("lastChecked: " + lastChecked.size() );
 			if(lock > 999){
 				status = "not found";
 				isSolvable = false;
@@ -79,8 +82,8 @@ public class AStar {
 	}
 	
 	public boolean[][] SmarSolve(){
-		lastChecked = new ArrayList<>();
-		toCheck = new ArrayList<>();
+		lastChecked = new HashSet<Point>();
+		toCheck = new HashSet<Point>();
 		
 		lastChecked.add(in);
 		
@@ -98,7 +101,6 @@ public class AStar {
 				if(p.x == out.x && p.y == out.y){
 					pathSize[p.x][p.y] = 0;
 					running = false;
-					System.out.println("FOUND!!");
 					break;
 				}
 					
@@ -112,10 +114,9 @@ public class AStar {
 				
 			}
 			
-			lastChecked = new ArrayList<>(toCheck);
+			lastChecked = new HashSet<Point>(toCheck);
 			lock++;
 			if(lock > 999){
-				System.out.println("NOT FOUND");
 				break;
 			}
 		}

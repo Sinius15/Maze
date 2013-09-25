@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import sinius.maze.Block;
 import sinius.maze.Entity;
@@ -28,15 +29,17 @@ public class SolveState implements GameState{
 	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
 	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
 	
-	Point in, out;
+	Point in;
 	
 	public SolveState(Level l){
 		
 		gLayers.add(new Layer_Maze());
 		
+		final ArrayList<Point> exits = new ArrayList<>();
+		
 		l.getEntitys().doForAll(new editAction<Entity>() { @Override public void action(Entity o) {
 			if(o.getClass().equals(Exit.class)){
-				out = new Point(o.getX(), o.getY());
+				exits.add(new Point(o.getX(), o.getY()));
 			}
 		}});
 		
@@ -54,6 +57,14 @@ public class SolveState implements GameState{
 		}
 		
 		AStar solver = new AStar(input, l.getWidth(), l.getHeight(), in, out);
+		
+		boolean solveAble = false;
+		
+		for(Point e : exits){
+			solver = new AStar(input, l.getWidth(), l.getHeight(), in, e);
+			solver.DumbSolve();
+		}
+		
 		
 		GButton back = new GButton(0, 0, 50, 30);
 		back.setButtonColor(Color.red);
