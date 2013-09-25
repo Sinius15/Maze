@@ -13,6 +13,7 @@ import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gui.EditorOptionScreen;
+import sinius.maze.plugin.Teleporter;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.pause.PauseEditState;
@@ -111,8 +112,15 @@ public class EditState implements GameState{
 						
 					}else if(button == MouseEvent.BUTTON3){
 						Game.get().level.getEntitys().doForAll(new editAction<Entity>() {@Override public void action(Entity e) {
-							if(e.getX() == Game.get().mouseX/Game.get().ppb_x && e.getY() == Game.get().mouseY/Game.get().ppb_y && e.getClass().equals(x.getClass()))
-								Game.get().level.getEntitys().removeLater(e);
+							if(e.onGrid()){
+								if(e.getX() == Game.get().mouseX/Game.get().ppb_x && e.getY() == Game.get().mouseY/Game.get().ppb_y && e.getClass().equals(x.getClass()))
+									Game.get().level.getEntitys().removeLater(e);
+							}else{
+								if(e.getX()/Game.get().ppb_x == Game.get().mouseX/Game.get().ppb_x && e.getY()/Game.get().ppb_y == Game.get().mouseY/Game.get().ppb_y && e.getClass().equals(x.getClass()))
+									Game.get().level.getEntitys().removeLater(e);
+							}
+								
+								
 						}});
 					}
 				}else{
