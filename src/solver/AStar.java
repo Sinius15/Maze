@@ -13,7 +13,8 @@ public class AStar {
 	int widht, height;
 	Point in, out;
 	ArrayList<Point> lastChecked, toCheck;
-	public static String status;
+	public boolean isSolvable;
+	public String status;
 	
 	public AStar(boolean[][] input, int w, int h, Point in, Point out){
 		maze = input;
@@ -33,6 +34,7 @@ public class AStar {
 	
 	public boolean[][] DumbSolve(){
 		boolean[][] output = new boolean[widht][height];
+		
 		
 		lastChecked = new ArrayList<>();
 		toCheck = new ArrayList<>();
@@ -56,6 +58,7 @@ public class AStar {
 				if(p.x == out.x && p.y == out.y){
 					running = false;
 					status = "found!";
+					isSolvable = true;
 					break;
 				}
 				
@@ -63,8 +66,10 @@ public class AStar {
 			
 			lastChecked = new ArrayList<>(toCheck);
 			lock++;
+			System.out.println(lock);
 			if(lock > 999){
 				status = "not found";
+				isSolvable = false;
 				break;
 			}
 		}

@@ -1,7 +1,6 @@
 package sinius.maze.state.solve;
 
 import java.awt.Graphics2D;
-import java.awt.Point;
 
 import sinius.maze.Game;
 import sinius.maze.Util;
@@ -11,7 +10,7 @@ public class Layer_Path implements GrapicsLayer{
 
 	boolean[][] path;
 	
-	public Layer_Path(boolean[][] path, Point out){
+	public Layer_Path(boolean[][] path){
 		this.path = path;
 	}
 	
