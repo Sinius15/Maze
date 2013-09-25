@@ -31,7 +31,11 @@ public class SolveState implements GameState{
 	
 	Point in;
 	
+	public long timeToSolve;
+	
 	public SolveState(Level l){
+		
+		long start = System.currentTimeMillis();
 		
 		gLayers.add(new Layer_Maze());
 		
@@ -56,13 +60,14 @@ public class SolveState implements GameState{
 			}
 		}
 		
-		AStar solver = new AStar(input, l.getWidth(), l.getHeight(), in, out);
-		
 		boolean solveAble = false;
 		
+		AStar solver = new AStar(input, l.getWidth(), l.getHeight());
+		
 		for(Point e : exits){
-			solver = new AStar(input, l.getWidth(), l.getHeight(), in, e);
-			solver.DumbSolve();
+			if(solver.DumbSolve(in, e)){
+				solveAble = true;
+			}
 		}
 		
 		
@@ -76,10 +81,13 @@ public class SolveState implements GameState{
 		gObjects.add(back);
 		
 		
-		gLayers.add(new Layer_Path(solver.DumbSolve()));
+		gLayers.add(new Layer_Path(solver.whereCanIWalk(in)));
 		gLayers.add(new Layer_Entitys());
 		
-		GText text = new GText("this level is solveable: " + solver.isSolvable, 60, 20);
+		long end = System.currentTimeMillis();
+		timeToSolve = end - start;
+		
+		GText text = new GText("this level is solveable: " + solveAble, 60, 20);
 		text.setColor(Color.black);
 		text.setFont(Util.MAIN_FONT);
 		gObjects.add(text);

@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
 import sinius.maze.Util;
+import sinius.maze.state.solve.SolveState;
 
 public class StatsOverlay implements GrapicsLayer{
 
@@ -35,6 +36,9 @@ public class StatsOverlay implements GrapicsLayer{
 			g.drawString("x: " + MainProgram.game.getPlayer().getX() , 15, 42);
 			g.drawString("y: " + MainProgram.game.getPlayer().getY() , 15, 62);
 			g.drawString("Entitys: " + Game.get().level.getEntitys().size(), 10, 90);
+		}
+		if(Game.get().display.gameState.getName().equals("solve")){
+			g.drawString("Time buisy with solving: " + ((SolveState)Game.get().display.gameState).timeToSolve + "ms", 10, 22);
 		}
 		
 	}

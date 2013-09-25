@@ -13,17 +13,13 @@ public class AStar {
 	boolean[][] maze;
 	int[][] pathSize;
 	int widht, height;
-	Point in, out;
 	Set<Point> lastChecked, toCheck;
-	public boolean isSolvable;
 	public String status;
 	
-	public AStar(boolean[][] input, int w, int h, Point in, Point out){
+	public AStar(boolean[][] input, int w, int h){
 		maze = input;
 		widht = w;
 		height = h;
-		this.in = in;
-		this.out = out;
 		
 		pathSize = new int[widht][height];
 		for(int x=0; x < widht; x++){
@@ -34,12 +30,21 @@ public class AStar {
 		
 	}
 	
-	public boolean[][] DumbSolve(){
-		boolean[][] output = new boolean[widht][height];
-		
-		
+	private void clearVars(){
+		pathSize = new int[widht][height];
+		for(int x=0; x < widht; x++){
+			for(int y=0; y < height; y++){
+				pathSize[x][y] = -1;
+			}
+		}
 		lastChecked = new HashSet<Point>();
 		toCheck = new HashSet<Point>();
+	}
+	
+	public boolean[][] whereCanIWalk(Point in){
+		boolean[][] output = new boolean[widht][height];
+		
+		clearVars();
 		
 		lastChecked.add(in);
 		
@@ -57,33 +62,58 @@ public class AStar {
 				output[p.x][p.y] = true;
 				pathSize[p.x][p.y] = 1;
 				status = "now checking " + p.toString(); 
+			}
+			
+			lastChecked = new HashSet<Point>(toCheck);
+			lock++;
+			
+			if(lock > 9999 || lastChecked.size() == 0){
+				status = "finish!";
+				return output;
+			}
+		}
+		return output;
+	}
+	
+	public boolean DumbSolve(Point in, Point out){
+		
+		clearVars();
+		
+		lastChecked.add(in);
+		
+		int lock = 0;
+		boolean running = true;
+		while(running){
+			toCheck.clear();
+			for(Point p : lastChecked){
+				for(Point q : getPointsAround(p)){
+					doStuff(q);
+				}
+			}
+			
+			for(Point p : toCheck){
+				pathSize[p.x][p.y] = 1;
+				status = "now checking " + p.toString(); 
 				if(p.x == out.x && p.y == out.y){
 					running = false;
 					status = "found!";
-					isSolvable = true;
-					break;
+					return true;
 				}
 				
 			}
 			
 			lastChecked = new HashSet<Point>(toCheck);
 			lock++;
-			System.out.println(lock);
-			System.out.println("lastChecked: " + lastChecked.size() );
-			if(lock > 999){
+			if(lock > 9999){
 				status = "not found";
-				isSolvable = false;
-				break;
+				return false;
 			}
 		}
-		
-		
-		return output;
+		return false;
 	}
 	
-	public boolean[][] SmarSolve(){
-		lastChecked = new HashSet<Point>();
-		toCheck = new HashSet<Point>();
+	public boolean[][] SmarSolve(Point in, Point out){
+		clearVars();
 		
 		lastChecked.add(in);
 		
