@@ -1,13 +1,9 @@
 package sinius.maze;
 
-import java.awt.Font;
-import java.awt.GraphicsEnvironment;
-import java.io.File;
 import java.util.ArrayList;
 
 import sinius.maze.core.Engine;
 import sinius.maze.io.MapStructureCreator;
-import sinius.maze.state.menu.MenuState;
 
 public class MainProgram {
 
@@ -35,17 +31,17 @@ public class MainProgram {
 			
 		}
 		
-		try {
-			GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Blocked Off.ttf")));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Blocked Off.ttf")));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
-		entityManager.initEntitys();
-		editorObjManager.initEditorObj();
-		
-		
-		game = new Game(null, new MenuState());
+//		entityManager.initEntitys();
+//		editorObjManager.initEditorObj();
+//		
+//		
+//		game = new Game(null, new MenuState());
 		
 	}
 }

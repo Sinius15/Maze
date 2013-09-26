@@ -15,11 +15,6 @@ import sinius.maze.Util;
 public class MapStructureCreator {
 
 	private static File main = new File(MainProgram.SAVEMAP);
-	private static File res = new File(MainProgram.SAVEMAP + "\\res");
-	private static File saves = new File(MainProgram.SAVEMAP + "\\saves");
-	private static File levels = new File(MainProgram.SAVEMAP + "\\levels");
-	public static File entitys = new File(MainProgram.SAVEMAP + "\\entitys");
-	
 	
 	@SuppressWarnings("resource")
 	public void CreateFirstStartup() throws Exception{
@@ -27,39 +22,38 @@ public class MapStructureCreator {
 		
 		if(!main.exists())
 			main.mkdirs();
-		if(!res.exists())
-			res.mkdirs();
-		if(!saves.exists())
-			saves.mkdirs();
-		if(!levels.exists())
-			levels.mkdirs();
-		if(!entitys.exists())
-			entitys.mkdirs();
 		
-			
 		if(!s.endsWith(".jar")){
-			ArrayList<File> temp;
-			temp = Util.getFileList("res\\pics_Entity\\");
-			if(temp != null)
-				for(File f : temp){
-					File to = new File(MainProgram.SAVEMAP + "\\res\\" + f.getName());
-					if(!to.exists())
-						Files.copy(f.toPath(), to.toPath());
+			File toMap = null, toFile = null, fromMap = null, fromFile = null;
+			ArrayList<String> dirs = new ArrayList<>();
+			File dir = new File("res//");
+			for(File f : dir.listFiles()){
+				if(f.isDirectory()){
+					dirs.add(f.getPath().substring(4, f.getPath().length()));
+					
 				}
-			temp = Util.getFileList("res\\levels\\");
-			if(temp != null)
-				for(File f : temp){
-					File to = new File(MainProgram.SAVEMAP + "\\levels\\" + f.getName());
-					if(!to.exists())
-						Files.copy(f.toPath(), to.toPath());
+			}
+			
+			
+			for(String maps : dirs){
+				toMap = new File(  MainProgram.SAVEMAP + "//" + maps);
+				fromMap = new File("res//" + maps);
+				if(!toMap.exists())
+					toMap.mkdirs();
+				ArrayList<File> files = Util.getFileList(fromMap.getAbsolutePath());
+				if(files != null){
+					for(File f : files){
+						toFile = new File(toMap.getAbsolutePath() + "//" + f.getName());
+						fromFile = f;
+						if(!toFile.exists()){
+							Files.copy(fromFile.toPath(), toFile.toPath());
+						}
+					}
 				}
-			temp = Util.getFileList("res\\entitys\\");
-			if(temp != null)
-				for(File f : temp){
-					File to = new File(MainProgram.SAVEMAP + "\\entitys\\" + f.getName());
-					if(!to.exists())
-						Files.copy(f.toPath(), to.toPath());
-				}
+				
+			}
+			
+				
 		}else{
 			s = s.replaceAll("%20", " ");
 			JarFile jar = new JarFile(s);
@@ -70,58 +64,37 @@ public class MapStructureCreator {
 				String[] split = path.split("/");
 				
 				System.out.println(path);
-				if(path.startsWith("levels/") && !path.equals("levels/")){
-					System.out.println("Now going to copy a file...    the path is " + path);
-					
-					File outFile = new File(MainProgram.SAVEMAP + "//levels//" + split[split.length-1]);
-					FileOutputStream outStream = new FileOutputStream(outFile);
-					InputStream inStream = getClass().getClassLoader().getResourceAsStream(path);
-					
-					int readBytes;
-		            byte[] buffer = new byte[4096];
-		            while ((readBytes = inStream.read(buffer)) > 0) {
-		                outStream.write(buffer, 0, readBytes);
-		            }
-		            
-		            inStream.close();
-		            outStream.flush();
-		            outStream.close();
-				}
-					
-				if(path.startsWith("pics_Entity/") && !path.equals("pics_Entity/")){
-					System.out.println("Now going to copy a file...    the path is " + path);
-					
-					File outFile = new File(MainProgram.SAVEMAP + "//res//" + split[split.length-1]);
-					FileOutputStream outStream = new FileOutputStream(outFile);
-					InputStream inStream = getClass().getClassLoader().getResourceAsStream(path);
-					
-					int readBytes;
-		            byte[] buffer = new byte[4096];
-		            while ((readBytes = inStream.read(buffer)) > 0) {
-		                outStream.write(buffer, 0, readBytes);
-		            }
-		            
-		            inStream.close();
-		            outStream.flush();
-		            outStream.close();
-				}
 				
-				if(path.startsWith("entitys/") && !path.equals("entitys/")){
-					System.out.println("Now going to copy a file...    the path is " + path);
+				
+				if(!path.endsWith("/") && !path.endsWith(".class") && !path.endsWith(".MF")){
 					
-					File outFile = new File(MainProgram.SAVEMAP + "//entitys//" + split[split.length-1]);
-					FileOutputStream outStream = new FileOutputStream(outFile);
-					InputStream inStream = getClass().getClassLoader().getResourceAsStream(path);
+					String builder = "";
+					for(int i = 0; i<(split.length-1); i++)
+						builder = builder + split[i];
 					
-					int readBytes;
-		            byte[] buffer = new byte[4096];
-		            while ((readBytes = inStream.read(buffer)) > 0) {
-		                outStream.write(buffer, 0, readBytes);
-		            }
-		            
-		            inStream.close();
-		            outStream.flush();
-		            outStream.close();
+					File map = new File(MainProgram.SAVEMAP + "//" + builder);
+					if(!map.exists())
+						map.mkdirs();
+					File outFile = new File(map.getAbsolutePath() +"//"+ split[split.length-1]);
+					
+					if(!outFile.exists()){
+						
+						FileOutputStream outStream = new FileOutputStream(outFile);
+						InputStream inStream = getClass().getClassLoader().getResourceAsStream(path);
+						
+						int readBytes;
+			            byte[] buffer = new byte[4096];
+			            while ((readBytes = inStream.read(buffer)) > 0) {
+			                outStream.write(buffer, 0, readBytes);
+			            }
+			            
+			            inStream.close();
+			            outStream.flush();
+			            outStream.close();
+						
+			            System.out.println("I just copeyed this file. path in jar: " + path + "  path on disk: " + outFile.getPath());
+			            
+					}
 				}
 				
 			}
