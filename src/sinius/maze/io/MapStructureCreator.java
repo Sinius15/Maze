@@ -16,6 +16,8 @@ public class MapStructureCreator {
 
 	private static File main = new File(MainProgram.SAVEMAP);
 	
+	public static File pluginFolder = new File(MainProgram.SAVEMAP + "//plugins");
+	
 	@SuppressWarnings("resource")
 	public void CreateFirstStartup() throws Exception{
 		String s = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();

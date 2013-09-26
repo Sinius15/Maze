@@ -88,6 +88,7 @@ public class EditorObjectManager {
 		return null;
 	}
 	
+	@SuppressWarnings("unused")
 	private List<File> getFiles(String suffix, Path folder) throws IOException{
 		List<File> files = new ArrayList<File>();
 		

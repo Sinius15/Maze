@@ -7,6 +7,7 @@ import sinius.maze.entitys.Player;
 import sinius.maze.gameEngine.Display;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.plugin.PluginManager;
 import sinius.maze.state.GameState;
 import sinius.maze.state.playMode.PlayState;
 import sinius.maze.timing.FPSTimer;
@@ -29,6 +30,8 @@ public class Game {
 	
 	public Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
 	
+	public PluginManager pluginManger;
+	
 	private static Game theGame;
 	
 	public Game(Level l, GameState state){
@@ -40,6 +43,8 @@ public class Game {
 			ppb_x = 800 / l.getWidth();
 			ppb_y = 800 / l.getHeight();
 		}
+		
+		pluginManger = new PluginManager();
 		
 		if(state == null)
 			display = new Display(800, 800, "Sinius's Maze", new PlayState());
