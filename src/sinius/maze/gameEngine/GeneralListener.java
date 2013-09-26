@@ -11,6 +11,7 @@ import java.awt.event.MouseMotionListener;
 import sinius.maze.Game;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.state.StatsOverlay;
+import sinius.maze.state.levelChoser.LevelChoserState;
 
 public class GeneralListener implements ComponentListener, KeyListener, MouseListener, MouseMotionListener{
 
@@ -123,6 +124,10 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void componentShown(ComponentEvent arg0) {
+		if(Game.get().display.gameState.getName().equals("levelChoser")){
+			((LevelChoserState) Game.get().display.gameState).refresh();
+		}
 	}
+
 
 }

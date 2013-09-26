@@ -61,11 +61,11 @@ public class Util {
 		return files;
 	}
 	
-	public static Level createEmptyLevel(int size, String name, Color bgColor, Color bColor, boolean fillLevel){
-		Level l = new Level(size, size, name);
+	public static Level createEmptyLevel(int w1, int h1, String name, Color bgColor, Color blockColor, boolean fillLevel){
+		Level l = new Level(w1, h1, name);
 		
 		l.setBackgroundColor(bgColor);
-		l.setStandardBlockColor(bColor);
+		l.setStandardBlockColor(blockColor);
 		
 		if(fillLevel){
 			for(int w = 0; w < l.getWidth(); w++){

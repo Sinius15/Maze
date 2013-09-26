@@ -22,6 +22,7 @@ public class EditorOptionScreen extends JFrame {
 	private JList<String> list;
 
 	public EditorOptionScreen() {
+		setAutoRequestFocus(false);
 		setResizable(false);
 		setTitle("Option's");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

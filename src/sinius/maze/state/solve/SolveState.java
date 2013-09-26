@@ -17,12 +17,12 @@ import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
 import sinius.maze.plugin.Exit;
+import sinius.maze.state.AStar;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.menu.MenuState;
 import sinius.maze.state.playMode.Layer_Entitys;
 import sinius.maze.state.playMode.Layer_Maze;
-import solver.AStar;
 
 public class SolveState implements GameState{
 

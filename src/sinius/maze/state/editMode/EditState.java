@@ -13,7 +13,6 @@ import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Spawn;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gui.EditorOptionScreen;
-import sinius.maze.plugin.Teleporter;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.pause.PauseEditState;

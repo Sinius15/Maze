@@ -31,7 +31,6 @@ public class Player implements Entity{
 			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Down.png"));
 			leftImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Left.png"));
 			rightImg= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Right.png"));
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -1,4 +1,4 @@
-package solver;
+package sinius.maze.state;
 
 import java.awt.Point;
 import java.util.ArrayList;

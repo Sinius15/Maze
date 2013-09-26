@@ -31,7 +31,7 @@ public class LevelCreator extends JFrame {
 	private JTextField nameField;
 	private JTextField blockColorField;
 
-	private static String pattern = "[a-zA-Z]0-9";
+	private static String pattern = "[a-zA-Z]*[0-9]*";
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public LevelCreator() {
@@ -151,7 +151,7 @@ public class LevelCreator extends JFrame {
 
 				
 				try {
-					LevelLoader.SaveLevel(Util.createEmptyLevel(size, name, bgColor, bColor, fillLevel), MainProgram.SAVEMAP + "\\saves\\" + nameField.getText() + ".maze");
+					LevelLoader.SaveLevel(Util.createEmptyLevel(size,size, name, bgColor, bColor, fillLevel), MainProgram.SAVEMAP + "\\saves\\" + nameField.getText() + ".maze");
 				} catch (Exception e) {
 					e.printStackTrace();
 					return;

@@ -15,6 +15,7 @@ import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gui.LevelCreator;
+import sinius.maze.gui.LevelImporter;
 import sinius.maze.io.LevelLoader;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
@@ -127,7 +128,16 @@ public class LevelChoserState implements GameState{
 		}});
 		buttons.add(solve);
 		
-		
+		GButton importer = new GButton(200, 625, 130, 55);
+		importer.setButtonColor(Color.orange);
+		importer.setTextColor(Color.black);
+		importer.setText("PNG to Maze");
+		importer.setAction(new ActionListener() {@Override public void actionPerformed(ActionEvent e) {
+			LevelImporter r = new LevelImporter();
+			r.setVisible(true);
+			Game.get().display.getFrame().setVisible(false);
+		}});
+		buttons.add(importer);
 		
 		refresh();
 	}
@@ -163,7 +173,7 @@ public class LevelChoserState implements GameState{
 		return LevelLoader.LoadLevel(new File(MainProgram.MAP_SAVES + "\\" + selected + ".maze"));
 	}
 	
-	private final synchronized void refresh(){
+	public final synchronized void refresh(){
 		gObjects = new SynchroniezedList<GObject>();
 		
 		gObjects.addAll(buttons);

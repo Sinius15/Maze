@@ -1,5 +1,8 @@
 package sinius.maze;
 
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
 import java.util.ArrayList;
 
 import sinius.maze.core.Engine;
@@ -30,6 +33,12 @@ public class MainProgram {
 			e.printStackTrace();
 			System.exit(1);
 			
+		}
+		
+		try {
+			GraphicsEnvironment.getLocalGraphicsEnvironment().registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Blocked Off.ttf")));
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		entityManager.initEntitys();

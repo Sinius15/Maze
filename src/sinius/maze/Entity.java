@@ -7,9 +7,7 @@ import java.awt.Rectangle;
 
 import sinius.maze.entitys.Player;
 
-public interface Entity {
-
-	public final int ID = 0;
+public interface Entity{
 	
 	void Create(int x, int y, String saveData);		//
 	String getName();								//done
@@ -23,4 +21,5 @@ public interface Entity {
 	Image getFont();								//
 	Rectangle getCollisionBox();					//
 	String getSaveData();							//
+
 }
