@@ -2,10 +2,10 @@ package sinius.maze.state.wait;
 
 import java.awt.Color;
 
-import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
+import sinius.maze.lib.Layout;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.menu.BackGround;
@@ -17,7 +17,7 @@ public class WaitState implements GameState {
 	
 	public WaitState(String text1) {
 		GText t = new GText(text1, 100,300);
-		t.setFont(Util.MAIN_FONT);
+		t.setFont(Layout.MAIN_FONT);
 		t.setColor(Color.white);
 		gObjects.add(t);
 		

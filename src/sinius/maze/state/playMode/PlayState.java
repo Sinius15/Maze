@@ -10,6 +10,7 @@ import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.entitys.Player;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
+import sinius.maze.lib.Layout;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.pause.PausePlayState;
@@ -37,7 +38,7 @@ public class PlayState implements GameState{
 		timer.Start();
 		
 		timeText = new GText(timer.getTime(), 5, 25);
-		timeText.setFont(Game.get().font);
+		timeText.setFont(Layout.MAIN_FONT);
 		timeText.setColor(Color.black);
 		
 		gObjects.add(timeText);

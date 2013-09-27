@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 
 import sinius.maze.Entity;
 import sinius.maze.Level;
-import sinius.maze.MainProgram;
+import sinius.maze.lib.Folders;
 
 public class Spawn implements Entity{
 
@@ -23,7 +23,7 @@ public class Spawn implements Entity{
 		this.x = x;
 		this.y = y;
 		try {
-			img = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Spawn.png"));
+			img = ImageIO.read(new File(Folders.RES.getAbsolutePath() + "/Spawn.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

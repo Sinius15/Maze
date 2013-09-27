@@ -99,14 +99,13 @@ public class YAMLFile {
 	
 	/**
 	 * this function is meant for files inside a .jar file.
-	 * @param the url to the file
+	 *
 	 */
 	public void Load(URL file){
 		data.clear();
 		String[] levelName = new String[100];
 		
 		try{
-			
 			InputStream is = file.openStream();
 			InputStreamReader isr = new InputStreamReader(is, "US-ASCII" );
 			BufferedReader reader = new BufferedReader(isr);

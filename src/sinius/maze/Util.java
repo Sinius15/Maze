@@ -1,15 +1,11 @@
 package sinius.maze;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.geom.Line2D;
 import java.io.File;
 import java.util.ArrayList;
 
 public class Util {
-
-	public static final Font MAIN_FONT = new Font("Zolano Serif BTN", Font.PLAIN, 18);
-	public static final Color GRAY = new Color(0f, 0f, 0f, 0.75f);
 	
 	public static ArrayList<Block> getCrossedBlocks(int x1, int y1, int x2, int y2, Level level){
 		

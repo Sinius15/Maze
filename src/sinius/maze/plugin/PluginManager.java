@@ -1,15 +1,17 @@
 package sinius.maze.plugin;
 
+import java.awt.Graphics2D;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import sinius.maze.EditorObject;
 import sinius.maze.Entity;
 import sinius.maze.Util;
-import sinius.maze.io.MapStructureCreator;
 import sinius.maze.io.YAMLFile;
+import sinius.maze.lib.Folders;
 
 public class PluginManager {
 
@@ -17,10 +19,11 @@ public class PluginManager {
 	private HashMap<Plugin, String> pluginNames = new HashMap<>();
 	
 	private ArrayList<Class<?>> entitys = new ArrayList<>();
+	private ArrayList<EditorObject> editorObj = new ArrayList<>();
 	
 	public void loadPlugins(){
 		try {
-			List<File> files = Util.getFileList(MapStructureCreator.pluginFolder.getAbsolutePath());
+			List<File> files = Util.getFileList(Folders.PLUGIN.getAbsolutePath());
 			for(File f: files){
 				if(!f.getName().endsWith(".jar"))
 					return;
@@ -35,14 +38,9 @@ public class PluginManager {
 				Plugin p = (Plugin)Class.forName(pluginFile.getString("main")).newInstance();
 				plugins.add(p);
 				pluginNames.put(p, pluginFile.getString("name"));
-			
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-		for(Plugin p : plugins){
-			p.onEnable();
 		}
 	}
 	
@@ -51,14 +49,21 @@ public class PluginManager {
 			p.onDisable();
 		}
 	}
-	
+	public void addEditorObject(EditorObject object){
+		editorObj.add(object);
+	}
 	public void addEntity(Class<?> entity){
 		entitys.add(entity);
 	}
+	public void initPlugins() {
+		for(Plugin p : plugins)
+			p.onEnable();
+	}
 	
-	public synchronized ArrayList<String> getEntityNames(){
+	//entity things
+	
+	public ArrayList<String> getEntityNames(){
 		ArrayList<String> out = new ArrayList<String>();
-		
 		for(Class<?> c: entitys){
 			Entity e;
 			try {
@@ -68,11 +73,10 @@ public class PluginManager {
 				e1.printStackTrace();
 			}
 		}
-		
 		return out;
 	}
 	
-	public synchronized Entity getEntityByName(String name){
+	public Entity getEntityByName(String name){
 		for(Class<?> c: entitys){
 			Entity e;
 			try {
@@ -86,7 +90,7 @@ public class PluginManager {
 		return null;
 	}
 	
-	public synchronized Entity getEntityByClass(String className){
+	public Entity getEntityByClass(String className){
 		for(Class<?> c : entitys){
 			if(c.getName().equals(className)){
 				try {
@@ -97,20 +101,40 @@ public class PluginManager {
 				}
 			}
 		}
-		
 		try {
 			Class<?> c = Class.forName(className);
 			if(Entity.class.isAssignableFrom(c)){
 				return (Entity) c.newInstance();
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
 		return null;
 	}
+
+	//editor object things
+	
+	public synchronized void drawEditorObjects(Graphics2D g){
+		for(EditorObject e: editorObj){
+			e.render(g);
+		}
+	}
+	
+	public synchronized ArrayList<String> getEditorObjectNames(){
+		ArrayList<String> out = new ArrayList<String>();
+		for(EditorObject e: editorObj){
+				out.add(e.getName());
+		}
+		return out;
+	}
+	
+	public synchronized EditorObject getEditorObjectByName(String name){
+		for(EditorObject e: editorObj){
+			if(e.getName().equals(name))
+				return e;
+		}
+		return null;
+	}
+	
 	
 }

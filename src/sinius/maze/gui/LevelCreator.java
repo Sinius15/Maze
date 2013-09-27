@@ -19,9 +19,9 @@ import javax.swing.border.EmptyBorder;
 
 import sinius.maze.Game;
 import sinius.maze.Level;
-import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.lib.Folders;
 
 public class LevelCreator extends JFrame {
 
@@ -151,7 +151,7 @@ public class LevelCreator extends JFrame {
 
 				
 				try {
-					LevelLoader.SaveLevel(Util.createEmptyLevel(size,size, name, bgColor, bColor, fillLevel), MainProgram.SAVEMAP + "\\saves\\" + nameField.getText() + ".maze");
+					LevelLoader.SaveLevel(Util.createEmptyLevel(size,size, name, bgColor, bColor, fillLevel), Folders.SAVES + "\\" + nameField.getText() + ".maze");
 				} catch (Exception e) {
 					e.printStackTrace();
 					return;

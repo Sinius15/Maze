@@ -5,12 +5,12 @@ import java.awt.Color;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JList;
 
-import sinius.maze.MainProgram;
+import sinius.maze.Game;
 
 public class EditorOptionScreen extends JFrame {
 
@@ -44,10 +44,10 @@ public class EditorOptionScreen extends JFrame {
 		model.addElement("Wall Brush");
 		model.addElement("Wall pencil");
 		model.addElement("Spawn");
-	    for(String s : MainProgram.entityManager.getEntityNames()){
+	    for(String s : Game.get().pluginManger.getEntityNames()){
 	         model.addElement(s);
 	    } 
-	    for(String s : MainProgram.editorObjManager.getNames()){
+	    for(String s : Game.get().pluginManger.getEditorObjectNames()){
 	         model.addElement(s);
 	    } 
 		

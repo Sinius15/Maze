@@ -11,7 +11,7 @@ import javax.imageio.ImageIO;
 import sinius.maze.Entity;
 import sinius.maze.Game;
 import sinius.maze.Level;
-import sinius.maze.MainProgram;
+import sinius.maze.lib.Folders;
 
 public class Player implements Entity{
 
@@ -27,10 +27,10 @@ public class Player implements Entity{
 		this.y = y;
 		speed =  Game.get().ppb_x/8;
 		try {
-			upImg	= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Up.png"));
-			downImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Down.png"));
-			leftImg = ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Left.png"));
-			rightImg= ImageIO.read(new File(MainProgram.SAVEMAP + "/res/Player_Right.png"));
+			upImg	= ImageIO.read(new File(Folders.RES.getAbsolutePath() + "/Player_Up.png"));
+			downImg = ImageIO.read(new File(Folders.RES.getAbsolutePath() + "/Player_Down.png"));
+			leftImg = ImageIO.read(new File(Folders.RES.getAbsolutePath() + "/Player_Left.png"));
+			rightImg= ImageIO.read(new File(Folders.RES.getAbsolutePath() + "/Player_Right.png"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

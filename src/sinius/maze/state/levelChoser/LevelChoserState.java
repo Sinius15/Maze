@@ -9,7 +9,6 @@ import java.util.Collection;
 
 import sinius.maze.Game;
 import sinius.maze.Level;
-import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
@@ -17,6 +16,7 @@ import sinius.maze.gameEngine.GObject;
 import sinius.maze.gui.LevelCreator;
 import sinius.maze.gui.LevelImporter;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.lib.Folders;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.editMode.EditState;
@@ -90,7 +90,7 @@ public class LevelChoserState implements GameState{
 		del.setText("delete level");
 		del.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
 			if(selected != null){
-				File f =new File(MainProgram.MAP_SAVES + "\\" + selected + ".maze");
+				File f =new File(Folders.SAVES + "\\" + selected + ".maze");
 				f.delete();
 				refresh();
 			}
@@ -170,7 +170,7 @@ public class LevelChoserState implements GameState{
 	}
 	
 	private Level getLevel(){
-		return LevelLoader.LoadLevel(new File(MainProgram.MAP_SAVES + "\\" + selected + ".maze"));
+		return LevelLoader.LoadLevel(new File(Folders.SAVES + "\\" + selected + ".maze"));
 	}
 	
 	public final synchronized void refresh(){
@@ -181,7 +181,7 @@ public class LevelChoserState implements GameState{
 		
 		selected = "";
 		int i = 0;
-		for(File f : Util.getFileList(MainProgram.MAP_SAVES)){
+		for(File f : Util.getFileList(Folders.SAVES.getAbsolutePath())){
 			i = i + 50;
 			final GButton b = new GButton(50, i, 700, 40);
 			b.setText(f.getName().replace(".maze", ""));

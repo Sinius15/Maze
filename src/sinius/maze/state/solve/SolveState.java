@@ -10,12 +10,12 @@ import sinius.maze.Block;
 import sinius.maze.Entity;
 import sinius.maze.Game;
 import sinius.maze.Level;
-import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
+import sinius.maze.lib.Layout;
 import sinius.maze.plugin.Exit;
 import sinius.maze.state.AStar;
 import sinius.maze.state.GameState;
@@ -89,7 +89,7 @@ public class SolveState implements GameState{
 		
 		GText text = new GText("this level is solveable: " + solveAble, 60, 20);
 		text.setColor(Color.black);
-		text.setFont(Util.MAIN_FONT);
+		text.setFont(Layout.MAIN_FONT);
 		gObjects.add(text);
 		
 		Game.get().display.setGameState(this);

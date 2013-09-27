@@ -9,21 +9,17 @@ import java.util.Enumeration;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-import sinius.maze.MainProgram;
 import sinius.maze.Util;
+import sinius.maze.lib.Folders;
 
 public class MapStructureCreator {
 
-	private static File main = new File(MainProgram.SAVEMAP);
-	
-	public static File pluginFolder = new File(MainProgram.SAVEMAP + "//plugins");
-	
 	@SuppressWarnings("resource")
 	public void CreateFirstStartup() throws Exception{
 		String s = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 		
-		if(!main.exists())
-			main.mkdirs();
+		if(!Folders.MAIN.exists())
+			Folders.MAIN.mkdirs();
 		
 		if(!s.endsWith(".jar")){
 			File toMap = null, toFile = null, fromMap = null, fromFile = null;
@@ -38,7 +34,7 @@ public class MapStructureCreator {
 			
 			
 			for(String maps : dirs){
-				toMap = new File(  MainProgram.SAVEMAP + "//" + maps);
+				toMap = new File(  Folders.MAIN + "//" + maps);
 				fromMap = new File("res//" + maps);
 				if(!toMap.exists())
 					toMap.mkdirs();
@@ -74,7 +70,7 @@ public class MapStructureCreator {
 					for(int i = 0; i<(split.length-1); i++)
 						builder = builder + split[i];
 					
-					File map = new File(MainProgram.SAVEMAP + "//" + builder);
+					File map = new File(Folders.MAIN + "//" + builder);
 					if(!map.exists())
 						map.mkdirs();
 					File outFile = new File(map.getAbsolutePath() +"//"+ split[split.length-1]);

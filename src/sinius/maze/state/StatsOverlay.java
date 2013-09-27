@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
-import sinius.maze.Util;
+import sinius.maze.lib.Layout;
 import sinius.maze.state.solve.SolveState;
 
 public class StatsOverlay implements GrapicsLayer{
@@ -23,21 +23,26 @@ public class StatsOverlay implements GrapicsLayer{
 	public void Draw(Graphics2D g) {
 		if(!show)
 			return;
-		g.setColor(Util.GRAY);
+		
+		String state = Game.get().display.gameState.getName();
+		
+		g.setColor(Layout.OVERLAY_COLOR);
 		g.fillRect(0, 0, 800, 150);	
 		g.setColor(Color.white);
-		g.setFont(Util.MAIN_FONT);
+		g.setFont(Layout.MAIN_FONT);
 		
 		g.drawString("FPS: " + Game.get().fps.getFPS(), 700, 22);
 		g.drawString("TPS: " + Game.get().tps.getTPS(), 700, 44);
 		g.drawString("State: "+ Game.get().display.gameState.getName(), 400, 22);
-		if(Game.get().display.gameState.getName().equals("play")){
+		if(state.equals("play")){
 			g.drawString("Player:" , 10, 22);
 			g.drawString("x: " + MainProgram.game.getPlayer().getX() , 15, 42);
 			g.drawString("y: " + MainProgram.game.getPlayer().getY() , 15, 62);
-			g.drawString("Entitys: " + Game.get().level.getEntitys().size(), 10, 90);
+			
 		}
-		if(Game.get().display.gameState.getName().equals("solve")){
+		if(state.equals("play") || state.equals("editor"))
+			g.drawString("Entitys: " + Game.get().level.getEntitys().size(), 10, 90);
+		if(state.equals("solve")){
 			g.drawString("Time buisy with solving: " + ((SolveState)Game.get().display.gameState).timeToSolve + "ms", 10, 22);
 		}
 		

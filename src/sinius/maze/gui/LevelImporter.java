@@ -22,9 +22,9 @@ import javax.swing.border.EmptyBorder;
 import sinius.maze.Block;
 import sinius.maze.Game;
 import sinius.maze.Level;
-import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.lib.Folders;
 
 public class LevelImporter extends JFrame {
 
@@ -107,7 +107,7 @@ public class LevelImporter extends JFrame {
 				}
 				
 				try {
-					LevelLoader.SaveLevel(l, MainProgram.SAVEMAP + "\\saves\\" + l.getName() + ".maze");
+					LevelLoader.SaveLevel(l, Folders.SAVES.getAbsolutePath() + "\\" + l.getName() + ".maze");
 				} catch (Exception e1) {
 					e1.printStackTrace();
 					return;

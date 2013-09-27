@@ -6,7 +6,6 @@ import java.awt.event.MouseEvent;
 import sinius.maze.Block;
 import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.MainProgram;
 import sinius.maze.Util;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.core.SynchroniezedList.editAction;
@@ -93,7 +92,7 @@ public class EditState implements GameState{
 					b.setType(Block.AIR);
 				}
 			}else{
-				final Entity x = MainProgram.entityManager.getEntityByName(Game.get().options.getBrush());
+				final Entity x = Game.get().pluginManger.getEntityByName(Game.get().options.getBrush());
 				if(x != null){
 					if(x.onGrid()){
 						x.Create(blockX, blockY, "");
@@ -123,7 +122,7 @@ public class EditState implements GameState{
 						}});
 					}
 				}else{
-					MainProgram.editorObjManager.getByName(Game.get().options.getBrush()).mouseClick(button);;
+					Game.get().pluginManger.getEditorObjectByName(Game.get().options.getBrush()).mouseClick(button);;
 				}
 				
 				

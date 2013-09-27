@@ -1,15 +1,13 @@
 package sinius.maze;
 
-import java.awt.Font;
-
 import sinius.maze.core.Engine;
 import sinius.maze.entitys.Player;
 import sinius.maze.gameEngine.Display;
 import sinius.maze.gui.EditorOptionScreen;
 import sinius.maze.io.LevelLoader;
+import sinius.maze.lib.Folders;
 import sinius.maze.plugin.PluginManager;
 import sinius.maze.state.GameState;
-import sinius.maze.state.playMode.PlayState;
 import sinius.maze.timing.FPSTimer;
 import sinius.maze.timing.TPSTimer;
 
@@ -17,39 +15,25 @@ public class Game {
 	
 	public Level level;
 	public EditorOptionScreen options;
-
 	public FPSTimer fps = new FPSTimer();
 	public TPSTimer tps = new TPSTimer();
-	
 	public Display display;
-	
 	public Player player;
-	
 	public boolean mouseDrag = false;
 	public int ppb_x, ppb_y, mouseX = -1, mouseY = -1, latestMouseX = -1, latestMouseY = -1;
-	
-	public Font font = new Font("Zolano Serif BTN", Font.PLAIN, 25);
-	
 	public PluginManager pluginManger;
 	
 	private static Game theGame;
 	
-	public Game(Level l, GameState state){
+	public Game(GameState state, PluginManager pm){
+		this.pluginManger = pm;
 		tps.Start();
 		theGame = this;
 		fps.Start();
-		level = l;
-		if(level != null){
-			ppb_x = 800 / l.getWidth();
-			ppb_y = 800 / l.getHeight();
-		}
 		
-		pluginManger = new PluginManager();
+		display = new Display(800, 800, "Sinius's Maze", state);
 		
-		if(state == null)
-			display = new Display(800, 800, "Sinius's Maze", new PlayState());
-		else
-			display = new Display(800, 800, "Sinius's Maze", state);
+		pluginManger.initPlugins();
 		
 		MainProgram.engine = new Engine();
 		
@@ -63,7 +47,7 @@ public class Game {
 	
 	public void SaveGame(){
 		try {
-			LevelLoader.SaveLevel(level, MainProgram.SAVEMAP + "\\saves\\" + level.getName() + ".maze" );
+			LevelLoader.SaveLevel(level, Folders.SAVES.getAbsolutePath() +"//"+ level.getName() + ".maze" );
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
