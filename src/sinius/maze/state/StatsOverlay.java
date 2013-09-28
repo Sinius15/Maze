@@ -43,7 +43,7 @@ public class StatsOverlay implements GrapicsLayer{
 		if(state.equals("play") || state.equals("editor"))
 			g.drawString("Entitys: " + Game.get().level.getEntitys().size(), 10, 90);
 		if(state.equals("solve")){
-			g.drawString("Time buisy with solving: " + ((SolveState)Game.get().display.gameState).timeToSolve + "ms", 10, 22);
+			g.drawString("Time busy with solving: " + ((SolveState)Game.get().display.gameState).timeToSolve + "ms", 10, 22);
 		}
 		
 	}

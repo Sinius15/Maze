@@ -37,8 +37,6 @@ public class Game {
 		
 		MainProgram.engine = new Engine();
 		
-		
-		
 	}
 	
 	public static Game get(){
