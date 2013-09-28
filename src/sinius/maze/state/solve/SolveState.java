@@ -16,7 +16,6 @@ import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
 import sinius.maze.lib.Layout;
-import sinius.maze.plugin.Exit;
 import sinius.maze.state.AStar;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
@@ -42,7 +41,7 @@ public class SolveState implements GameState{
 		final ArrayList<Point> exits = new ArrayList<>();
 		
 		l.getEntitys().doForAll(new editAction<Entity>() { @Override public void action(Entity o) {
-			if(o.getClass().equals(Exit.class)){
+			if(o.getName().equals("Exit")){
 				exits.add(new Point(o.getX(), o.getY()));
 			}
 		}});

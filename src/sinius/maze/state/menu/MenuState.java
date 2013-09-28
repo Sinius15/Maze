@@ -8,16 +8,21 @@ import sinius.maze.Game;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.gameEngine.GButton;
 import sinius.maze.gameEngine.GObject;
+import sinius.maze.gameEngine.GText;
+import sinius.maze.lib.General;
+import sinius.maze.lib.Layout;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.levelChoser.LevelChoserState;
+import sinius.maze.updater.Updater;
 
 public class MenuState implements GameState{
 
 	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
 	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
 	
-	private GButton b_start;
+	private GButton b_start, b_update;
+	private GText t_version;
 	
 	public MenuState(){
 		gLayers.add(new BackGround());
@@ -32,6 +37,36 @@ public class MenuState implements GameState{
 				
 		}});
 		gObjects.add(b_start);
+		
+		b_update = new GButton(100, 650, 250, 80);
+		b_update.setButtonColor(Color.blue);
+		b_update.setTextColor(Color.white);
+		b_update.setText("Check for updates");
+		b_update.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
+			Game.get().display.reDraw();
+			b_update.setText("checkin....");
+			Updater r = new Updater();
+			try {
+				if(r.isLatestVersion(General.VESRION))
+					b_update.setText("You are running the latest version.");
+				else{
+					b_update.setText("There is a update!");
+					Game.get().display.getFrame().setVisible(false);
+					r.showUpdateScreen();
+				}
+					
+			} catch (Exception e1) {
+				b_update.setText("No Internet Connection Found!");
+			}
+				
+		}});
+		gObjects.add(b_update);
+		
+		t_version = new GText(General.VESRION.toString(), 710, 780);
+		t_version.setColor(Color.white);
+		t_version.setFont(Layout.MAIN_FONT);
+		gObjects.add(t_version);
+		
 	}
 	
 	@Override

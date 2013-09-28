@@ -16,10 +16,13 @@ public class MapStructureCreator {
 
 	@SuppressWarnings("resource")
 	public void CreateFirstStartup() throws Exception{
+		
 		String s = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 		
 		if(!Folders.MAIN.exists())
 			Folders.MAIN.mkdirs();
+		if(!Folders.TEMP.exists())
+			Folders.TEMP.mkdirs();
 		
 		if(!s.endsWith(".jar")){
 			File toMap = null, toFile = null, fromMap = null, fromFile = null;

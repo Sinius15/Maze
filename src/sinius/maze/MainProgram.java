@@ -10,12 +10,14 @@ import sinius.maze.io.MapStructureCreator;
 import sinius.maze.lib.Folders;
 import sinius.maze.plugin.PluginManager;
 import sinius.maze.state.menu.MenuState;
+import sinius.maze.updater.Version;
 
 public class MainProgram {
 
 	public static ArrayList<Level> levels;
 	public static Game game;
 	public static Engine engine;
+	public static final Version VESRION = new Version("alpha", 5, "a");
 	
 	public static void main(String[] args) {
 		if(args.length == 1)

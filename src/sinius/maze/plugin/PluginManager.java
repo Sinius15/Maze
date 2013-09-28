@@ -22,6 +22,8 @@ public class PluginManager {
 	private ArrayList<EditorObject> editorObj = new ArrayList<>();
 	
 	public void loadPlugins(){
+		String runPath = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+		
 		try {
 			List<File> files = Util.getFileList(Folders.PLUGIN.getAbsolutePath());
 			for(File f: files){
@@ -41,6 +43,23 @@ public class PluginManager {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		
+		
+		if(!runPath.endsWith(".jar")){
+			try{
+				File pluginYML = new File(runPath + "/plugin.yml");
+				YAMLFile pluginFile = new YAMLFile();
+				pluginFile.Load(pluginYML);
+				if(pluginFile.getString("name") == null || pluginFile.getString("main") == null){
+					return;
+				}
+				Plugin p = (Plugin)Class.forName(pluginFile.getString("main")).newInstance();
+				plugins.add(p);
+				pluginNames.put(p, pluginFile.getString("name"));
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 	}
 	
