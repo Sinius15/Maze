@@ -31,7 +31,7 @@ public class PluginManager {
 					return;
 				URL path = new URL("jar:" + f.toURI().toURL() + "!/plugin.yml");
 				
-				YAMLFile pluginFile = new YAMLFile();
+				YAMLFile pluginFile = new YAMLFile(true);
 				pluginFile.Load(path);
 				
 				if(pluginFile.getString("name") == null || pluginFile.getString("main") == null){
@@ -49,7 +49,7 @@ public class PluginManager {
 		if(!runPath.endsWith(".jar")){
 			try{
 				File pluginYML = new File(runPath + "/plugin.yml");
-				YAMLFile pluginFile = new YAMLFile();
+				YAMLFile pluginFile = new YAMLFile(false);
 				pluginFile.Load(pluginYML);
 				if(pluginFile.getString("name") == null || pluginFile.getString("main") == null){
 					return;

@@ -11,12 +11,12 @@ import sinius.maze.entitys.Spawn;
 
 public class LevelLoader {
 
-	private static YAMLFile saveFile = new YAMLFile();
+	private static YAMLFile saveFile = new YAMLFile(true);
 	
 	static int i = 0;
 	
 	public static void SaveLevel(Level l, String place) throws Exception{
-		saveFile = new YAMLFile();
+		saveFile = new YAMLFile(true);
 		
 		saveFile.addInt("levelWidht", l.getWidth());
 		saveFile.addInt("levelHeight", l.getHeight());
@@ -58,7 +58,7 @@ public class LevelLoader {
 	}
 	
 	public static Level LoadLevel(File f){
-		saveFile = new YAMLFile();
+		saveFile = new YAMLFile(true);
 		saveFile.Load(f);
 		
 		Level level = new Level(saveFile.getInt("levelWidht"), saveFile.getInt("levelHeight"), saveFile.getString("levelName"));

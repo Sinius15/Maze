@@ -14,6 +14,11 @@ import java.util.TreeSet;
 public class YAMLFile {
 
 	private HashMap<String, String> data = new HashMap<String, String>();
+	private boolean showError = false;
+	
+	public YAMLFile(boolean showError){
+		this.showError = showError;
+	}
 	
 	public void Save(File f) throws Exception{
 		
@@ -92,8 +97,10 @@ public class YAMLFile {
 
 			 reader.close(); 
 		}catch(Exception e){
-			System.err.println("YAML ERROR: You asked me to load a yml file, but i failed. I am sorry.");
-			e.printStackTrace();
+			if(showError){
+				System.err.println("YAML ERROR: You asked me to load a yml file, but i failed. I am sorry.");
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -149,8 +156,10 @@ public class YAMLFile {
 			isr.close();
 			is.close();
 		}catch(Exception e){
-			System.err.println("YAML ERROR: You asked me to load a yml file, but i failed. I am sorry.");
-			e.printStackTrace();
+			if(showError){
+				System.err.println("YAML ERROR: You asked me to load a yml file, but i failed. I am sorry.");
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -228,7 +237,8 @@ public class YAMLFile {
 			try{
 				i = Integer.valueOf(s);
 			}catch(Exception e){
-				System.err.println("YAML ERROR: You asked for a int, but there was an other object(like a string) stored.  path: " + path);
+				if(showError)
+					System.err.println("YAML ERROR: You asked for a int, but there was an other object(like a string) stored.  path: " + path);
 				return null;
 			}
 			return i;
@@ -248,11 +258,13 @@ public class YAMLFile {
 			try{
 				b = Boolean.valueOf(s);
 				if(!s.equals("true") || !s.equals("false")){
-					System.err.println("YAML ERROR: You asked for a boolean, but there was an other object(like a string) stored.  path: " + path);
+					if(showError)
+						System.err.println("YAML ERROR: You asked for a boolean, but there was an other object(like a string) stored.  path: " + path);
 					return null;
 				}
 			}catch(Exception e){
-				System.err.println("YAML ERROR: You asked for a boolean, but there was an other object(like a string) stored.  path: " + path);
+				if(showError)
+					System.err.println("YAML ERROR: You asked for a boolean, but there was an other object(like a string) stored.  path: " + path);
 				return null;
 			}
 			return b;
