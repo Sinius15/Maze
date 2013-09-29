@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
+import sinius.maze.lib.Layout;
+
 public class GButton implements GObject{
 
 	private Color buttonColor, textColor;
@@ -22,6 +24,7 @@ public class GButton implements GObject{
 
 	public GButton(int x, int y, int width, int height){
 		boundrys = new Rectangle(x, y, width, height);
+		font = Layout.MAIN_FONT;
 	}
 	
 	@Override
@@ -41,7 +44,6 @@ public class GButton implements GObject{
 		}
 			
 	}
-
 
 	public Image getImg() {
 		return img;

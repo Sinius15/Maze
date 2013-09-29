@@ -19,7 +19,6 @@ public class Game {
 	public TPSTimer tps = new TPSTimer();
 	public Display display;
 	public Player player;
-	public boolean mouseDrag = false;
 	public int ppb_x, ppb_y, mouseX = -1, mouseY = -1, latestMouseX = -1, latestMouseY = -1;
 	public PluginManager pluginManger;
 	

@@ -8,6 +8,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import javax.swing.JFrame;
+
 import sinius.maze.Game;
 import sinius.maze.core.SynchroniezedList;
 import sinius.maze.state.StatsOverlay;
@@ -24,16 +26,22 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void mouseDragged(MouseEvent event) {
-		if(event.getX() == Game.get().mouseX && event.getY() == Game.get().mouseY){
+		JFrame frame = Game.get().display.getFrame();
+		float zoomX = (frame.getWidth()-frame.getInsets().left-frame.getInsets().right)/800f;
+		float zoomY = (frame.getHeight()-frame.getInsets().top-frame.getInsets().bottom)/800f;
+		
+		int mouseX = (int) (event.getX()/zoomX);
+		int mouseY = (int) (event.getY()/zoomY);
+		
+		if(mouseX == Game.get().mouseX && mouseY == Game.get().mouseY){
 			return;
 		}
 		
-		if(event.getX() <800 && event.getX()>=0 && event.getY() <800 && event.getY()>=0){
+		if(mouseX <800 && mouseX>=0 && mouseY <800 && mouseY>=0){
 			Game.get().latestMouseX = Game.get().mouseX;
 			Game.get().latestMouseY = Game.get().mouseY;
-			Game.get().mouseX = event.getX();
-			Game.get().mouseY = event.getY();
-			Game.get().mouseDrag = false;
+			Game.get().mouseX = mouseX;
+			Game.get().mouseY = mouseY;
 		}else{
 			Game.get().latestMouseX = -1;
 			Game.get().mouseX = -1;
@@ -43,16 +51,22 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 
 	@Override
 	public void mouseMoved(MouseEvent event) {
-		if(event.getX() == Game.get().mouseX && event.getY() == Game.get().mouseY){
+		JFrame frame = Game.get().display.getFrame();
+		float zoomX = (frame.getWidth()-frame.getInsets().left-frame.getInsets().right)/800f;
+		float zoomY = (frame.getHeight()-frame.getInsets().top-frame.getInsets().bottom)/800f;
+		
+		int mouseX = (int) (event.getX()/zoomX);
+		int mouseY = (int) (event.getY()/zoomY);
+		
+		if(mouseX == Game.get().mouseX && mouseY == Game.get().mouseY){
 			return;
 		}
 		
-		if(event.getX() <800 && event.getX()>=0 && event.getY() <800 && event.getY()>=0){
+		if(mouseX <800 && mouseX>=0 && mouseY <800 && mouseY>=0){
 			Game.get().latestMouseX = Game.get().mouseX;
 			Game.get().latestMouseY = Game.get().mouseY;
-			Game.get().mouseX = event.getX();
-			Game.get().mouseY = event.getY();
-			Game.get().mouseDrag = true;
+			Game.get().mouseX = mouseX;
+			Game.get().mouseY = mouseY;
 		}else{
 			Game.get().latestMouseX = -1;
 			Game.get().mouseX = -1;

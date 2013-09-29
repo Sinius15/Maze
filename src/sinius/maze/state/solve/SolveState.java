@@ -17,7 +17,6 @@ import sinius.maze.gameEngine.GObject;
 import sinius.maze.gameEngine.GText;
 import sinius.maze.lib.Layout;
 import sinius.maze.plugin.Teleporter;
-import sinius.maze.state.AStar;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.menu.MenuState;

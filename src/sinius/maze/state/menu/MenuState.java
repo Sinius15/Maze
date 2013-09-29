@@ -38,7 +38,7 @@ public class MenuState implements GameState{
 		}});
 		gObjects.add(b_start);
 		
-		b_update = new GButton(100, 650, 250, 80);
+		b_update = new GButton(100, 650, 350, 80);
 		b_update.setButtonColor(Color.blue);
 		b_update.setTextColor(Color.white);
 		b_update.setText("Check for updates");
