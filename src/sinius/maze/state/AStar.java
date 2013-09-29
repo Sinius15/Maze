@@ -6,9 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import sinius.maze.Block;
-import sinius.maze.Entity;
 import sinius.maze.Game;
-import sinius.maze.core.SynchroniezedList.editAction;
 import sinius.maze.plugin.Teleporter;
 
 public class AStar {
@@ -17,12 +15,14 @@ public class AStar {
 	int[][] pathSize;
 	int widht, height;
 	Set<Point> lastChecked, toCheck;
+	ArrayList<Teleporter> teleporters;
 	public String status;
 	
-	public AStar(boolean[][] input, int w, int h){
+	public AStar(boolean[][] input, int w, int h, ArrayList<Teleporter> tel){
 		maze = input;
 		widht = w;
 		height = h;
+		this.teleporters = tel;
 	}
 	
 	private void clearVars(){
@@ -182,15 +182,10 @@ public class AStar {
 				if(Game.get().level.getBlock(temp.x, temp.y).getType() == Block.AIR){
 					toCheck.add(temp);
 				}
-				Game.get().level.getEntitys().doForAll(new editAction<Entity>() {@Override
-				public void action(Entity o) {
-					if(o.getName().equals("Teleporter")){
-						Teleporter t = (Teleporter) o;
-						if(t.type.equals("in"))
-							toCheck.add(new Point(t.toX, t.toY));
-						
-					}
-				}});
+				for(Teleporter t : teleporters){
+					if(t.type.equals("in"))
+						toCheck.add(new Point(t.toX, t.toY));
+				}
 			}
 		}
 	}
