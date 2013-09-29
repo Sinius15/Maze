@@ -61,7 +61,7 @@ public class LevelImporter extends JFrame {
 		contentPane.add(textField_name);
 		textField_name.setColumns(10);
 		
-		JLabel lblLevelName = new JLabel(" Level Name");
+		JLabel lblLevelName = new JLabel("Level Name");
 		lblLevelName.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblLevelName.setBounds(10, 63, 153, 38);
 		contentPane.add(lblLevelName);

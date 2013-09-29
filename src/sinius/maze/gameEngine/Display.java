@@ -57,7 +57,6 @@ public class Display{
 	public void onTick(){
 		listner.pressedKeys.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
 			gameState.keyEvent(o);
-			
 		}});
 		
 		listner.pressedMouse.doForAll(new editAction<Integer>() { @Override public void action(Integer o) {
@@ -105,6 +104,11 @@ public class Display{
 	
 	public DrawPane getPanel(){
 		return pane;
+	}
+	
+	public void resetSize(){
+		frame.setSize(new Dimension(800+frame.getInsets().left+frame.getInsets().right, 800+frame.getInsets().top+frame.getInsets().bottom));
+		frame.revalidate();
 	}
 	
 	private MouseListener getMouseListener(){

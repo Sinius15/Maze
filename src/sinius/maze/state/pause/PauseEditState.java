@@ -13,6 +13,7 @@ import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.editMode.EditState;
 import sinius.maze.state.menu.MenuState;
+import sinius.maze.state.wait.WaitState;
 
 public class PauseEditState implements GameState{
 
@@ -42,8 +43,14 @@ public EditState editState;
 		save.setButtonColor(Color.magenta);
 		save.setTextColor(Color.black);
 		save.setText("Save the level");
+		final GameState p = this;
 		save.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
-			Game.get().SaveGame();
+			Game.get().display.setGameState(new WaitState("Saving the level..."));
+			Thread t = new Thread(new Runnable() {@Override public void run() {
+				Game.get().SaveGame();
+				Game.get().display.setGameState(p);
+			}});
+			t.start();
 		}});
 		gObjects.add(save);
 		

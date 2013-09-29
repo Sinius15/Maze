@@ -47,8 +47,13 @@ public class LevelChoserState implements GameState{
 		play.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
 			if(selected == "")
 				return;
-			Game.get().level = getLevel();
-			Game.get().display.setGameState(new PlayState());
+			Game.get().display.setGameState(new WaitState("Loading the level..."));
+			Thread t = new Thread(new Runnable() {@Override public void run() {
+				Game.get().level = getLevel();
+				Game.get().display.setGameState(new PlayState());
+			}});
+			t.start();
+			
 		}});
 		buttons.add(play);
 		

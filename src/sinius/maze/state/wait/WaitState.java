@@ -22,7 +22,6 @@ public class WaitState implements GameState {
 		gObjects.add(t);
 		
 		gLayers.add(new BackGround());
-		
 	}
 	
 	@Override

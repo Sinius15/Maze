@@ -20,10 +20,6 @@ public class GeneralListener implements ComponentListener, KeyListener, MouseLis
 	public SynchroniezedList<Integer> pressedKeys = new SynchroniezedList<Integer>();
 	public SynchroniezedList<Integer> pressedMouse = new SynchroniezedList<Integer>();
 
-	public boolean mouseMovedAfterDrag = false;
-
-	public MouseEvent latestMouseEvent = null;
-
 	@Override
 	public void mouseDragged(MouseEvent event) {
 		JFrame frame = Game.get().display.getFrame();

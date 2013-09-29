@@ -67,7 +67,7 @@ public class MapStructureCreator {
 				System.out.println(path);
 				
 				
-				if(!path.endsWith("/") && !path.endsWith(".class") && !path.endsWith(".MF")){
+				if(!path.endsWith("/") && !path.endsWith(".class") && !path.endsWith(".MF") && !path.endsWith("plugin.yml")){
 					
 					String builder = "";
 					for(int i = 0; i<(split.length-1); i++)
