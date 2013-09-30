@@ -10,18 +10,12 @@ public static final int WALL = 1;
 private int type;
 private Color color = Color.white;
 private int x, y;
-//private Rectangle r;
 	
 	public Block(int type, int x, int y/*, int ppb_x, int ppb_y */){
 		this.x = x;
 		this.y = y;
 		this.setType(type);
-//		this.r = new Rectangle(x * ppb_x, y*ppb_x, ppb_x, ppb_y);
 	}
-	
-//	public Rectangle getCollisionBox(){
-//		return r ;
-//	}
 	
 	public int getType() {
 		return type;
