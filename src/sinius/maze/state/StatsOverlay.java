@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 
 import sinius.maze.Game;
 import sinius.maze.MainProgram;
+import sinius.maze.lib.Folders;
 import sinius.maze.lib.Layout;
 import sinius.maze.state.solve.SolveState;
 
@@ -39,6 +40,9 @@ public class StatsOverlay implements GrapicsLayer{
 			g.drawString("x: " + MainProgram.game.getPlayer().getX() , 15, 42);
 			g.drawString("y: " + MainProgram.game.getPlayer().getY() , 15, 62);
 			
+		}
+		if(state.equals("Menu")){
+			g.drawString("Dir: " + Folders.MAIN.getAbsolutePath() , 10, 82);
 		}
 		if(state.equals("play") || state.equals("editor"))
 			g.drawString("Entitys: " + Game.get().level.getEntitys().size(), 10, 90);
