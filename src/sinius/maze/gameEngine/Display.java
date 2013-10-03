@@ -35,7 +35,6 @@ public class Display{
 	public Display(int width, int height, String title, GameState state){
 		gameState = state;
 		frame = new JFrame();
-		
 		pane = new DrawPane();
 		frame.setResizable(true);
 		pane.setPreferredSize(new Dimension(width, height));
