@@ -14,14 +14,13 @@ import sinius.maze.lib.Layout;
 import sinius.maze.state.GameState;
 import sinius.maze.state.GrapicsLayer;
 import sinius.maze.state.levelChoser.LevelChoserState;
-import sinius.maze.updater.Updater;
 
 public class MenuState implements GameState{
 
 	private SynchroniezedList<GObject> gObjects = new SynchroniezedList<GObject>();
 	private SynchroniezedList<GrapicsLayer> gLayers = new SynchroniezedList<GrapicsLayer>();
 	
-	private GButton b_start, b_update, b_resetSize;
+	private GButton b_start, b_resetSize;
 	private GText t_version;
 	
 	public MenuState(){
@@ -37,31 +36,7 @@ public class MenuState implements GameState{
 				
 		}});
 		gObjects.add(b_start);
-		
-		b_update = new GButton(100, 650, 350, 80);
-		b_update.setButtonColor(Color.blue);
-		b_update.setTextColor(Color.white);
-		b_update.setText("Check for updates");
-		b_update.setAction(new ActionListener() { @Override public void actionPerformed(ActionEvent e) {
-			Game.get().display.reDraw();
-			b_update.setText("checkin....");
-			Updater r = new Updater();
-			try {
-				if(r.isLatestVersion(General.VESRION))
-					b_update.setText("You are running the latest version.");
-				else{
-					b_update.setText("There is a update!");
-					Game.get().display.getFrame().setVisible(false);
-					r.showUpdateScreen();
-				}
-					
-			} catch (Exception e1) {
-				b_update.setText("No Internet Connection Found!");
-			}
-				
-		}});
-		gObjects.add(b_update);
-		
+	
 		b_resetSize = new GButton(500, 650, 200, 80);
 		b_resetSize.setButtonColor(Color.blue);
 		b_resetSize.setTextColor(Color.white);

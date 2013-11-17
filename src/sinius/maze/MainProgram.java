@@ -10,27 +10,28 @@ import sinius.maze.io.MapStructureCreator;
 import sinius.maze.lib.Folders;
 import sinius.maze.plugin.PluginManager;
 import sinius.maze.state.menu.MenuState;
-import sinius.maze.updater.Version;
 
 public class MainProgram {
 
 	public static ArrayList<Level> levels;
 	public static Game game;
 	public static Engine engine;
-	public static final Version VESRION = new Version("alpha", 5, "a");
 	
 	public static void main(String[] args) {
+
 		if(args.length == 1)
 			Folders.MAIN = new File(args[0]);
 		else
 			Folders.MAIN = new File(System.getenv("APPDATA") + "\\Sinius Maze");
 		Folders.init();
 		
+		
+		
 		MapStructureCreator maper = new MapStructureCreator();
 		try {
 			maper.CreateFirstStartup();
 		} catch (Exception e) {
-			System.out.println("something critical went wrong when creating the files");
+			System.err.println("something critical went wrong when creating the files");
 			e.printStackTrace();
 			System.exit(1);
 			

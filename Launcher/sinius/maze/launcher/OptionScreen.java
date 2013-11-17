@@ -1,5 +1,6 @@
 package sinius.maze.launcher;
 
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +13,8 @@ import javax.swing.JTextField;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+
 import javax.swing.JButton;
 
 public class OptionScreen extends JFrame {
@@ -44,7 +47,11 @@ public class OptionScreen extends JFrame {
 		chckbxUseDefaultData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxUseDefaultData.isSelected()){
+					btnNewButton.setEnabled(false);
+					textField.setEnabled(false);
+				}else{
 					btnNewButton.setEnabled(true);
+					textField.setEnabled(true);
 				}
 					
 			}
@@ -59,8 +66,46 @@ public class OptionScreen extends JFrame {
 		textField.setColumns(10);
 		
 		btnNewButton = new JButton("...");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+					JFileChooser filechooser = new JFileChooser();
+					filechooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+					filechooser.setAcceptAllFileFilterUsed(false);
+					filechooser.setDialogType(JFileChooser.SAVE_DIALOG);
+					int returnErrorNR = filechooser.showSaveDialog(null);
+					if(returnErrorNR != 0)
+						return;
+					String path = filechooser.getSelectedFile().getAbsolutePath();
+					textField.setText(path);
+					
+			
+		}});
 		btnNewButton.setEnabled(false);
 		btnNewButton.setBounds(411, 8, 21, 21);
 		contentPane.add(btnNewButton);
+		
+		final JCheckBox chckbxAutomaticUpdate = new JCheckBox("Automatic Update");
+		chckbxAutomaticUpdate.setSelected(true);
+		chckbxAutomaticUpdate.setBounds(6, 34, 184, 23);
+		contentPane.add(chckbxAutomaticUpdate);
+		
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Main.dataPath = new File(textField.getText());
+				if(chckbxUseDefaultData.isSelected())
+					Main.dataPath = null;
+				Main.autoUpadte = chckbxAutomaticUpdate.isSelected();
+					
+				
+				
+				Main.frame.setEnabled(true);
+				Main.frame.optionScreen.setVisible(false);
+			}
+		});
+		btnSave.setBounds(334, 234, 98, 26);
+		contentPane.add(btnSave);
+		
+		
 	}
 }

@@ -64,8 +64,6 @@ public class MapStructureCreator {
 				String path = entry.getName();
 				String[] split = path.split("/");
 				
-				System.out.println(path);
-				
 				
 				if(!path.endsWith("/") && !path.endsWith(".class") && !path.endsWith(".MF") && !path.endsWith("plugin.yml")){
 					
@@ -92,8 +90,6 @@ public class MapStructureCreator {
 			            inStream.close();
 			            outStream.flush();
 			            outStream.close();
-						
-			            System.out.println("I just copeyed this file. path in jar: " + path + "  path on disk: " + outFile.getPath());
 			            
 					}
 				}

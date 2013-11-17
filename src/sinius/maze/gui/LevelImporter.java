@@ -79,9 +79,7 @@ public class LevelImporter extends JFrame {
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				File file = new File(textField_file.getText());
-//				File file = new File("A://tester.png");
 				if(!file.exists() || !file.getName().endsWith(".png")){
-					System.out.println("returning!");
 					return;
 				}
 					

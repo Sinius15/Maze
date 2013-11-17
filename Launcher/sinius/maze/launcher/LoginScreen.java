@@ -19,6 +19,8 @@ public class LoginScreen extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	
+	OptionScreen optionScreen = new OptionScreen();
 
 	public LoginScreen() {
 		setTitle("Sinius Maze - Launcher");
@@ -44,8 +46,7 @@ public class LoginScreen extends JFrame {
 		JMenuItem mntmOptions = new JMenuItem("Options");
 		mntmOptions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OptionScreen s = new OptionScreen();
-				s.setVisible(true);
+				optionScreen.setVisible(true);
 				Main.frame.setEnabled(false);
 			}
 		});
@@ -55,6 +56,11 @@ public class LoginScreen extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnPlay = new JButton("Play");
+		btnPlay.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnPlay.setToolTipText("Start the game");
 		btnPlay.setBounds(146, 76, 137, 26);
 		contentPane.add(btnPlay);
